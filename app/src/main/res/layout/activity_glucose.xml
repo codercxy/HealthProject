@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+    tools:context="com.nju.android.health.views.activities.glucose.GlucoseActivity">
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar_manual_pres"
+        android:layout_width="match_parent"
+        android:layout_height="?android:attr/actionBarSize"
+        android:background="#00CCCC"
+        app:popupTheme="@style/AppTheme.PopupOverlay" >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            style="@style/TextAppearance.AppCompat.Widget.ActionBar.Title"
+            android:gravity="center"
+            android:text="血糖测量"
+            android:textColor="#fff"/>
+    </android.support.v7.widget.Toolbar>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="?android:attr/actionBarSize"
+        android:orientation="vertical"
+        android:divider="@drawable/linearlayoutdivider"
+        android:showDividers="middle">
+        <!--时间-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="时间"
+                android:padding="15dp"
+                android:textSize="18sp"
+                />
+            <TextView
+                android:id="@+id/glu_time"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="15dp"
+                android:textSize="18sp"
+                android:drawableRight="@drawable/ic_chevron_right_grey600_24dp"/>
+        </LinearLayout>
+
+
+        <!--空腹-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="测量"
+                android:padding="15dp"
+                android:textSize="18sp"
+                />
+            <TextView
+                android:id="@+id/glu_type"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="15dp"
+                android:textSize="18sp"
+                android:drawableRight="@drawable/ic_chevron_right_grey600_24dp"/>
+        </LinearLayout>
+
+        <!-- 血糖值-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="血糖值"
+                android:padding="15dp"
+                android:textSize="18sp"
+                />
+            <EditText
+                android:id="@+id/et_glu_value"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:background="@null"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="mmol/L"
+                android:padding="15dp"
+                android:textSize="18sp"
+                />
+
+
+        </LinearLayout>
+
+        <!--备注-->
+        <!--<TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="15dp"
+            android:text="添加备注"
+            android:textSize="18sp"/>
+        <EditText
+            android:id="@+id/et_manual_pres_note"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:hint="请输入内容"
+            android:gravity="top"
+            android:paddingLeft="15dp"
+            android:background="@drawable/manual_pres_note"/>-->
+
+        <Button
+            android:id="@+id/btn_glu_submit"
+            android:layout_width="258dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="200dp"
+            android:text="提交"
+            android:background="@color/green"
+            android:textColor="#fff"/>
+    </LinearLayout>
+</FrameLayout>

@@ -1,0 +1,139 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".views.fragments.data.OldDataFragment">
+
+    <!--<android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar_me"
+        android:layout_width="match_parent"
+        android:background="@color/colorPrimary"
+        android:layout_height="?android:attr/actionBarSize"
+        app:title=""
+        app:popupTheme="@style/AppTheme.PopupOverlay">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:text="历史数据"
+            android:textSize="20sp"
+            android:textColor="#fff"/>
+    </android.support.v7.widget.Toolbar>-->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        android:orientation="vertical">
+
+        <!--<TextView
+            android:id="@+id/data_head"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:ellipsize="marquee"
+            android:gravity="center_horizontal|center"
+            android:singleLine="true"
+            android:background="@color/black"
+            android:text="图表"
+            android:textColor="@color/aliwx_white"
+            android:textSize="20dp"/>-->
+
+        <!--<FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="170dp"
+            >
+            <ImageView
+                android:id="@+id/data_avenue"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/avenue"
+                android:scaleType="centerCrop"/>
+
+            <com.nju.android.health.utils.CircleBarTiny
+                android:id="@+id/data_progress_pedometer_run"
+                android:layout_width="match_parent"
+                android:layout_height="130dp"
+                android:layout_gravity="center"
+                android:layout_marginBottom="8dp"/>
+
+
+        </FrameLayout>-->
+
+        <android.support.design.widget.TabLayout
+            android:id="@+id/data_tabLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?attr/colorPrimary"/>
+        <android.support.v4.view.ViewPager
+            android:id="@+id/data_viewPager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <android.support.v7.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/data_recycler" />
+    </LinearLayout>
+
+
+    <!--<LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="?android:attr/actionBarSize"
+        android:orientation="vertical"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp">
+
+            <ImageView
+                android:id="@+id/data_pressure"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:padding="30dp"
+                android:layout_height="150dp"
+                android:src="@drawable/blood_pressure"
+                android:scaleType="centerCrop"/>
+
+            <ImageView
+                android:id="@+id/data_sugar"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:padding="30dp"
+                android:layout_height="150dp"
+                android:src="@drawable/blood_sugar"
+                android:scaleType="centerCrop"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="血压"
+                android:textSize="18sp"
+                android:gravity="center"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="血糖"
+                android:textSize="18sp"
+                android:gravity="center"/>
+        </LinearLayout>
+
+
+    </LinearLayout>-->
+
+</FrameLayout>

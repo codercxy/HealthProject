@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+    <RelativeLayout
+        android:id="@+id/relativeLayout4"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="@color/colorPrimary"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true">
+
+        <RelativeLayout
+            android:id="@+id/back_relative"
+            android:layout_width="50dp"
+            android:layout_height="30dp"
+            android:layout_centerVertical="true"
+            android:weightSum="1" >
+
+            <ImageView
+                android:id="@+id/imageView5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="2dp"
+                android:src="@drawable/jt_fh" />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/textView8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:text="血糖记录详情"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="120dp"
+        android:background="#fff"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:id="@+id/state_content_relative_measure_result"
+        android:layout_below="@+id/relativeLayout4"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="本次测量结果"
+            android:textSize="20sp"
+            android:id="@+id/state_content_text_measure_result"
+            android:layout_marginStart="15dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="8dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="时段："
+            android:id="@+id/state_content_text_gaoya"
+            android:layout_below="@+id/state_content_text_measure_result"
+            android:layout_alignLeft="@+id/state_content_text_measure_result"
+            android:layout_alignStart="@+id/state_content_text_measure_result" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="血糖值："
+            android:id="@+id/state_content_text_diya"
+            android:layout_below="@+id/state_content_text_gaoya"
+            android:layout_alignLeft="@+id/state_content_text_gaoya"
+            android:layout_alignStart="@+id/state_content_text_gaoya" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="测试时间："
+            android:id="@+id/state_content_text_xinlv"
+            android:layout_below="@+id/state_content_text_diya"
+            android:layout_alignLeft="@+id/state_content_text_diya"
+            android:layout_alignStart="@+id/state_content_text_diya" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="早餐前两小时"
+            android:id="@+id/state_content_text_gy"
+            android:layout_alignTop="@+id/state_content_text_gaoya"
+            android:layout_toEndOf="@+id/state_content_text_gaoya"
+            android:layout_toRightOf="@+id/state_content_text_gaoya"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="35mmol/L"
+            android:id="@+id/state_content_text_dy"
+            android:layout_alignBaseline="@+id/state_content_text_diya"
+            android:layout_alignBottom="@+id/state_content_text_diya"
+            android:layout_toRightOf="@+id/state_content_text_diya"
+            android:layout_toEndOf="@+id/state_content_text_diya" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="2016-03-03 13:33"
+            android:id="@+id/state_content_text_xl"
+            android:layout_below="@+id/state_content_text_dy"
+            android:layout_toRightOf="@+id/state_content_text_xinlv"
+            android:layout_toEndOf="@+id/state_content_text_xinlv" />
+
+
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="150dp"
+        android:background="#fff"
+        android:id="@+id/state_content_relative_assessment_result"
+        android:layout_below="@+id/state_content_relative_measure_result"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_alignLeft="@+id/state_content_relative_measure_result"
+        android:layout_alignStart="@+id/state_content_relative_measure_result">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="备注"
+            android:textSize="20sp"
+            android:id="@+id/state_content_text_assessment_result"
+            android:layout_marginStart="15dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="17dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"/>
+
+        <TextView
+            android:text="血糖记录详情测试数据"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/state_content_text_assessment__contentresult"
+            android:layout_marginTop="8dp"
+            android:layout_below="@+id/state_content_text_assessment_result"
+            android:layout_alignStart="@+id/state_content_text_assessment_result"
+            android:layout_alignLeft="@+id/state_content_text_assessment_result"/>
+    </RelativeLayout>
+
+
+</RelativeLayout>

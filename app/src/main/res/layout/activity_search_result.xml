@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_search_result"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.nju.android.health.views.activities.next.SearchResultActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="选择符合的特征"
+        android:textSize="16sp"
+        android:padding="16dp"/>
+
+    <com.nju.android.health.utils.FlowLayout
+        android:id="@+id/search_result_flow"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp" >
+
+        <!--<TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/text_flag"
+            android:textColor="#43BBE7"
+            android:text="抽烟"
+            android:background="@drawable/flow_flag_1"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/text_flag"
+            android:textColor="#43BBE7"
+            android:text="饮酒"
+            android:background="@drawable/flow_flag_1"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/text_flag"
+            android:textColor="@color/aliwx_white"
+            android:text="焦虑"
+            android:background="@drawable/flow_flag_2"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/text_flag"
+            android:textColor="#43BBE7"
+            android:text="长期喝咖啡"
+            android:background="@drawable/flow_flag_1"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/text_flag"
+            android:textColor="#43BBE7"
+            android:text="外伤"
+            android:background="@drawable/flow_flag_1"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/text_flag"
+            android:textColor="@color/aliwx_white"
+            android:text="睡眠不良"
+            android:background="@drawable/flow_flag_2"/>-->
+
+    </com.nju.android.health.utils.FlowLayout>
+
+    <!--对应疾病-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="对应疾病"
+            android:textSize="16sp"
+            android:padding="16dp"
+            android:id="@+id/textView9" />
+
+        <!--偏头痛-->
+        <LinearLayout
+            android:id="@+id/search_result_headache"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingLeft="8dp"
+            android:paddingRight="16dp">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/disease"
+                android:padding="16dp"/>
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="偏头痛"
+                android:layout_gravity="center_vertical"
+                android:textSize="16sp"
+                android:textColor="@color/black"/>
+
+            <com.nju.android.health.utils.MyProgressBar
+                android:id="@+id/search_result_headache_bar"
+                android:layout_width="140dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="16dp"
+                style="@style/mprogressbar"
+                android:progress="0"
+                android:max="100"
+                />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/ic_keyboard_arrow_right_black_24dp"/>
+        </LinearLayout>
+        <!--脑肿瘤-->
+        <LinearLayout
+            android:id="@+id/search_result_brain"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingLeft="8dp"
+            android:paddingRight="16dp">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/disease"
+                android:padding="16dp"/>
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="脑肿瘤"
+                android:layout_gravity="center_vertical"
+                android:textSize="16sp"
+                android:textColor="@color/black"/>
+
+            <com.nju.android.health.utils.MyProgressBar
+                android:id="@+id/search_result_brain_bar"
+                android:layout_width="140dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                style="@style/mprogressbar"
+                android:progress="0"
+                android:max="100"
+                />
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/ic_keyboard_arrow_right_black_24dp"/>
+        </LinearLayout>
+        <!--脑膜炎-->
+        <LinearLayout
+            android:id="@+id/search_result_brain_next"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingLeft="8dp"
+            android:paddingRight="16dp">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/disease"
+                android:padding="16dp"/>
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="脑膜炎"
+                android:layout_gravity="center_vertical"
+                android:textSize="16sp"
+                android:textColor="@color/black"/>
+
+            <com.nju.android.health.utils.MyProgressBar
+                android:id="@+id/search_result_brain_next_bar"
+                android:layout_width="140dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="16dp"
+                style="@style/mprogressbar"
+                android:progress="0"
+                android:max="100"
+                />
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/ic_keyboard_arrow_right_black_24dp"/>
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/view" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="更多疾病"
+            android:padding="12dp"
+            android:gravity="right|center_vertical"
+            android:drawableRight="@drawable/ic_keyboard_arrow_right_black_24dp"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="8dp"
+            android:background="@color/view" />
+
+
+    </LinearLayout>
+
+</LinearLayout>

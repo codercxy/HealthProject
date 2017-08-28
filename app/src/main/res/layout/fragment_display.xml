@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+			android:orientation="horizontal"
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			android:columnCount="2">
+
+	<TextView android:text="@string/highpress_label"
+	    android:textSize="20dp"/>
+
+	<TextView android:id="@+id/highpress"
+	    android:textSize="20dp"/>
+
+	<TextView android:text="@string/lowpress_label"
+	    android:textSize="20dp"/>
+
+	<TextView android:id="@+id/lowpress"
+	    android:textSize="20dp"/>
+	
+	<TextView android:text="@string/pulse_label"
+	    android:textSize="20dp"/>
+
+	<TextView android:id="@+id/pulse"
+	    android:textSize="20dp"/>
+	
+</GridLayout>

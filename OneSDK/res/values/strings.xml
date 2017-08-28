@@ -1,0 +1,19 @@
+<resources>
+    <string name="title_activity_at_msg_list">AtMsgListActivity</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+
+<!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+	<string name="app_name">OpenIM</string>
+    <string name="quit_confirm">退出后您将收不到新消息通知，是否确认退出？</string>
+    <string name="guest_login">账号不存在，是否以游客方式登录？</string>
+    <string name="confirm">确定</string>
+    <string name="cancel">取消</string>
+    <string name="setting_sound">声音提醒</string>
+    <string name="setting_vibration">振动提醒</string>
+    <string name="setting_nodisturb_dsc">消息免打扰</string>
+
+</resources>

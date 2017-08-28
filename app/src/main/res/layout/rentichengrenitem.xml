@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/rentichengfenxiangqing"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:background="@drawable/border1">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:id="@+id/jk_item_img_jt"
+            android:layout_marginEnd="21dp"
+            android:layout_marginRight="21dp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"/>
+
+        <RelativeLayout
+            android:layout_width="130dp"
+            android:layout_height="fill_parent"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:id="@+id/relativeLayout8" >
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/jk_item_img_sx"
+                android:src="@drawable/shuxian"
+                android:layout_centerVertical="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="2015-11-11"
+                android:id="@+id/jk_item_text_year"
+                android:layout_above="@+id/jk_item_text_time"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="8dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="18.06"
+                android:id="@+id/jk_item_text_time"
+                android:layout_alignBottom="@+id/jk_item_img_sx"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="14dp" />
+        </RelativeLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="水分："
+            android:textColor="@color/colorPrimary"
+            android:id="@+id/jk_item_text_xueya"
+            android:layout_marginStart="12dp"
+            android:layout_marginLeft="12dp"
+            android:layout_above="@+id/jk_item_text_xinlv"
+            android:layout_toEndOf="@+id/relativeLayout8"
+            android:layout_toRightOf="@+id/relativeLayout8"
+            android:layout_marginBottom="10dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="热量："
+            android:textColor="@color/colorPrimary"
+            android:id="@+id/jk_item_text_xinlv"
+            android:layout_alignBottom="@+id/jk_item_img_jt"
+            android:layout_toStartOf="@+id/jk_item_text_data_2"
+            android:layout_toLeftOf="@+id/jk_item_text_data_2"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="200/100"
+            android:id="@+id/jk_item_text_data_1"
+            android:layout_alignBottom="@+id/jk_item_text_xueya"
+            android:layout_toEndOf="@+id/jk_item_text_xueya"
+            android:layout_toRightOf="@+id/jk_item_text_xueya"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="30"
+            android:id="@+id/jk_item_text_data_2"
+            android:layout_alignBottom="@+id/jk_item_text_xinlv"
+            android:layout_alignStart="@+id/jk_item_text_data_1"
+            android:layout_alignLeft="@+id/jk_item_text_data_1"/>
+
+        <TextView
+            android:layout_marginLeft="3dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="%"
+            android:id="@+id/jk_item_text_danwei_1"
+            android:layout_alignBottom="@+id/jk_item_text_data_1"
+            android:layout_toEndOf="@+id/jk_item_text_data_1"
+            android:layout_toRightOf="@+id/jk_item_text_data_1"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:id="@+id/jk_item_text_danwei_2"
+            android:layout_alignBottom="@+id/jk_item_text_data_2"
+            android:layout_alignStart="@+id/jk_item_text_danwei_1"
+            android:layout_alignLeft="@+id/jk_item_text_danwei_1"/>
+    </RelativeLayout>
+</LinearLayout>

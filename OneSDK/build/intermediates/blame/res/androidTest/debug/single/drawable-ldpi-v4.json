@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "D:\\MyProjects\\Android\\health\\OneSDK\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-ldpi-v4\\com_taobao_tae_sdk_web_view_title_bar_back.9.png",
+        "source": "D:\\MyProjects\\Android\\health\\OneSDK\\build\\intermediates\\bundles\\debug\\res\\drawable-ldpi-v4\\com_taobao_tae_sdk_web_view_title_bar_back.9.png"
+    },
+    {
+        "merged": "D:\\MyProjects\\Android\\health\\OneSDK\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-ldpi-v4\\com_taobao_tae_sdk_web_view_title_bar_close.9.png",
+        "source": "D:\\MyProjects\\Android\\health\\OneSDK\\build\\intermediates\\bundles\\debug\\res\\drawable-ldpi-v4\\com_taobao_tae_sdk_web_view_title_bar_close.9.png"
+    }
+]

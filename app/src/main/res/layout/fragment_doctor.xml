@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".views.fragments.doctor.DoctorFragment">
+
+
+    <!--<android.support.v7.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="?android:attr/actionBarSize"
+        android:background="@color/colorPrimary"
+        app:popupTheme="@style/AppTheme.PopupOverlay"
+        app:title="">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:text="咨询"
+            android:textSize="20sp"
+            android:textColor="#fff"/>
+
+
+    </android.support.v7.widget.Toolbar>-->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="5dp">
+
+            <!--我的医生-->
+            <TextView
+                android:id="@+id/doctor_my"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="我的医生"
+                android:padding="8dp"
+                android:gravity="center"
+                android:drawableTop="@drawable/doctor_my"/>
+            <!--医师-->
+            <TextView
+                android:id="@+id/doctor_physician"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="普通医生"
+                android:padding="8dp"
+                android:gravity="center"
+                android:drawableTop="@drawable/doctor_phy"/>
+            <!--专家医生-->
+            <TextView
+                android:id="@+id/doctor_specialist"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:padding="8dp"
+                android:text="专家医生"
+                android:gravity="center"
+                android:drawableTop="@drawable/doctor_spe"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</FrameLayout>

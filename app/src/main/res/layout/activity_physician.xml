@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    tools:context="com.nju.android.health.views.activities.doctor.PhysicianActivity">
+
+    <android.support.v7.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="?android:attr/actionBarSize"
+        android:background="#00CCCC"
+        app:popupTheme="@style/AppTheme.PopupOverlay">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            style="@style/TextAppearance.AppCompat.Widget.ActionBar.Title"
+            android:gravity="center"
+            android:text="普通医生"
+            android:textColor="#fff"/>
+
+    </android.support.v7.widget.Toolbar>
+
+    <!--搜索 输入症状、疾病、医院、科室医生名-->
+
+    <include
+        layout="@layout/physician_tab" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/phy_recycler"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layoutManager="LinearLayoutManager"></android.support.v7.widget.RecyclerView>
+
+            <!--使背景变灰-->
+            <View
+                android:id="@+id/main_darkview"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/dark_bg"
+                android:visibility="gone" />
+        </LinearLayout>
+
+
+    </ScrollView>
+
+
+</LinearLayout>

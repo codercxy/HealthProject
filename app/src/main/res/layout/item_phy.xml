@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/item_phy"
+    android:orientation="horizontal" android:layout_width="match_parent"
+    android:layout_height="104dp">
+
+    <com.nju.android.health.utils.CircleImg
+        android:id="@+id/item_phy_image"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginRight="24dp"
+        android:layout_gravity="center_vertical"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical" >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp">
+
+            <!--name-->
+            <TextView
+                android:id="@+id/item_phy_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:text="刘海防"/>
+            <!--room-->
+            <TextView
+                android:id="@+id/item_phy_room"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/item_phy_name"
+                android:layout_marginTop="4dp"
+                android:paddingLeft="8dp"
+                android:textSize="12sp"
+                android:text="妇科"
+                />
+            <!--level-->
+            <TextView
+                android:id="@+id/item_phy_level"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/item_phy_room"
+                android:layout_marginTop="4dp"
+                android:paddingLeft="8dp"
+                android:textSize="12sp"
+                android:text="主任医师"
+                />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp">
+
+            <!--hospital-->
+            <TextView
+                android:id="@+id/item_phy_loc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="复旦大学附属华山医院"
+                android:textSize="12sp"/>
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp">
+
+            <!--good at-->
+            <TextView
+                android:id="@+id/item_phy_good_at"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="擅长：不孕不育"
+                android:textSize="12sp"/>
+
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+
+</LinearLayout>

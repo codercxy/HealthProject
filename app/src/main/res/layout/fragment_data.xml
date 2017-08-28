@@ -1,0 +1,440 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="com.nju.android.health.views.fragments.data.DataFragment">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:gravity="center"
+        android:text="开始测量"
+        android:textSize="22sp"
+        android:textColor="@color/aliwx_white"
+        android:background="#7B1FA2"
+        />
+
+
+    <ScrollView
+        android:layout_marginTop="?android:attr/actionBarSize"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/data_rec"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            </android.support.v7.widget.RecyclerView>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="8dp"
+                android:background="@color/view" />
+            <!--计步与热量消耗-->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/aliwx_white"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:id="@+id/ll_home_run"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:padding="10dp"
+                    android:gravity="center_horizontal"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="5dp"
+                        android:layout_gravity="center_vertical"
+                        android:src="@drawable/home_run"/>
+
+                    <TextView
+                        android:id="@+id/home_run"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="步"
+                        android:textColor="@color/black"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_home_burn"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal"
+                    android:padding="10dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/home_burn"
+                        android:layout_gravity="center_vertical"
+                        android:padding="5dp"/>
+
+                    <TextView
+                        android:id="@+id/home_burn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="卡路里"
+                        android:textColor="@color/black"/>
+                </LinearLayout>
+            </LinearLayout>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="5dp"
+                android:background="@color/view" />
+            <!--数据展示-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/aliwx_white"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="12dp"
+                    android:gravity="center_horizontal"
+                    android:text="最近数据" />
+                <!--暂无数据-->
+                <LinearLayout
+                    android:id="@+id/ll_home_no_data"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="暂无数据"
+                        android:textColor="@color/black"
+                        android:gravity="center"/>
+                </LinearLayout>
+
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="16dp"
+                    android:orientation="vertical">
+                    <!-- 血压-->
+                    <LinearLayout
+                        android:id="@+id/ll_home_pressure"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:paddingTop="8dp"
+                        android:paddingBottom="8dp">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="10dp"
+                            android:orientation="vertical"
+                            >
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="血压"
+
+                                android:textSize="18sp"
+                                android:textColor="@color/black"
+                                android:gravity="left" />
+                            <!--时间-->
+                            <TextView
+                                android:id="@+id/home_time"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="34dp"
+                                android:gravity="left"
+                                android:textColor="@color/black"
+                                />
+
+                        </LinearLayout>
+                        <!--血压值-->
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="18dp"
+                            android:orientation="vertical">
+                            <!--高压-->
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="left"
+                                android:padding="4dp"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="高    压："
+                                    android:textColor="@color/black"
+                                    />
+                                <TextView
+                                    android:id="@+id/home_high"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textColor="@color/colorPrimary"/>
+                                <!--<TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text=" mmHg"/>-->
+                            </LinearLayout>
+                            <!--低压-->
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="left"
+                                android:padding="4dp"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="低    压："
+                                    android:textColor="@color/black"
+                                    />
+                                <TextView
+                                    android:id="@+id/home_low"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textColor="@color/colorPrimary"/>
+                                <!--<TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text=" mmHg"/>-->
+                            </LinearLayout>
+                            <!--心率-->
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:padding="4dp"
+                                android:gravity="left"
+                                >
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="心    率："
+                                    android:textColor="@color/black"
+                                    />
+                                <TextView
+                                    android:id="@+id/home_rate"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textColor="@color/colorPrimary"/>
+                                <!--<TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text=" 次/分"/>-->
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+                    <!--空腹血糖-->
+                    <LinearLayout
+                        android:id="@+id/ll_home_glu_empty"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:paddingBottom="8dp">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="空腹血糖"
+                                android:textSize="18sp"
+                                android:gravity="left"
+                                android:textColor="@color/black"
+                                android:paddingTop="8dp"
+                                android:paddingLeft="10dp"/>
+                            <!--时间-->
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:paddingTop="8dp"
+                                android:paddingLeft="10dp"
+                                android:orientation="horizontal">
+
+
+                                <TextView
+                                    android:id="@+id/home_time_glu"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="left"
+                                    android:paddingTop="4dp"
+                                    android:paddingBottom="4dp"
+                                    android:textColor="@color/black"
+                                    />
+                                <!--血糖-->
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+
+                                    android:gravity="left"
+                                    android:padding="4dp"
+                                    android:orientation="horizontal">
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="血糖值："
+                                        android:paddingLeft="36dp"
+                                        android:textColor="@color/black"
+                                        />
+                                    <TextView
+                                        android:id="@+id/home_glu"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:textColor="@color/colorPrimary"/>
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text=" mmol/L"
+                                        android:textColor="@color/black"/>
+                                </LinearLayout>
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+
+
+
+
+                    </LinearLayout>
+                    <!--餐后2小时血糖-->
+                    <LinearLayout
+                        android:id="@+id/ll_home_glu_full"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:paddingBottom="8dp">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="餐后2小时血糖"
+                                android:textSize="18sp"
+                                android:gravity="left"
+                                android:textColor="@color/black"
+                                android:paddingTop="8dp"
+                                android:paddingLeft="10dp"/>
+                            <!--时间-->
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:paddingTop="8dp"
+                                android:paddingLeft="10dp"
+                                android:orientation="horizontal">
+
+
+
+                                <TextView
+                                    android:id="@+id/home_time_glu_full"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="left"
+                                    android:paddingTop="4dp"
+                                    android:paddingBottom="4dp"
+                                    android:textColor="@color/black"
+                                    />
+                                <!--血糖-->
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:padding="4dp"
+                                    android:gravity="left"
+                                    android:orientation="horizontal">
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="血糖值："
+                                        android:paddingLeft="36dp"
+                                        android:textColor="@color/black"
+                                        />
+                                    <TextView
+                                        android:id="@+id/home_glu_full"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:textColor="@color/colorPrimary"/>
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text=" mmol/L"
+                                        android:textColor="@color/black"/>
+                                </LinearLayout>
+                            </LinearLayout>
+                        </LinearLayout>
+
+
+
+
+                    </LinearLayout>
+                </LinearLayout>
+
+
+
+                <TextView
+                    android:id="@+id/home_step"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="5dp"
+                android:background="@color/view" />
+
+        </LinearLayout>
+    </ScrollView>
+
+
+
+
+</FrameLayout>

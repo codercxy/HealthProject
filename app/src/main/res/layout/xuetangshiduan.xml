@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/pop"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:layout_centerHorizontal="true">
+
+            <LinearLayout
+                android:id="@+id/linearLayoutXT"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/btn_style_alert_dialog_button_normal"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <Button
+                    android:id="@+id/canqian"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:background="@color/aliwx_white"
+                    android:gravity="center"
+                    android:text="餐前" />
+
+                <Button
+                    android:id="@+id/canhou"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:background="@color/aliwx_white"
+                    android:gravity="center"
+                    android:text="餐后" />
+
+                <Button
+                    android:id="@+id/zaocanqian"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:background="@color/aliwx_white"
+                    android:gravity="center"
+                    android:text="早餐前两小时" />
+
+                <Button
+                    android:id="@+id/zaocanhou"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:background="@color/aliwx_white"
+                    android:gravity="center"
+                    android:text="早餐后两小时" />
+
+
+                <Button
+                    android:id="@+id/wucanqian"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:background="@color/aliwx_white"
+                    android:gravity="center"
+                    android:text="午餐前两小时" />
+
+                <Button
+                    android:id="@+id/wucanhou"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:background="@color/aliwx_white"
+                    android:gravity="center"
+                    android:text="午餐后两小时" />
+
+                <Button
+                    android:id="@+id/wancanqian"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:background="@color/aliwx_white"
+                    android:gravity="center"
+                    android:text="晚餐前两小时" />
+
+
+                <Button
+                    android:id="@+id/wancanhou"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:background="@color/aliwx_white"
+                    android:gravity="center"
+                    android:text="晚餐后两小时" />
+
+                <Button
+                    android:id="@+id/shuiqian"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:background="@color/aliwx_white"
+                    android:gravity="center"
+                    android:text="睡前" />
+
+                <Button
+                    android:id="@+id/yejian"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:background="@color/aliwx_white"
+                    android:gravity="center"
+                    android:text="夜间" />
+
+                <Button
+                    android:id="@+id/suiji"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:background="@color/aliwx_white"
+                    android:gravity="center"
+                    android:text="随机" />
+
+
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+
+
+</RelativeLayout>

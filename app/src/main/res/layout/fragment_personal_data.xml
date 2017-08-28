@@ -1,0 +1,206 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.nju.android.health.views.fragments.setting.PersonalDataFragment">
+
+    <!-- 性别 -->
+    <LinearLayout
+        android:id="@+id/ll_personal_data_sex"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="性别"
+            android:gravity="center_vertical"
+            android:textSize="16sp"
+            android:paddingLeft="16dp"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"
+            android:textColor="@color/black"/>
+
+
+        <TextView
+            android:id="@+id/personal_data_sex"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="男"
+            android:paddingRight="16dp"
+            android:textSize="16sp"
+            android:textColor="@color/black"
+            android:gravity="center_vertical|right"/>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:background="@color/view" />
+
+    <!-- 出生日期 -->
+    <LinearLayout
+        android:id="@+id/ll_personal_data_birth"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="出生日期"
+            android:gravity="center_vertical"
+            android:textSize="16sp"
+            android:paddingLeft="16dp"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"
+            android:textColor="@color/black"/>
+
+
+        <TextView
+            android:id="@+id/personal_data_birth"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="1993/10/01"
+            android:paddingRight="16dp"
+            android:textSize="16sp"
+            android:textColor="@color/black"
+            android:gravity="center_vertical|right"/>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:background="@color/view" />
+
+    <!-- 身高 -->
+    <LinearLayout
+        android:id="@+id/ll_personal_data_height"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+
+        android:clickable="true"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="身高"
+            android:gravity="center_vertical"
+            android:textSize="16sp"
+            android:paddingLeft="16dp"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"
+            android:textColor="@color/black"
+            android:id="@+id/textView" />
+
+        <TextView
+            android:id="@+id/personal_data_height"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical|right"
+            android:text="190"
+            android:textSize="16sp"
+            android:textColor="@color/black"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="cm"
+            android:paddingRight="16dp"
+            android:textSize="16sp"
+            android:textColor="@color/black"
+            android:gravity="center_vertical"/>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:background="@color/view" />
+
+    <!-- 体重 -->
+    <LinearLayout
+        android:id="@+id/ll_personal_data_weight"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="体重"
+            android:gravity="center_vertical"
+            android:textSize="16sp"
+            android:paddingLeft="16dp"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"
+            android:textColor="@color/black"/>
+
+        <TextView
+            android:id="@+id/personal_data_weight"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical|right"
+            android:text="65.0"
+            android:textSize="16sp"
+            android:textColor="@color/black"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="kg"
+            android:paddingRight="16dp"
+            android:textSize="16sp"
+            android:textColor="@color/black"
+            android:gravity="center_vertical"/>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:background="@color/view" />
+
+
+    <!-- 婚姻 -->
+    <LinearLayout
+        android:id="@+id/ll_personal_data_marriage"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="婚姻"
+            android:gravity="center_vertical"
+            android:textSize="16sp"
+            android:paddingLeft="16dp"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"
+            android:textColor="@color/black"/>
+
+
+        <TextView
+            android:id="@+id/personal_data_marriage"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="已婚"
+            android:paddingRight="16dp"
+            android:textSize="16sp"
+            android:textColor="@color/black"
+            android:gravity="center_vertical|right"/>
+    </LinearLayout>
+
+</LinearLayout>

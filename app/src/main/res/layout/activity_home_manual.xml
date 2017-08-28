@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="com.nju.android.health.views.activities.HomeManualActivity">
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar_home_manual"
+        android:layout_width="match_parent"
+        android:layout_height="?android:attr/actionBarSize"
+        android:background="#00CCCC"
+        app:popupTheme="@style/AppTheme.PopupOverlay" >
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        style="@style/TextAppearance.AppCompat.Widget.ActionBar.Title"
+        android:gravity="center"
+        android:text="手动输入"
+        android:textColor="#fff"/>
+    </android.support.v7.widget.Toolbar>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_marginTop="?android:attr/actionBarSize">
+
+        <!--血压、血糖 img-->
+        <LinearLayout
+            android:layout_marginTop="16dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp">
+
+            <ImageView
+                android:id="@+id/home_manual_pressure"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:padding="30dp"
+                android:layout_height="120dp"
+                android:src="@drawable/blood_pressure"
+                android:scaleType="fitCenter"/>
+
+            <ImageView
+                android:id="@+id/home_manual_sugar"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:padding="30dp"
+                android:layout_height="120dp"
+                android:src="@drawable/suger"
+                android:scaleType="fitCenter"/>
+        </LinearLayout>
+        <!--血压、血糖 text-->
+        <LinearLayout
+            android:layout_marginTop="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="血压"
+                android:textSize="18sp"
+                android:gravity="center"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="血糖"
+                android:textSize="18sp"
+                android:gravity="center"/>
+        </LinearLayout>
+        <!-- 尿酸、胆固醇 img -->
+        <LinearLayout
+            android:layout_marginTop="16dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp">
+
+            <ImageView
+                android:id="@+id/home_manual_acid"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:padding="30dp"
+                android:layout_height="120dp"
+                android:src="@drawable/acid"
+                android:scaleType="fitCenter"/>
+
+            <ImageView
+                android:id="@+id/home_manual_stone"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:padding="30dp"
+                android:layout_height="120dp"
+                android:src="@drawable/stone"
+                android:scaleType="fitCenter"/>
+        </LinearLayout>
+        <!--尿酸、胆固醇 text-->
+        <LinearLayout
+            android:layout_marginTop="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="尿酸"
+                android:textSize="18sp"
+                android:gravity="center"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="胆固醇"
+                android:textSize="18sp"
+                android:gravity="center"/>
+        </LinearLayout>
+        <!-- 人体成分、脑卒中 img -->
+        <LinearLayout
+            android:layout_marginTop="16dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp">
+
+            <ImageView
+                android:id="@+id/home_manual_body"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:padding="30dp"
+                android:layout_height="120dp"
+                android:src="@drawable/body"
+                android:scaleType="fitCenter"/>
+
+            <ImageView
+                android:id="@+id/home_manual_brain"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:padding="30dp"
+                android:layout_height="120dp"
+                android:src="@drawable/brain"
+                android:scaleType="fitCenter"/>
+        </LinearLayout>
+        <!--人体成分、脑卒中 text-->
+        <LinearLayout
+            android:layout_marginTop="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="人体成分"
+                android:textSize="18sp"
+                android:gravity="center"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="脑卒中"
+                android:textSize="18sp"
+                android:gravity="center"/>
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+
+</FrameLayout>

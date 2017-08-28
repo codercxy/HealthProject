@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/xiangqingbiaoti_1"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:background="@color/colorPrimary">
+
+        <RelativeLayout
+            android:id="@+id/back_relative"
+            android:layout_width="50dp"
+            android:layout_height="30dp"
+            android:layout_centerVertical="true"
+            android:weightSum="1">
+
+            <ImageView
+                android:id="@+id/imageView5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="2dp"
+                android:src="@drawable/jt_fh" />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/textView8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:text="提交成功"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/beijing1"
+        android:layout_width="match_parent"
+        android:layout_height="480dp"
+        android:layout_below="@+id/xiangqingbiaoti_1"
+        android:background="@drawable/xqbj2">
+
+
+        <TextView
+            android:id="@+id/textView45"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/xiangqingfenxi"
+            android:gravity="center"
+            android:text="分析结果"
+            android:textColor="#ffffff"
+            android:textSize="25sp" />
+
+        <RelativeLayout
+            android:id="@+id/relativeLayout_jieguo"
+            android:layout_below="@+id/textView45"
+            android:layout_width="match_parent"
+            android:layout_height="80dp">
+            <com.nju.android.health.utils.CircleImg
+                android:layout_marginLeft="15dp"
+                android:layout_centerVertical="true"
+                android:id="@+id/dian1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/xiangqingdian" />
+            <TextView
+                android:layout_marginLeft="10dp"
+                android:layout_centerVertical="true"
+                android:id="@+id/dian1_text1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/dian1"
+                android:text="您检测的胆固醇结果为:"
+                android:textSize="15sp" />
+            <TextView
+                android:id="@+id/danguchun_jieguo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/dian1_text1"
+                android:layout_toRightOf="@id/dian1_text1"
+                android:text=""
+                android:textColor="#e91212"
+                android:textSize="18sp" />
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/relativeLayout_jiance"
+            android:layout_below="@+id/relativeLayout_jieguo"
+            android:layout_width="match_parent"
+            android:layout_height="80dp">
+            <com.nju.android.health.utils.CircleImg
+                android:layout_marginLeft="15dp"
+                android:id="@+id/dian2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/xiangqingdian"
+                android:layout_centerVertical="true"
+                />
+
+            <TextView
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@+id/dian2"
+                android:layout_centerVertical="true"
+                android:id="@+id/danguchun_pingjia_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textSize="15sp" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/relativeLayout_jianyi"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_below="@+id/relativeLayout_jiance">
+
+            <com.nju.android.health.utils.CircleImg
+                android:layout_marginLeft="15dp"
+                android:id="@+id/dian3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/xiangqingdian"
+                android:layout_centerVertical="true"
+                />
+
+            <TextView
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@+id/dian3"
+                android:layout_centerVertical="true"
+                android:id="@+id/danguchun_pingjia_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textSize="15sp" />
+
+
+        </RelativeLayout>
+
+        <TextView
+            android:layout_marginLeft="30dp"
+            android:id="@+id/dian7_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="是否每天提醒一次测量胆固醇？"
+            android:textSize="15sp"
+            android:layout_marginTop="360dp"
+            />
+        <Button
+            android:gravity="center"
+            android:id="@+id/danguchun_shi"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_below="@+id/dian7_text"
+            android:text="是"
+            android:textSize="15sp"
+            android:layout_alignLeft="@+id/dian7_text"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/xiangqingqueding"
+            />
+
+        <com.nju.android.health.utils.CircleImg
+            android:id="@+id/tishi_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/xiangqingdian"
+            android:layout_marginRight="6dp"
+            android:layout_marginEnd="6dp"
+            android:layout_marginTop="363dp"
+            android:layout_toLeftOf="@+id/danguchun_shi"
+            android:layout_toStartOf="@+id/danguchun_shi" />
+
+        <Button
+            android:id="@+id/danguchun_fou"
+            android:gravity="center"
+            android:layout_marginLeft="80dp"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:text="否"
+            android:textSize="15sp"
+            android:background="@drawable/xiangqingqueding"
+            android:layout_alignBaseline="@+id/danguchun_shi"
+            android:layout_alignBottom="@+id/danguchun_shi"
+            android:layout_toEndOf="@+id/danguchun_shi" />
+
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/lvxian"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@+id/beijing1"
+        android:src="@drawable/lvxian" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/lvxian"
+        android:background="#ffffff"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true" >
+
+        <TextView
+            android:id="@+id/danguchun_fanhui"
+            android:layout_width="105dp"
+            android:layout_height="30dp"
+            android:background="@drawable/shapem1"
+            android:gravity="center"
+            android:text="返回"
+            android:textColor="#ffffff"
+            android:textSize="28px" />
+
+        <TextView
+            android:id="@+id/danguchun_zixun"
+            android:layout_width="105dp"
+            android:layout_height="30dp"
+            android:layout_marginLeft="40dp"
+            android:background="@drawable/shapem1"
+            android:gravity="center"
+            android:text="咨询后台医生"
+            android:textColor="#ffffff"
+            android:textSize="28px"
+            android:visibility="gone"/>
+    </LinearLayout>
+
+
+</RelativeLayout>

@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <Button android:id="@+id/back"
+        android:layout_width="60dp"
+        android:layout_height="35dp"
+        android:background="#0099FF"
+        android:text=" "
+        android:textColor="#ffffff"
+        android:textSize="15sp"
+        android:paddingBottom="5dp"
+        android:paddingTop="5dp" />"
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="400dp"
+        android:layout_height="35dp"
+        android:layout_gravity="center"
+        android:layout_toLeftOf="@+id/sure"
+        android:layout_toRightOf="@id/back"
+        android:background="#0099FF"
+        android:gravity="center"
+        android:paddingBottom="5dp"
+        android:paddingTop="5dp"
+        android:text="设置闹钟"
+        android:textSize="20sp" />
+
+    <Button
+        android:id="@+id/sure"
+        android:layout_width="60dp"
+        android:layout_height="35dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:background="#0099FF"
+        android:paddingBottom="5dp"
+        android:paddingTop="5dp"
+        android:text=" "
+        android:textColor="#ffffff"
+        android:textSize="15sp" />
+
+    <RelativeLayout android:id="@+id/relativelayout1"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:gravity="center"
+        android:layout_below="@+id/title" >
+
+        <DigitalClock
+            android:id="@+id/dClock"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="40sp"
+            android:textColor="#00bfff"
+            android:layout_x="70px"
+            android:layout_y="32px"  >
+
+        </DigitalClock>
+
+    </RelativeLayout>
+
+    <RelativeLayout android:id="@+id/relativelayout2"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_below="@+id/relativelayout1"
+        android:layout_marginTop="5dp"
+        android:background="#ffffff" >
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="60dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="15dp"
+            android:text="闹钟一"
+            android:textSize="25sp" />
+
+        <TextView
+            android:id="@+id/setTime1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignLeft="@+id/textView1"
+            android:layout_marginBottom="15dp"
+            android:text="目前无设置"
+            android:textSize="20sp"
+            android:textColor="#00bfff" />
+
+        <Button
+            android:id="@+id/mButton1"
+            android:layout_width="90dp"
+            android:layout_height="35dp"
+            android:layout_alignParentRight="true"
+            android:layout_alignTop="@+id/textView1"
+            android:layout_marginRight="60dp"
+            android:text="设置闹钟"
+            android:textSize="18sp"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:background="@drawable/pres_dialog_button" />
+
+        <Button
+            android:id="@+id/mButton2"
+            android:layout_width="90dp"
+            android:layout_height="35dp"
+            android:layout_alignLeft="@+id/mButton1"
+            android:layout_alignTop="@+id/setTime1"
+            android:text="删除设置"
+            android:textSize="18sp"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:background="@drawable/pres_dialog_button" />
+
+    </RelativeLayout>
+
+    <RelativeLayout android:id="@+id/relativelayout3"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_below="@+id/relativelayout2"
+        android:layout_marginTop="5dp"
+        android:background="#ffffff" >
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="60dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="15dp"
+            android:text="闹钟二"
+            android:textSize="25sp" />
+
+        <TextView
+            android:id="@+id/setTime5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="60dp"
+            android:layout_marginBottom="15dp"
+            android:text="目前无设置"
+            android:textSize="20sp"
+            android:textColor="#00bfff" />
+
+        <Button
+            android:id="@+id/mButton5"
+            android:layout_width="90dp"
+            android:layout_height="35dp"
+            android:layout_alignParentRight="true"
+            android:layout_alignTop="@+id/textView2"
+            android:layout_marginRight="60dp"
+            android:text="设置闹钟"
+            android:textSize="18sp"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:background="@drawable/pres_dialog_button" />
+
+        <Button
+            android:id="@+id/mButton6"
+            android:layout_width="90dp"
+            android:layout_height="35dp"
+            android:layout_alignLeft="@+id/mButton5"
+            android:layout_alignTop="@+id/setTime5"
+            android:layout_alignParentBottom="true"
+            android:text="删除设置"
+            android:textSize="18sp"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:background="@drawable/pres_dialog_button" />
+
+    </RelativeLayout>
+
+    <RelativeLayout android:id="@+id/relativelayout4"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_below="@+id/relativelayout3"
+        android:layout_marginTop="5dp"
+        android:background="#ffffff" >
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="15dp"
+            android:text="重复响起的闹钟"
+            android:textSize="25sp" />
+
+        <TextView
+            android:id="@+id/setTime2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="20dp"
+            android:layout_marginBottom="15dp"
+            android:text="目前无设置"
+            android:textSize="20sp"
+            android:textColor="#00bfff" />
+
+        <Button
+            android:id="@+id/mButton3"
+            android:layout_width="90dp"
+            android:layout_height="35dp"
+            android:layout_alignParentRight="true"
+            android:layout_alignTop="@+id/textView3"
+            android:layout_marginRight="20dp"
+            android:text="设置闹钟"
+            android:textSize="18sp"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:background="@drawable/pres_dialog_button" />
+
+        <Button
+            android:id="@+id/mButton4"
+            android:layout_width="90dp"
+            android:layout_height="35dp"
+            android:layout_alignLeft="@+id/mButton3"
+            android:layout_alignTop="@+id/setTime2"
+            android:text="删除设置"
+            android:textSize="18sp"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:background="@drawable/pres_dialog_button" />
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

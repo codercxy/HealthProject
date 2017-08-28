@@ -1,0 +1,1030 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout118"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="@color/colorPrimary"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true">
+
+        <RelativeLayout
+            android:id="@+id/relativeLayout117"
+            android:layout_width="50dp"
+            android:layout_height="30dp"
+            android:layout_centerVertical="true"
+            android:weightSum="1" >
+
+            <ImageView
+                android:id="@+id/imageView125"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="2dp"
+                android:src="@drawable/jt_fh" />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/textView173"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:text="添加人体成分"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/rtchengfeng_tijiao"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="16dp"
+            android:text="提交"
+            android:background="@color/colorPrimary"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/liebiao_chengfen"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@id/rtchengfeng_tijiao"
+            android:layout_marginRight="10dp"
+            android:text="列表"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp" />
+
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:id="@+id/scrollView"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/relativeLayout118" >
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="fill_parent"
+            android:layout_height="795dp">
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="790dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:id="@+id/relativeLayout120"
+                    android:background="@drawable/border2"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true"
+                    android:visibility="visible">
+
+                    <RelativeLayout
+                        android:id="@+id/relativeLayout119"
+                        android:layout_width="80dp"
+                        android:layout_height="fill_parent"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="15dp"
+                        android:paddingBottom="15dp"
+                        android:paddingLeft="15dp"
+                        android:paddingRight="15dp" >
+
+                        <TextView
+                            android:id="@+id/textView174"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="日期"
+                            android:textSize="14sp"
+                            android:layout_centerVertical="true"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignParentStart="true" />
+
+                        <ImageView
+                            android:id="@+id/imageView126"
+                            android:layout_width="wrap_content"
+                            android:layout_height="50dp"
+                            android:src="@drawable/shuxian"
+                            android:layout_centerVertical="true"
+                            android:layout_alignParentRight="true"
+                            android:layout_alignParentEnd="true" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_centerVertical="true"
+                        android:layout_toEndOf="@+id/relativeLayout119"
+                        android:layout_toRightOf="@+id/relativeLayout119" >
+
+                        <TextView
+                            android:id="@+id/person_dateshow"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="请输入日期"
+                            android:textSize="14sp"
+                            android:layout_centerVertical="true"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignParentStart="true" />
+
+                        <ImageView
+                            android:id="@+id/person_datepick"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/jiantou"
+                            android:layout_alignTop="@+id/person_dateshow"
+                            android:layout_alignParentRight="true"
+                            android:layout_alignParentEnd="true"
+                            android:layout_marginRight="17dp"
+                            android:layout_marginEnd="17dp" />
+                    </RelativeLayout>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:background="@drawable/border2"
+                    android:id="@+id/relativeLayout122"
+                    android:layout_below="@+id/relativeLayout120"
+                    android:layout_centerHorizontal="true"
+                    android:visibility="visible">
+
+                    <RelativeLayout
+                        android:id="@+id/relativeLayout121"
+                        android:layout_width="80dp"
+                        android:layout_height="fill_parent"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="15dp"
+                        android:paddingBottom="15dp"
+                        android:paddingLeft="15dp"
+                        android:paddingRight="15dp" >
+
+                        <TextView
+                            android:id="@+id/textView176"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="时间"
+                            android:textSize="14sp"
+                            android:layout_centerVertical="true"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignParentStart="true" />
+
+                        <ImageView
+                            android:id="@+id/imageView128"
+                            android:layout_width="wrap_content"
+                            android:layout_height="50dp"
+                            android:src="@drawable/shuxian"
+                            android:layout_centerVertical="true"
+                            android:layout_alignParentRight="true"
+                            android:layout_alignParentEnd="true" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_centerVertical="true"
+                        android:layout_toEndOf="@+id/relativeLayout121"
+                        android:layout_toRightOf="@+id/relativeLayout121" >
+
+                        <TextView
+                            android:id="@+id/person_timeshow"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="请选择时间"
+                            android:textSize="14sp"
+                            android:layout_centerVertical="true"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignParentStart="true" />
+
+                        <ImageView
+                            android:id="@+id/person_timepick"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/jiantou"
+                            android:layout_alignTop="@+id/person_timeshow"
+                            android:layout_alignParentRight="true"
+                            android:layout_alignParentEnd="true"
+                            android:layout_marginRight="18dp"
+                            android:layout_marginEnd="18dp" />
+                    </RelativeLayout>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:background="@drawable/border2"
+                    android:id="@+id/relativeLayout124"
+                    android:layout_below="@+id/relativeLayout122"
+                    android:layout_centerHorizontal="true">
+
+                    <RelativeLayout
+                        android:id="@+id/relativeLayout123"
+                        android:layout_width="80dp"
+                        android:layout_height="fill_parent"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="15dp"
+                        android:paddingBottom="15dp"
+                        android:paddingLeft="15dp"
+                        android:paddingRight="15dp" >
+
+                        <TextView
+
+                            android:id="@+id/textView178"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="体重"
+                            android:textSize="14sp"
+                            android:layout_alignParentBottom="true"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignParentStart="true" />
+
+                        <ImageView
+                            android:id="@+id/imageView130"
+                            android:layout_width="wrap_content"
+                            android:layout_height="50dp"
+                            android:src="@drawable/shuxian"
+                            android:layout_centerVertical="true"
+                            android:layout_alignParentRight="true"
+                            android:layout_alignParentEnd="true" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_centerVertical="true"
+                        android:layout_toEndOf="@+id/relativeLayout123"
+                        android:layout_toRightOf="@+id/relativeLayout123" >
+
+                        <EditText
+                            android:id="@+id/rtchengfeng_tizhong"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:textSize="14sp"
+                            android:hint="请输入体重值"
+                            android:background="@null"
+                            android:imeOptions="actionNext"
+                            android:singleLine="true"
+                            android:inputType="numberDecimal"
+                            android:layout_centerVertical="true"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignParentStart="true" />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="80dp"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true" >
+
+                        <ImageView
+                            android:id="@+id/imageView131"
+                            android:layout_width="wrap_content"
+                            android:layout_height="50dp"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignParentStart="true"
+                            android:layout_centerVertical="true"
+                            android:src="@drawable/shuxian" />
+
+                        <TextView
+                            android:id="@+id/textView179"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:layout_centerVertical="true"
+                            android:text="kg" />
+                    </RelativeLayout>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:background="@drawable/border2"
+                    android:id="@+id/relativeLayout126"
+                    android:layout_below="@+id/relativeLayout124"
+                    android:layout_centerHorizontal="true">
+
+                    <RelativeLayout
+                        android:id="@+id/relativeLayout125"
+                        android:layout_width="80dp"
+                        android:layout_height="fill_parent"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="15dp"
+                        android:paddingBottom="15dp"
+                        android:paddingLeft="15dp"
+                        android:paddingRight="15dp" >
+
+                        <TextView
+                            android:id="@+id/textView180"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="脂肪"
+                            android:textSize="14sp"
+                            android:layout_alignParentBottom="true"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignParentStart="true" />
+
+                        <ImageView
+                            android:id="@+id/imageView132"
+                            android:layout_width="wrap_content"
+                            android:layout_height="50dp"
+                            android:src="@drawable/shuxian"
+                            android:layout_centerVertical="true"
+                            android:layout_alignParentRight="true"
+                            android:layout_alignParentEnd="true" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_centerVertical="true"
+                        android:layout_toEndOf="@+id/relativeLayout125"
+                        android:layout_toRightOf="@+id/relativeLayout125" >
+
+                        <EditText
+                            android:id="@+id/rtchengfeng_zhifang"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:textSize="14sp"
+                            android:hint="请输入脂肪百分比值"
+                            android:background="@null"
+                            android:imeOptions="actionNext"
+                            android:singleLine="true"
+                            android:inputType="numberDecimal"
+                            android:layout_centerVertical="true"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignParentStart="true" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="80dp"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true" >
+
+                        <ImageView
+                            android:id="@+id/imageView133"
+                            android:layout_width="wrap_content"
+                            android:layout_height="50dp"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignParentStart="true"
+                            android:layout_centerVertical="true"
+                            android:src="@drawable/shuxian" />
+
+                        <TextView
+                            android:id="@+id/textView181"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:layout_centerVertical="true"
+                            android:text="%" />
+                    </RelativeLayout>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:background="@drawable/border2"
+                    android:id="@+id/relativeLayout128"
+                    android:layout_below="@+id/relativeLayout126"
+                    android:layout_centerHorizontal="true">
+
+                    <RelativeLayout
+                        android:id="@+id/relativeLayout127"
+                        android:layout_width="80dp"
+                        android:layout_height="fill_parent"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="15dp"
+                        android:paddingBottom="15dp"
+                        android:paddingLeft="15dp"
+                        android:paddingRight="15dp" >
+
+                        <TextView
+
+                            android:id="@+id/textView182"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="骨量"
+                            android:textSize="14sp"
+                            android:layout_alignParentBottom="true"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignParentStart="true" />
+
+                        <ImageView
+                            android:id="@+id/imageView134"
+                            android:layout_width="wrap_content"
+                            android:layout_height="50dp"
+                            android:src="@drawable/shuxian"
+                            android:layout_centerVertical="true"
+                            android:layout_alignParentRight="true"
+                            android:layout_alignParentEnd="true" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_centerVertical="true"
+                        android:layout_toEndOf="@+id/relativeLayout127"
+                        android:layout_toRightOf="@+id/relativeLayout127" >
+
+                        <EditText
+                            android:id="@+id/rtchengfeng_guliang"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:textSize="14sp"
+                            android:hint="请输入骨量值"
+                            android:background="@null"
+                            android:imeOptions="actionNext"
+                            android:singleLine="true"
+                            android:inputType="numberDecimal"
+                            android:layout_centerVertical="true"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignParentStart="true" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="80dp"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true" >
+
+                        <ImageView
+                            android:id="@+id/imageView135"
+                            android:layout_width="wrap_content"
+                            android:layout_height="50dp"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignParentStart="true"
+                            android:layout_centerVertical="true"
+                            android:src="@drawable/shuxian" />
+
+                        <TextView
+                            android:id="@+id/textView183"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:layout_centerVertical="true"
+                            android:text="kg" />
+                    </RelativeLayout>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:background="@drawable/border2"
+                    android:id="@+id/relativeLayout130"
+                    android:layout_below="@+id/relativeLayout128"
+                    android:layout_centerHorizontal="true">
+
+                    <RelativeLayout
+                        android:id="@+id/relativeLayout129"
+                        android:layout_width="80dp"
+                        android:layout_height="fill_parent"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="15dp"
+                        android:paddingBottom="15dp"
+                        android:paddingLeft="15dp"
+                        android:paddingRight="15dp" >
+
+                        <TextView
+                            android:id="@+id/textView184"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="肌肉"
+                            android:textSize="14sp"
+                            android:layout_alignParentBottom="true"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignParentStart="true" />
+
+                        <ImageView
+                            android:id="@+id/imageView136"
+                            android:layout_width="wrap_content"
+                            android:layout_height="50dp"
+                            android:src="@drawable/shuxian"
+                            android:layout_centerVertical="true"
+                            android:layout_alignParentRight="true"
+                            android:layout_alignParentEnd="true" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_centerVertical="true"
+                        android:layout_toEndOf="@+id/relativeLayout129"
+                        android:layout_toRightOf="@+id/relativeLayout129" >
+
+                        <EditText
+                            android:id="@+id/rtchengfeng_jirou"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:textSize="14sp"
+                            android:hint="请输入肌肉值"
+                            android:background="@null"
+                            android:imeOptions="actionNext"
+                            android:singleLine="true"
+                            android:inputType="numberDecimal"
+                            android:layout_centerVertical="true"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignParentStart="true" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="80dp"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true" >
+
+                        <ImageView
+                            android:id="@+id/imageView137"
+                            android:layout_width="wrap_content"
+                            android:layout_height="50dp"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignParentStart="true"
+                            android:layout_centerVertical="true"
+                            android:src="@drawable/shuxian" />
+
+                        <TextView
+                            android:id="@+id/textView185"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:layout_centerVertical="true"
+                            android:text="kg" />
+                    </RelativeLayout>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:background="@drawable/border2"
+                    android:id="@+id/relativeLayout132"
+                    android:layout_below="@+id/relativeLayout130"
+                    android:layout_centerHorizontal="true">
+
+                    <RelativeLayout
+                        android:id="@+id/relativeLayout131"
+                        android:layout_width="80dp"
+                        android:layout_height="fill_parent"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="11dp"
+                        android:paddingBottom="17dp"
+                        android:paddingRight="10dp"  >
+
+                        <TextView
+                            android:layout_marginLeft="4dp"
+                            android:id="@+id/textView186"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="内脏脂肪"
+                            android:textSize="14sp"
+                            android:layout_alignParentBottom="true"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignParentStart="true" />
+
+                        <ImageView
+                            android:id="@+id/imageView138"
+                            android:layout_width="wrap_content"
+                            android:layout_height="50dp"
+                            android:src="@drawable/shuxian"
+                            android:layout_centerVertical="true"
+                            android:layout_alignParentRight="true"
+                            android:layout_alignParentEnd="true" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_centerVertical="true"
+                        android:layout_toEndOf="@+id/relativeLayout131"
+                        android:layout_toRightOf="@+id/relativeLayout131" >
+
+                        <EditText
+                            android:layout_marginLeft="3dp"
+                            android:id="@+id/rtchengfeng_neizang"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:textSize="14sp"
+                            android:hint="请输入内脏值百分比"
+                            android:background="@null"
+                            android:imeOptions="actionNext"
+                            android:singleLine="true"
+                            android:inputType="numberDecimal"
+                            android:layout_centerVertical="true"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignParentStart="true" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="80dp"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true" >
+
+                        <ImageView
+                            android:id="@+id/imageView139"
+                            android:layout_width="wrap_content"
+                            android:layout_height="50dp"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignParentStart="true"
+                            android:layout_centerVertical="true"
+                            android:src="@drawable/shuxian" />
+
+                        <TextView
+                            android:id="@+id/textView187"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:layout_centerVertical="true"
+                            android:text="%" />
+                    </RelativeLayout>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:background="@drawable/border2"
+                    android:id="@+id/relativeLayout134"
+                    android:layout_below="@+id/relativeLayout132"
+                    android:layout_centerHorizontal="true">
+
+                    <RelativeLayout
+                        android:id="@+id/relativeLayout133"
+                        android:layout_width="80dp"
+                        android:layout_height="fill_parent"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="11dp"
+                        android:paddingBottom="17dp"
+                        android:paddingRight="10dp"  >
+
+                        <TextView
+                            android:layout_marginLeft="4dp"
+                            android:id="@+id/textView188"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="人体阻抗"
+                            android:textSize="14sp"
+                            android:layout_alignParentBottom="true"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignParentStart="true" />
+
+                        <ImageView
+                            android:id="@+id/imageView140"
+                            android:layout_width="wrap_content"
+                            android:layout_height="50dp"
+                            android:src="@drawable/shuxian"
+                            android:layout_centerVertical="true"
+                            android:layout_alignParentRight="true"
+                            android:layout_alignParentEnd="true" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_centerVertical="true"
+                        android:layout_toEndOf="@+id/relativeLayout133"
+                        android:layout_toRightOf="@+id/relativeLayout133" >
+
+                        <EditText
+                            android:layout_marginLeft="3dp"
+                            android:id="@+id/rtchengfeng_zukang"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="14sp"
+                            android:hint="请输入人体阻抗值"
+                            android:background="@null"
+                            android:imeOptions="actionNext"
+                            android:singleLine="true"
+                            android:inputType="numberDecimal"
+                            android:layout_centerVertical="true"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignParentStart="true" />
+
+
+                        <ImageView
+                            android:id="@+id/person_zukang"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/jiantou"
+                            android:layout_alignTop="@+id/rtchengfeng_zukang"
+                            android:layout_alignParentRight="true"
+                            android:layout_alignParentEnd="true"
+                            android:layout_marginRight="18dp"
+                            android:layout_marginEnd="18dp" />
+                    </RelativeLayout>
+
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:background="@drawable/border2"
+                    android:id="@+id/relativeLayout136"
+                    android:layout_below="@+id/relativeLayout134"
+                    android:layout_centerHorizontal="true">
+
+                    <RelativeLayout
+                        android:id="@+id/relativeLayout135"
+                        android:layout_width="80dp"
+                        android:layout_height="fill_parent"
+                        android:layout_gravity="center"
+                        android:paddingBottom="15dp"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true">
+
+                        <TextView
+                            android:id="@+id/textView190"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="质量指数"
+                            android:textSize="14sp"
+                            android:layout_alignParentBottom="true"
+                            android:layout_centerHorizontal="true" />
+
+                        <ImageView
+                            android:id="@+id/imageView142"
+                            android:layout_width="wrap_content"
+                            android:layout_height="50dp"
+                            android:src="@drawable/shuxian"
+                            android:layout_centerVertical="true"
+                            android:layout_alignParentRight="true"
+                            android:layout_alignParentEnd="true" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_centerVertical="true"
+                        android:layout_toEndOf="@+id/relativeLayout135"
+                        android:layout_toRightOf="@+id/relativeLayout135" >
+
+                        <EditText
+                            android:id="@+id/rtchengfeng_zhiliang"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="14sp"
+                            android:hint="请输入人体质量指数值"
+                            android:background="@null"
+                            android:imeOptions="actionNext"
+                            android:singleLine="true"
+                            android:inputType="numberDecimal"
+                            android:layout_centerVertical="true"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignParentStart="true"
+                            android:layout_marginLeft="17dp"
+                            android:layout_marginStart="17dp" />
+
+                        <ImageView
+                            android:id="@+id/person_zhiliang"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/jiantou"
+                            android:layout_alignTop="@+id/rtchengfeng_zhiliang"
+                            android:layout_alignParentRight="true"
+                            android:layout_alignParentEnd="true"
+                            android:layout_marginRight="18dp"
+                            android:layout_marginEnd="18dp" />
+
+                    </RelativeLayout>
+
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:background="@drawable/border2"
+                    android:id="@+id/relativeLayout138"
+                    android:layout_below="@+id/relativeLayout136"
+                    android:layout_centerHorizontal="true">
+
+                    <RelativeLayout
+                        android:id="@+id/relativeLayout137"
+                        android:layout_width="80dp"
+                        android:layout_height="fill_parent"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="15dp"
+                        android:paddingBottom="15dp"
+                        android:paddingLeft="15dp"
+                        android:paddingRight="15dp" >
+
+                        <TextView
+                            android:id="@+id/textView192"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="水分"
+                            android:textSize="14sp"
+                            android:layout_alignParentBottom="true"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignParentStart="true" />
+
+                        <ImageView
+                            android:id="@+id/imageView144"
+                            android:layout_width="wrap_content"
+                            android:layout_height="50dp"
+                            android:src="@drawable/shuxian"
+                            android:layout_centerVertical="true"
+                            android:layout_alignParentRight="true"
+                            android:layout_alignParentEnd="true" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_centerVertical="true"
+                        android:layout_toEndOf="@+id/relativeLayout137"
+                        android:layout_toRightOf="@+id/relativeLayout137" >
+
+                        <EditText
+                            android:id="@+id/rtchengfeng_shuifen"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:textSize="14sp"
+                            android:hint="请输入水分百分比"
+                            android:background="@null"
+                            android:imeOptions="actionNext"
+                            android:singleLine="true"
+                            android:inputType="numberDecimal"
+                            android:layout_centerVertical="true"
+                            android:layout_alignParentStart="true" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="80dp"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true" >
+
+                        <ImageView
+                            android:id="@+id/imageView145"
+                            android:layout_width="wrap_content"
+                            android:layout_height="50dp"
+                            android:layout_alignParentStart="true"
+                            android:layout_centerVertical="true"
+                            android:src="@drawable/shuxian" />
+
+                        <TextView
+                            android:id="@+id/textView193"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:layout_centerVertical="true"
+                            android:text="%" />
+                    </RelativeLayout>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:background="@drawable/border2"
+                    android:id="@+id/relativeLayout140"
+                    android:layout_below="@+id/relativeLayout138"
+                    android:layout_centerHorizontal="true">
+
+                    <RelativeLayout
+                        android:id="@+id/relativeLayout139"
+                        android:layout_width="80dp"
+                        android:layout_height="fill_parent"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="15dp"
+                        android:paddingBottom="15dp"
+                        android:paddingLeft="15dp"
+                        android:paddingRight="15dp" >
+
+                        <TextView
+                            android:id="@+id/textView194"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="热量"
+                            android:textSize="14sp"
+                            android:layout_alignParentBottom="true"
+                            android:layout_alignParentStart="true" />
+
+                        <ImageView
+                            android:id="@+id/imageView146"
+                            android:layout_width="wrap_content"
+                            android:layout_height="50dp"
+                            android:src="@drawable/shuxian"
+                            android:layout_centerVertical="true"
+                            android:layout_alignParentEnd="true" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_centerVertical="true"
+                        android:layout_toEndOf="@+id/relativeLayout139"
+                         >
+                        <EditText
+                            android:id="@+id/rtchengfeng_reliang"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:textSize="14sp"
+                            android:hint="请输入热量值"
+                            android:background="@null"
+                            android:imeOptions="actionNext"
+                            android:singleLine="true"
+                            android:inputType="numberDecimal"
+                            android:layout_centerVertical="true"
+                            android:layout_alignParentStart="true" />
+                    </RelativeLayout>
+                </RelativeLayout>
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_below="@+id/relativeLayout140"
+                    android:layout_alignParentStart="true"
+                    android:background="@drawable/border"
+                    android:id="@+id/relativeLayout22">
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="170dp"
+                        android:layout_alignParentBottom="true"
+                        android:layout_centerHorizontal="true"
+                        android:background="@drawable/border"
+                        android:id="@+id/relativeLayout21">
+                        <EditText
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:id="@+id/rtchengfeng_remark"
+                            android:background="@null"
+                            android:gravity="top"
+                            android:hint="请输入内容"
+                            android:textSize="14sp"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginRight="10dp"
+                            android:layout_marginTop="5dp"
+                            android:paddingLeft="5dp"
+                            android:paddingRight="5dp"
+                            android:paddingTop="5dp"
+                            android:paddingBottom="5dp"
+                            android:layout_alignParentTop="true"
+                            android:layout_alignParentStart="true" />
+                    </RelativeLayout>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="备注"
+                        android:id="@+id/textView22"
+                        android:layout_marginStart="14dp"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentStart="true"
+                        android:layout_marginTop="6dp" />
+                </RelativeLayout>
+            </RelativeLayout>
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>

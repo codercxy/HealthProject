@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.nju.android.health">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <uses-permission android:name="android.permission.MANAGE_ACCOUNTS" />
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+
+    <uses-feature android:name="android.hardware.sensor.stepcounter" />
+    <uses-feature android:name="android.hardware.sensor.stepdetector" />
+
+    <application
+        android:name=".MyApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".views.activities.MainActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".views.activities.LoginActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".views.activities.RegisterActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".views.activities.SetMeActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".views.activities.HomeManualActivity"
+            android:theme="@style/AppTheme.picker" />
+        <activity
+            android:name=".views.activities.HomeAutoActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".views.activities.pressure.ManualActivity"
+            android:taskAffinity=""
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".views.activities.pressure.AnlsActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".bluetooth.BleActivity"
+            android:label="@string/app_name" />
+
+        <service android:name=".bluetooth.BleService" />
+
+        <activity
+            android:name=".views.activities.doctor.MyDoctorActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".views.activities.doctor.PhysicianActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".views.activities.doctor.SpecialistActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".views.activities.me.MeInfoActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".views.activities.health.ArticleActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".views.activities.glucose.GlucoseActivity"
+            android:theme="@style/AppTheme.picker" />
+        <activity
+            android:name=".views.activities.glucose.AnlsGluActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".views.activities.doctor.PhyDetailActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".views.activities.doctor.DoctorActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".views.fragments.home.RunActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".views.fragments.home.BurnActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <service android:name=".service.StepService" />
+        <service android:name=".service.AutoSaveService" />
+
+        <activity
+            android:name=".views.activities.home.ClockActivity"
+            android:theme="@style/AppTheme.picker" />
+
+        <receiver android:name=".utils.AlarmReceiver" />
+
+        <activity
+            android:name=".views.activities.me.HealthRecordActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".views.activities.next.SearchActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".views.activities.next.SearchResultActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".views.activities.next.Chart_1_Activity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".views.activities.next.Chart_2_Activity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".views.activities.next.Chart_3_Activity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".views.activities.next.Chart_4_Activity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".views.activities.next.Chart_5_Activity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".views.activities.next.AddXyrecorder"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <service android:name=".bswk.BluetoothLEService" />
+        <service android:name=".bswk.BluetoothLEService_2" />
+        <!-- <service android:name=".bswk.BluetoothLEService_3" /> -->
+
+        <service
+            android:name=".bswk.ServerPushService"
+            android:enabled="true"
+            android:exported="true"
+            android:persistent="true"
+            android:priority="1000"
+            android:process=":message" />
+
+        <receiver
+            android:name=".bswk.MyReceiver"
+            android:enabled="true"
+            android:exported="true"
+            android:process=":receiver" />
+
+        <activity android:name=".bswk.XuetangAdd" />
+        <activity android:name=".bswk.Xuetang" />
+        <activity android:name=".bswk.XuetangAddxiangqing" />
+        <activity android:name=".bswk.Xuetangxiangqing" />
+        <activity android:name=".bswk.Xiangqing" />
+        <activity android:name=".bswk.AddUricAcidActivity" />
+        <activity android:name=".bswk.UricAcidAddLaterActivity" />
+        <activity android:name=".bswk.acid.UricAcidActivity" />
+        <activity android:name=".bswk.stone.AddCholesterolActivity" />
+        <activity android:name=".bswk.stone.CholesterolAddLaterActivity" />
+        <activity android:name=".bswk.stone.CholesterolListActivity" />
+        <activity android:name=".bswk.body.RentichengfenAdd" />
+        <activity android:name=".bswk.body.Rentichengfen" />
+        <activity android:name=".bswk.body.Rentichengrenxiangqing" />
+        <activity android:name=".bswk.brain.NaozuzhongActivity" />
+        <activity android:name=".views.activities.next.SearchResultDetailActivity"></activity>
+    </application>
+
+</manifest>

@@ -1,0 +1,14 @@
+[
+    {
+        "merged": "D:\\MyProjects\\Android\\health\\OneSDK\\build\\intermediates\\res\\merged\\androidTest\\debug\\raw\\aliwx_sent.mp3",
+        "source": "D:\\MyProjects\\Android\\health\\OneSDK\\build\\intermediates\\bundles\\debug\\res\\raw\\aliwx_sent.mp3"
+    },
+    {
+        "merged": "D:\\MyProjects\\Android\\health\\OneSDK\\build\\intermediates\\res\\merged\\androidTest\\debug\\raw\\aliwx_play_completed.mp3",
+        "source": "D:\\MyProjects\\Android\\health\\OneSDK\\build\\intermediates\\bundles\\debug\\res\\raw\\aliwx_play_completed.mp3"
+    },
+    {
+        "merged": "D:\\MyProjects\\Android\\health\\OneSDK\\build\\intermediates\\res\\merged\\androidTest\\debug\\raw\\aliwx_itemmatch.xml",
+        "source": "D:\\MyProjects\\Android\\health\\OneSDK\\build\\intermediates\\bundles\\debug\\res\\raw\\aliwx_itemmatch.xml"
+    }
+]

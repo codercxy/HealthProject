@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+    tools:context="com.nju.android.health.views.activities.glucose.AnlsGluActivity">
+    <android.support.v7.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="?android:attr/actionBarSize"
+        android:background="#00CCCC"
+        app:popupTheme="@style/AppTheme.PopupOverlay" >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            style="@style/TextAppearance.AppCompat.Widget.ActionBar.Title"
+            android:gravity="center"
+            android:text="血糖分析"
+            android:textColor="#fff"/>
+    </android.support.v7.widget.Toolbar>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="?android:attr/actionBarSize"
+        android:orientation="vertical">
+        <!--显示时间-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/glu_anls_time"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:gravity="center"
+                android:textSize="18sp"/>
+
+
+        </LinearLayout>
+
+        <!--显示类型-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/glu_anls_type"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:gravity="center"
+                android:textSize="18sp"/>
+
+
+        </LinearLayout>
+        <!--血糖值-->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="10dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="血糖值："
+                android:textSize="18sp"/>
+            <TextView
+                android:id="@+id/glu_anls_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="18sp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=" mmol/L"
+                android:textSize="18sp"/>
+
+
+        </LinearLayout>
+
+
+        <!--progress_rate_img-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp">
+
+            <ImageView
+                android:id="@+id/glu_anls_img1"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="24dp" />
+            <ImageView
+                android:id="@+id/glu_anls_img2"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="24dp" />
+            <ImageView
+                android:id="@+id/glu_anls_img3"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="24dp" />
+        </LinearLayout>
+        <!--progress_rate_prog-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp">
+
+            <TextView
+                android:id="@+id/glu_anls_prog1"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:background="@drawable/pres_anls_shape"/>
+            <TextView
+                android:id="@+id/glu_anls_prog2"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:background="#33CC33"/>
+            <TextView
+                android:id="@+id/glu_anls_prog3"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:background="@drawable/pres_anls_shape_tail"/>
+        </LinearLayout>
+        <!--progress_rate_text-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp">
+
+            <TextView
+                android:id="@+id/glu_anls_text1"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="血糖过低"/>
+            <TextView
+                android:id="@+id/glu_anls_text2"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="血糖正常"/>
+            <TextView
+                android:id="@+id/glu_anls_text3"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="血糖过高"/>
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="15dp"
+            android:textSize="18sp"
+            android:text="分析结果："/>
+
+        <TextView
+            android:id="@+id/glu_anls_result"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:padding="10dp"
+            android:background="@drawable/pre_anls_shape_result"/>
+
+    </LinearLayout>
+
+</FrameLayout>

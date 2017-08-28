@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/bottomBarItemData"
+        android:icon="@drawable/ic_trending_up_grey600_24dp"
+        android:title="数据" />
+    <item
+        android:id="@+id/bottomBarItemHome"
+        android:icon="@drawable/ic_home_grey600_24dp"
+        android:title="主页" />
+    <item
+        android:id="@+id/bottomBarItemDoctor"
+        android:icon="@drawable/ic_local_hospital_grey600_24dp"
+        android:title="医生" />
+    <item
+        android:id="@+id/bottomBarItemSetting"
+        android:icon="@drawable/ic_settings_grey600_24dp"
+        android:title="设置" />
+</menu>

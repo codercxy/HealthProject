@@ -1,0 +1,298 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.nju.android.health.views.fragments.setting.HealthRecordFragment">
+
+
+
+    <!-- 过敏史 -->
+    <LinearLayout
+        android:id="@+id/ll_health_record_allergies"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="过敏史"
+            android:gravity="center_vertical"
+            android:textSize="16sp"
+            android:paddingLeft="16dp"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"
+            android:textColor="@color/black"/>
+
+
+        <TextView
+            android:id="@+id/health_record_allergies"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="花粉"
+            android:paddingRight="16dp"
+            android:textSize="16sp"
+            android:textColor="@color/black"
+            android:gravity="center_vertical|right"/>
+    </LinearLayout>
+    <View
+    android:layout_width="match_parent"
+    android:layout_height="1dp"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp"
+    android:background="@color/view" />
+
+
+    <!-- 慢性疾病 -->
+    <LinearLayout
+        android:id="@+id/ll_health_record_chronic"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="慢性疾病"
+            android:gravity="center_vertical"
+            android:textSize="16sp"
+            android:paddingLeft="16dp"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"
+            android:textColor="@color/black"/>
+
+
+        <TextView
+            android:id="@+id/health_record_chronic"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="无"
+            android:paddingRight="16dp"
+            android:textSize="16sp"
+            android:textColor="@color/black"
+            android:gravity="center_vertical|right"/>
+    </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:background="@color/view" />
+
+
+    <!-- 家族遗传病史 -->
+    <LinearLayout
+        android:id="@+id/ll_health_record_family"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="家族遗传病史"
+            android:gravity="center_vertical"
+            android:textSize="16sp"
+            android:paddingLeft="16dp"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"
+            android:textColor="@color/black"/>
+
+
+        <TextView
+            android:id="@+id/health_record_family"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="无"
+            android:paddingRight="16dp"
+            android:textSize="16sp"
+            android:textColor="@color/black"
+            android:gravity="center_vertical|right"/>
+    </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:background="@color/view" />
+
+
+    <!-- 身体状况或疾病信息 -->
+    <LinearLayout
+        android:id="@+id/ll_health_record_illnesses"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="身体状况或疾病信息"
+            android:gravity="center_vertical"
+            android:textSize="16sp"
+            android:paddingLeft="16dp"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"
+            android:textColor="@color/black"/>
+
+
+        <TextView
+            android:id="@+id/health_record_illnesses"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="无"
+            android:paddingRight="16dp"
+            android:textSize="16sp"
+            android:textColor="@color/black"
+            android:gravity="center_vertical|right"/>
+    </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:background="@color/view" />
+
+
+    <!-- 住院记录 -->
+    <LinearLayout
+        android:id="@+id/ll_health_record_hospital"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="住院记录"
+            android:gravity="center_vertical"
+            android:textSize="16sp"
+            android:paddingLeft="16dp"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"
+            android:textColor="@color/black"/>
+
+
+        <TextView
+            android:id="@+id/health_record_hospital"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="无"
+            android:paddingRight="16dp"
+            android:textSize="16sp"
+            android:textColor="@color/black"
+            android:gravity="center_vertical|right"/>
+    </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:background="@color/view" />
+
+
+    <!-- 服用药物清单 -->
+    <LinearLayout
+        android:id="@+id/ll_health_record_medications"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="服用药物清单"
+            android:gravity="center_vertical"
+            android:textSize="16sp"
+            android:paddingLeft="16dp"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"
+            android:textColor="@color/black"/>
+
+
+        <TextView
+            android:id="@+id/health_record_medications"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="xxx"
+            android:paddingRight="16dp"
+            android:textSize="16sp"
+            android:textColor="@color/black"
+            android:gravity="center_vertical|right"/>
+    </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:background="@color/view" />
+
+
+    <!-- 免疫接种 -->
+    <LinearLayout
+        android:id="@+id/ll_health_record_vaccinations"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="免疫接种"
+            android:gravity="center_vertical"
+            android:textSize="16sp"
+            android:paddingLeft="16dp"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"
+            android:textColor="@color/black"/>
+
+
+        <TextView
+            android:id="@+id/health_record_vaccinations"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="无"
+            android:paddingRight="16dp"
+            android:textSize="16sp"
+            android:textColor="@color/black"
+            android:gravity="center_vertical|right"/>
+    </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:background="@color/view" />
+
+
+    <!-- 手术信息 -->
+    <LinearLayout
+        android:id="@+id/ll_health_record_surgeries"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="手术信息"
+            android:gravity="center_vertical"
+            android:textSize="16sp"
+            android:paddingLeft="16dp"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"
+            android:textColor="@color/black"/>
+
+
+        <TextView
+            android:id="@+id/health_record_surgeries"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="无"
+            android:paddingRight="16dp"
+            android:textSize="16sp"
+            android:textColor="@color/black"
+            android:gravity="center_vertical|right"/>
+    </LinearLayout>
+</LinearLayout>

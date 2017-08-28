@@ -1,0 +1,15 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+	  xmlns:tools="http://schemas.android.com/tools"
+	  tools:context="com.stylingandroid.bluetoothle.HomeFragment">
+
+	<item
+		android:id="@+id/action_exit"
+		android:orderInCategory="100"
+		android:icon="@drawable/ic_menu_exit"
+		android:title="@string/action_exit"/>
+	<item
+		android:id="@+id/action_refresh"
+		android:orderInCategory="100"
+		android:icon="@drawable/ic_menu_refresh"
+		android:title="@string/action_refresh"/>
+</menu> 

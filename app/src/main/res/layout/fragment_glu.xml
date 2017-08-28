@@ -1,0 +1,50 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.nju.android.health.views.fragments.data.GluFragment">
+
+    <include
+        layout="@layout/glucose_tab" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="horizontal">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="空腹血糖图"
+                android:textSize="18sp"/>
+
+            <com.github.mikephil.charting.charts.CombinedChart
+                android:id="@+id/chart_glu_empty"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="餐后2小时血糖图"
+                android:textSize="18sp"/>
+
+            <com.github.mikephil.charting.charts.CombinedChart
+                android:id="@+id/chart_glu_full"
+                android:layout_width="match_parent"
+                android:layout_height="300dp" />
+
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

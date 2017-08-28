@@ -1,0 +1,195 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".views.fragments.setting.SettingFragment">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar_me"
+        android:layout_width="match_parent"
+        android:layout_height="?android:attr/actionBarSize"
+        android:background="@color/aliwx_white"
+        app:popupTheme="@style/AppTheme.PopupOverlay" >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="个人中心"
+            android:textSize="20sp"
+            android:layout_marginLeft="48dp"
+            android:textColor="@color/black"/>
+    </android.support.v7.widget.Toolbar>
+
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="?android:attr/actionBarSize"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            android:orientation="vertical"
+            >
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="8dp"
+                android:background="@color/view" />
+
+            <LinearLayout
+                android:id="@+id/ll_setting_info"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/aliwx_white"
+                android:orientation="horizontal">
+
+                <com.nju.android.health.utils.CircleImg
+                    android:id="@+id/me_circleimg"
+                    android:layout_width="88dp"
+                    android:layout_height="88dp"
+                    android:layout_gravity="center_vertical"
+                    android:src="@drawable/head"
+                    android:layout_margin="16dp"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="120dp"
+                    android:text="username"
+                    android:textSize="16sp"
+                    android:layout_marginLeft="16dp"
+                    android:textColor="@color/black"
+                    android:gravity="center_vertical"
+                    android:id="@+id/me_username" />
+            </LinearLayout>
+
+
+
+
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="10dp"
+                android:background="#f5f5f5" />
+            <TextView
+                android:id="@+id/me_info"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="15dp"
+                android:drawableRight="@drawable/ic_chevron_right_grey600_24dp"
+                android:text="健康档案"/>
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="1dp"
+                android:background="#f5f5f5" />
+
+            <TextView
+                android:id="@+id/me_message"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="15dp"
+                android:drawableRight="@drawable/ic_chevron_right_grey600_24dp"
+                android:text="消息中心"/>
+
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="1dp"
+                android:background="#f5f5f5" />
+
+            <TextView
+                android:id="@+id/me_feedback"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="15dp"
+                android:drawableRight="@drawable/ic_chevron_right_grey600_24dp"
+                android:text="意见反馈"/>
+
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="1dp"
+                android:background="#f5f5f5" />
+
+            <TextView
+                android:id="@+id/me_search"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="15dp"
+                android:drawableRight="@drawable/ic_chevron_right_grey600_24dp"
+                android:text="搜索"/>
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="1dp"
+                android:background="#f5f5f5" />
+
+            <TextView
+                android:id="@+id/me_chart_1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="15dp"
+                android:drawableRight="@drawable/ic_chevron_right_grey600_24dp"
+                android:text="chart_1"/>
+
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="1dp"
+                android:background="#f5f5f5" />
+
+            <TextView
+                android:id="@+id/me_chart_2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="15dp"
+                android:drawableRight="@drawable/ic_chevron_right_grey600_24dp"
+                android:text="chart_2"/>
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="1dp"
+                android:background="#f5f5f5" />
+
+            <TextView
+                android:id="@+id/me_chart_3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="15dp"
+                android:drawableRight="@drawable/ic_chevron_right_grey600_24dp"
+                android:text="chart_3"/>
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="1dp"
+                android:background="#f5f5f5" />
+
+            <TextView
+                android:id="@+id/me_chart_4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="15dp"
+                android:drawableRight="@drawable/ic_chevron_right_grey600_24dp"
+                android:text="chart_4"/>
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="1dp"
+                android:background="#f5f5f5" />
+
+            <TextView
+                android:id="@+id/me_chart_5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="15dp"
+                android:drawableRight="@drawable/ic_chevron_right_grey600_24dp"
+                android:text="chart_5"/>
+
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="#f5f5f5" />
+
+
+        </LinearLayout>
+    </ScrollView>
+
+
+
+</FrameLayout>
