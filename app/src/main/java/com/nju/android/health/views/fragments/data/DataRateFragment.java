@@ -70,6 +70,8 @@ public class DataRateFragment extends Fragment implements View.OnClickListener{
         generateValues();
 
         initLine(DAY);
+        clearChart();
+        initLine(DAY);
 
         return view;
     }
@@ -194,7 +196,7 @@ public class DataRateFragment extends Fragment implements View.OnClickListener{
         chart.setViewportCalculationEnabled(false);
 
         //setWidth
-        if (numberOfPoints > 0) {
+        if (numberOfPoints > 9) {
             Viewport viewport = new Viewport(chart.getMaximumViewport());
             viewport.top = 160;
             viewport.bottom = 50;
@@ -207,7 +209,7 @@ public class DataRateFragment extends Fragment implements View.OnClickListener{
         } else {
             resetViewport();
             if (numberOfPoints > 0) {
-                chart.setZoomLevel(0, currentData.get(0).getHigh(), chart.getMaxZoom() / numberOfPoints);
+                chart.setZoomLevel(0, currentData.get(0).getHigh(), chart.getZoomLevel());
             }
 
         }

@@ -153,7 +153,7 @@ public class DataStepFragment extends Fragment{
             chart.setZoomLevel(1, getByMonth.get(0).getNumber(), chart.getMaxZoom() / numberOfPoints);
         } else {
             resetViewport();
-            chart.setZoomLevel(1, getByMonth.get(0).getNumber(), chart.getMaxZoom() / numberOfPoints);
+            chart.setZoomLevel(1, getByMonth.get(0).getNumber(), chart.getZoomLevel());
         }
 
         chart.setZoomType(ZoomType.HORIZONTAL);

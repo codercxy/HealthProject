@@ -74,8 +74,11 @@ public class DataLineFragment extends Fragment implements View.OnClickListener{
 
         generateValues();
 
+        clearChart();
         initLine(DAY);
 
+        clearChart();
+        initLine(DAY);
         //resetViewport();
 
         return view;
@@ -233,15 +236,11 @@ public class DataLineFragment extends Fragment implements View.OnClickListener{
         } else {
             resetViewport();
             if (numberOfPoints > 0) {
-                chart.setZoomLevel(0, currentData.get(0).getHigh(), chart.getMaxZoom() / numberOfPoints);
+                chart.setZoomLevel(0, currentData.get(0).getHigh(), chart.getZoomLevel());
             }
 
-
         }
-
         /*setUpRange();*/
-
-
         chart.setZoomType(ZoomType.HORIZONTAL);
         chart.setContainerScrollEnabled(true, ContainerScrollType.HORIZONTAL);
 

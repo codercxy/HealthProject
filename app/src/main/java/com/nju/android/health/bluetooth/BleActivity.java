@@ -102,6 +102,7 @@ public class BleActivity extends AppCompatActivity implements DeviceListFragment
 			Log.e("bleService_existed", "true");
 
 		}
+
 		//bindService(mServiceIntent, mConnection, BIND_AUTO_CREATE);//请求远程通信
 	}
 
@@ -134,6 +135,7 @@ public class BleActivity extends AppCompatActivity implements DeviceListFragment
 					Log.w(TAG, "Error connecting to BleService", e);
 					mService = null;
 				}
+
 			}
 
 			@Override
@@ -141,6 +143,9 @@ public class BleActivity extends AppCompatActivity implements DeviceListFragment
 				mService = null;
 			}
 		};
+		if (mService != null) {
+			startScan();
+		}
 		bindService(mServiceIntent, mConnection, BIND_AUTO_CREATE);//请求远程通信
 
 	}
@@ -189,7 +194,7 @@ public class BleActivity extends AppCompatActivity implements DeviceListFragment
 	@Override
 	protected void onStart() {
 		super.onStart();
-		
+
 		//delete by wy in 2015.7.29
 //		bindService(mServiceIntent, mConnection, BIND_AUTO_CREATE);
 	}

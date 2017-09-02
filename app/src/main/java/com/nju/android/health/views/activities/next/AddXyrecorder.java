@@ -34,6 +34,7 @@ import android.widget.Toast;
 
 import com.nju.android.health.MyApplication;
 import com.nju.android.health.R;
+import com.nju.android.health.bluetooth.BleActivity;
 import com.nju.android.health.bswk.BluetoothLEService;
 import com.nju.android.health.bswk.FileService;
 import com.nju.android.health.bswk.HttpInfo;
@@ -161,7 +162,7 @@ public class AddXyrecorder extends Activity implements View.OnClickListener {
             @Override
             public void onClick(View v) {
                 //判断是否有权限
-                if (ContextCompat.checkSelfPermission(AddXyrecorder.this,
+                /*if (ContextCompat.checkSelfPermission(AddXyrecorder.this,
                         Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
                     //请求权限
                     ActivityCompat.requestPermissions(AddXyrecorder.this, new String[]{Manifest.permission.ACCESS_COARSE_LOCATION},
@@ -187,7 +188,9 @@ public class AddXyrecorder extends Activity implements View.OnClickListener {
                     xyrecorder_gy.setText("");
                     xyrecorder_dy.setText("");
                     xyrecorder_xl.setText("");
-                }
+                }*/
+                Intent intent = new Intent(AddXyrecorder.this, BleActivity.class);
+                startActivity(intent);
 
             }
         });
@@ -459,6 +462,7 @@ public class AddXyrecorder extends Activity implements View.OnClickListener {
 
                     savePressureValue(newDateTime, max_blood_pressure, min_blood_pressure, heart_rate);
                     Toast.makeText(AddXyrecorder.this,"提交成功！", Toast.LENGTH_SHORT).show();
+                    onBackPressed();
                 }
 
             }else{
