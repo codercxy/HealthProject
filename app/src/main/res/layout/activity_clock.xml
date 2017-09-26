@@ -87,12 +87,13 @@
 
         <Button
             android:id="@+id/btn_clock_submit"
-            android:layout_width="258dp"
+            android:layout_width="158dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="200dp"
+            android:textSize="18sp"
             android:text="提交"
-            android:background="#00bfff"
+            android:background="#00CCCC"
             android:textColor="#fff"/>
 
 

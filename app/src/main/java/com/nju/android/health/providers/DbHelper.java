@@ -19,6 +19,7 @@ public class DbHelper extends SQLiteOpenHelper{
         if (db.isReadOnly()) {
             db = getWritableDatabase();
         }
+        db.execSQL(DbUser.User.CREATE_SQL);
         db.execSQL(DbPressure.Pressure.CREATE_SQL);
         db.execSQL(DbGlucose.Glucose.CREATE_SQL);
         db.execSQL(DbStep.Step.CREATE_SQL);

@@ -20,6 +20,7 @@ import android.os.Message;
 import android.os.StrictMode;
 import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
+import android.support.v4.app.FragmentManager;
 import android.support.v4.content.ContextCompat;
 import android.util.Log;
 import android.view.View;
@@ -261,6 +262,7 @@ public class AddXyrecorder extends Activity implements View.OnClickListener {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(AddXyrecorder.this, MainActivity.class);
+                intent.putExtra("tabIndex", 0);
                 startActivity(intent);
             }
         });
@@ -391,6 +393,11 @@ public class AddXyrecorder extends Activity implements View.OnClickListener {
 
     @Override
     public void onClick(View v) {
+        if (xyrecorder_gy.getText().toString().equals("") || xyrecorder_dy.getText().toString().equals("") || xyrecorder_xl.getText().toString().equals("")) {
+            Toast.makeText(AddXyrecorder.this, "请不要留空值", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
         if(Double.parseDouble(xyrecorder_gy.getText().toString()) <= 280.0 && Double.parseDouble(xyrecorder_dy.getText().toString()) >= 20.0 &&
                 Double.parseDouble(xyrecorder_gy.getText().toString()) > Double.parseDouble(xyrecorder_dy.getText().toString())){
             if(Double.parseDouble(xyrecorder_xl.getText().toString()) <= 180.0 && 20.0 <= Double.parseDouble(xyrecorder_xl.getText().toString())){

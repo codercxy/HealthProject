@@ -36,6 +36,7 @@ public class DbProvider extends ContentProvider{
     private static final int PRESSURE = 0;
     private static final int GLUCOSE = 1;
     private static final int STEP = 2;
+    private static final int USER = 3;
 
     private long user_id;
     private static final UriMatcher uriMatcher;
@@ -46,6 +47,7 @@ public class DbProvider extends ContentProvider{
         uriMatcher.addURI(DbPressure.PROVIDER_NAME, DbPressure.Pressure.TABLE_NAME, PRESSURE);
         uriMatcher.addURI(DbGlucose.PROVIDER_NAME, DbGlucose.Glucose.TABLE_NAME, GLUCOSE);
         uriMatcher.addURI(DbStep.PROVIDER_NAME, DbStep.Step.TABLE_NAME, STEP);
+        uriMatcher.addURI(DbUser.PROVIDER_NAME, DbUser.User.TABLE_NAME, USER);
     }
 
     public SQLiteDatabase database;
@@ -55,6 +57,7 @@ public class DbProvider extends ContentProvider{
     public boolean onCreate() {
         return false;
     }
+
 
     public void init(Context context) {
         this.context = context;
@@ -94,6 +97,14 @@ public class DbProvider extends ContentProvider{
                     context.getContentResolver().notifyChange(uri, null);
                 }
                 break;
+            case USER:
+
+                rowId = database.insert(DbUser.User.TABLE_NAME, null, contentValues);
+                if (rowId > 0) {
+                    uri = ContentUris.withAppendedId(DbUser.CONTENT_URI, rowId);
+                    context.getContentResolver().notifyChange(uri, null);
+                }
+                break;
 
 
 
@@ -128,6 +139,12 @@ public class DbProvider extends ContentProvider{
                     sortOrder = DbStep.Step.DEFAULT_SORT_ORDER;
                 }
                 break;
+            case USER:
+                queryBuilder.setTables(DbUser.User.TABLE_NAME);
+                if (sortOrder == null) {
+                    sortOrder = DbUser.User.DEFAULT_SORT_ORDER;
+                }
+                break;
 
             default:
                 throw new IllegalArgumentException("Unknown URI: " + uri);
@@ -153,6 +170,9 @@ public class DbProvider extends ContentProvider{
             case STEP:
                 rowsDeleted = database.delete(DbStep.Step.TABLE_NAME, selection, selectionArgs);
                 break;
+            case USER:
+                rowsDeleted = database.delete(DbUser.User.TABLE_NAME, selection, selectionArgs);
+                break;
 
             default:
                 throw new IllegalArgumentException("Unknown Uri" + uri);
@@ -176,11 +196,44 @@ public class DbProvider extends ContentProvider{
             case STEP:
                 rowsUpdated = database.update(DbStep.Step.TABLE_NAME, contentValues, selection, selectionArgs);
                 break;
+            case USER:
+                rowsUpdated = database.update(DbUser.User.TABLE_NAME, contentValues, selection, selectionArgs);
+                break;
             default:
                 throw new IllegalArgumentException("Unknown Uri" + uri);
         }
         context.getContentResolver().notifyChange(uri, null);
         return rowsUpdated;
+    }
+
+    public String getUserName() {
+        String[] projection = new String[] {DbUser.User.USER_ID,
+                DbUser.User.NAME};
+        String[] args = {String.valueOf(user_id)};
+        Cursor c = query(DbUser.CONTENT_URI, projection, "user_id = ?", args, null);
+        if (c.moveToFirst()) {
+            return c.getString(c.getColumnIndexOrThrow(DbUser.User.NAME));
+        } else {
+            return "";
+        }
+    }
+
+    public void UpdateUser(String name) {
+        String[] projection = new String[] {DbUser.User.USER_ID,
+                DbUser.User.NAME};
+        String[] args = {String.valueOf(user_id)};
+        Cursor c = query(DbUser.CONTENT_URI, projection, "user_id = ?", args, null);
+        ContentValues values = new ContentValues();
+        values.put("user_id", String.valueOf(user_id));
+        values.put("user_name", name);
+        if (!c.moveToFirst()) {
+            insert(DbUser.CONTENT_URI, values);
+            System.out.println("Insert success");
+        } else {
+            update(DbUser.CONTENT_URI, values, "user_id = ?", args);
+            System.out.println("update success");
+        }
+        c.close();
     }
 
     @Nullable

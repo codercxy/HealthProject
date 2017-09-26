@@ -84,12 +84,15 @@ public class SearchResultActivity extends AppCompatActivity implements View.OnCl
         Intent intent = new Intent();
         switch (v.getId()) {
             case R.id.search_result_headache:
+                intent.putExtra("extra_id", 0);
 
 
                 break;
             case R.id.search_result_brain:
+                intent.putExtra("extra_id", 1);
                 break;
             case R.id.search_result_brain_next:
+                intent.putExtra("extra_id", 2);
                 break;
 
             default:

@@ -81,10 +81,11 @@ public class DataStepFragment extends Fragment{
     private void generateData() {
 
         mProvider = new DbProvider();
-        mProvider.init(getActivity());
+        mProvider.init(getActivity().getApplicationContext());
 
         //getStep data
         getByMonth = mProvider.getStepByMonth();
+        mProvider.shutdown();
 
     }
     private void initLine() {

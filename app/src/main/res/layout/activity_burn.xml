@@ -1,9 +1,20 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context="com.nju.android.health.views.fragments.home.BurnActivity">
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:gravity="center"
+        android:text="消耗热量"
+        android:textSize="22sp"
+        android:textColor="@color/aliwx_white"
+        android:background="#7B1FA2"
+        />
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -17,4 +28,4 @@
         </com.nju.android.health.utils.CircleBar>
     </LinearLayout>
 
-</FrameLayout>
+</LinearLayout>

@@ -302,6 +302,7 @@ public class PhysicianActivity extends AppCompatActivity implements RecyclerView
             darkView.startAnimation(animIn);
             darkView.setVisibility(View.VISIBLE);
         }
+
     }
     //顶部第2个标签的点击事件
     private void tab2OnClick() {
@@ -315,6 +316,7 @@ public class PhysicianActivity extends AppCompatActivity implements RecyclerView
             darkView.startAnimation(animIn);
             darkView.setVisibility(View.VISIBLE);
         }
+
     }
     //顶部第3个标签的点击事件
     private void tab3OnClick() {
@@ -347,15 +349,45 @@ public class PhysicianActivity extends AppCompatActivity implements RecyclerView
         switch (tab) {
             case "tab1":
                 locTab.setText(selectedName);
+                updatePhyList("tab1", selectedName);
                 break;
             case "tab2":
                 roomTab.setText(selectedName);
+
                 break;
             case "tab3":
                 sortTab.setText(selectedName);
                 break;
         }
 
+    }
+    private void updatePhyList(String tab, String name) {
+        switch (tab) {
+            case "tab1":
+                System.out.println("NAME:" + name);
+                if (!name.equals("北京市")) {
+                    System.out.println("HERE" + name);
+                    phyList = new ArrayList<>();
+                    showDoctors(phyList);
+                } else if (phyList.isEmpty()){
+                    Physician phy = new Physician();
+                    phy.setImageRes(R.drawable.phy);
+                    phy.setName("舒慧君");
+                    phy.setRoom("内科");
+                    phy.setLevel("副主任医师");
+                    phy.setLoc("北京协和医院");
+                    phy.setGoodAt("擅长：慢性胃炎、自身免疫性肝炎");
+                    phyList.add(phy);
+                    showDoctors(phyList);
+                }
+                break;
+            case "tab2":
+
+                break;
+            case "tab3":
+
+                break;
+        }
     }
 
     /*@Override
@@ -390,6 +422,7 @@ public class PhysicianActivity extends AppCompatActivity implements RecyclerView
 
         intent.putExtra("doctor", bundle);
         startActivity(intent);
+
 
     }
 

@@ -24,6 +24,7 @@ import android.widget.Spinner;
 import android.widget.TextView;
 
 import com.nju.android.health.R;
+import com.nju.android.health.providers.DbProvider;
 import com.nju.android.health.utils.CircleImg;
 import com.nju.android.health.utils.PictureUtil;
 
@@ -162,12 +163,17 @@ public class MeInfoActivity extends AppCompatActivity implements View.OnClickLis
 
                         } else {
                             isEditable = false;
+                            DbProvider provider = new DbProvider();
+                            provider.init(getApplicationContext());
+                            provider.UpdateUser(et_username.getText().toString());
+                            provider.shutdown();
 
                             SharedPreferences sharedPref = getPreferences(Context.MODE_PRIVATE);
                             SharedPreferences.Editor editor = sharedPref.edit();
                             editor.putString(getString(R.string.username), et_username.getText().toString());
                             editor.putString(getString(R.string.name), et_name.getText().toString());
                             editor.putString(getString(R.string.phone), et_phonoe.getText().toString());
+
 //                            editor.putString(getString(R.string.sex), et_sex.getText().toString());
 //                            editor.putString(getString(R.string.age), et_age.getText().toString());
 //                            editor.putString(getString(R.string.birth), et_date.getText().toString());

@@ -92,11 +92,13 @@ public class DataRateFragment extends Fragment implements View.OnClickListener{
 
     private void generateValues() {
         mProvider = new DbProvider();
-        mProvider.init(getActivity());
+        mProvider.init(getActivity().getApplicationContext());
 
         getByDay = mProvider.getPressure(DAY);
         getByWeek = mProvider.getPressure(WEEK);
         getByMonth = mProvider.getPressure(MONTH);
+
+        mProvider.shutdown();
 
         currentData = new ArrayList<>();
     }
@@ -199,7 +201,7 @@ public class DataRateFragment extends Fragment implements View.OnClickListener{
         if (numberOfPoints > 9) {
             Viewport viewport = new Viewport(chart.getMaximumViewport());
             viewport.top = 160;
-            viewport.bottom = 50;
+            viewport.bottom = 25;
             viewport.right = numberOfPoints - 0.7f;
             chart.setMaximumViewport(viewport);
             viewport.right = 9;
@@ -326,7 +328,7 @@ public class DataRateFragment extends Fragment implements View.OnClickListener{
         // Reset viewport height range to (0,100)
 
         final Viewport v = new Viewport(chart.getMaximumViewport());
-        v.bottom = 50;
+        v.bottom = 25;
         v.top = 160;
         v.left = 0;
         v.right = numberOfPoints - 0.8f;

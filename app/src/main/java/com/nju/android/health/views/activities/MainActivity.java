@@ -166,9 +166,19 @@ public class MainActivity extends AppCompatActivity implements BackHandledInterf
 
         if(intent != null && savedInstanceState == null){
             mContent = null;
+            currentIndex = intent.getIntExtra("tabIndex", 1);
+            if (currentIndex == 0) {
+                getFragmentManager()
+                        .beginTransaction()
+                        .replace(R.id.content, new DataListFragment())
+                        .addToBackStack(null)
+                        .commit();
+            } else {
+                setTabSelection(currentIndex);
+            }
 
-            setTabSelection(1);
-            currentIndex = 1;
+
+//            currentIndex = 1;
 //            mBottomBar.selectTabAtPosition(1);
 //            mBottomBar.setDefaultTabPosition(1);
 //            home.setBackgroundColor(Color.rgb(220, 220, 220));

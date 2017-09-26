@@ -110,12 +110,13 @@ public class DataLineFragment extends Fragment implements View.OnClickListener{
     private void generateValues() {
 
         mProvider = new DbProvider();
-        mProvider.init(getActivity());
+        mProvider.init(getActivity().getApplicationContext());
 
         getByDay = mProvider.getPressure(DAY);
         getByWeek = mProvider.getPressure(WEEK);
         getByMonth = mProvider.getPressure(MONTH);
 
+        mProvider.shutdown();
         currentData = new ArrayList<>();
         /*for (int i = 0; i < numberOfLines; ++i) {
             for (int j = 0; j < numberOfPoints; ++j) {
@@ -225,7 +226,7 @@ public class DataLineFragment extends Fragment implements View.OnClickListener{
         //setWidth
         if (numberOfPoints > 9) {
             Viewport viewport = new Viewport(chart.getMaximumViewport());
-            viewport.top = 150;
+            viewport.top = 180;
             viewport.bottom = 50;
             viewport.right = numberOfPoints - 0.7f;
             chart.setMaximumViewport(viewport);
@@ -347,7 +348,7 @@ public class DataLineFragment extends Fragment implements View.OnClickListener{
 
         final Viewport v = new Viewport(chart.getCurrentViewport());
         v.bottom = 50;
-        v.top = 150;
+        v.top = 180;
         v.left = 0;
         v.right = numberOfPoints - 0.8f;
         chart.setMaximumViewport(v);

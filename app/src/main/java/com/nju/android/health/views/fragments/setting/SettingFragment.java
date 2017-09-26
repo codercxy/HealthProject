@@ -23,6 +23,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.nju.android.health.R;
+import com.nju.android.health.providers.DbProvider;
 import com.nju.android.health.utils.BackHandledFragment;
 import com.nju.android.health.utils.CircleImg;
 import com.nju.android.health.utils.PictureUtil;
@@ -148,8 +149,27 @@ public class SettingFragment extends BackHandledFragment implements View.OnClick
 
     }
 
+    @Override
+    public void onStart() {
+        super.onStart();
+        try {
+            System.out.println("provider start");
+            DbProvider provider = new DbProvider();
+            provider.init(getActivity().getApplicationContext());
+            if (!provider.getUserName().equals("")) {
+                System.out.println("provider name" + provider.getUserName());
+                username.setText(provider.getUserName());
+            }
+            provider.shutdown();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 
     private void initData() {
+
+
+
         //init Toolbar
 //        setSupportActionBar(toolbar);
 //        toolbar.setNavigationIcon(R.drawable.ic_more_vert_white_24dp);

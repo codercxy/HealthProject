@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.graphics.Color;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.AttributeSet;
@@ -224,7 +225,7 @@ public class Search_View extends LinearLayout {
         listView = (Search_Listview) findViewById(R.id.search_listview);
         iv_search = (ImageView) findViewById(R.id.search_search);
 
-
+        et_search.setTextColor(Color.BLACK);
     }
 
     /*插入数据*/

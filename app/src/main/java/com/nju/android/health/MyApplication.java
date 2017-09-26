@@ -33,6 +33,7 @@ public class MyApplication extends Application{
     private String user_id = null;
     // 存储seesionid
     private String session_id = null;
+
     // 存储应用锁打开的Activity，方便退出应用的时候回收
     private List<Activity> mList = new LinkedList<Activity>();
     //  存放图书ID
@@ -72,6 +73,8 @@ public class MyApplication extends Application{
         return session_id;
     }
 
+
+
     // Application类，不能使用private属性，否则会报错
     public MyApplication() {
     }
@@ -83,6 +86,8 @@ public class MyApplication extends Application{
     public void setSession_id(String session_id) {
         this.session_id = session_id;
     }
+
+
 
     public synchronized static MyApplication getInstance() {
         if (null == instance) {
