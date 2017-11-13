@@ -42,6 +42,7 @@ import com.nju.android.health.bswk.HttpInfo;
 import com.nju.android.health.providers.DbPressure;
 import com.nju.android.health.providers.DbProvider;
 import com.nju.android.health.utils.SaveValueToDB;
+import com.nju.android.health.utils.VolleyRequestImp;
 import com.nju.android.health.views.activities.MainActivity;
 import com.zhy.http.okhttp.OkHttpUtils;
 import com.zhy.http.okhttp.callback.StringCallback;
@@ -493,6 +494,23 @@ public class AddXyrecorder extends Activity implements View.OnClickListener {
 
         provider.insert(DbPressure.CONTENT_URI, contentValues);
         provider.database.close();
+
+        //volley
+        Map<String, String> param = new HashMap<>();
+        param.put("username", "chy");
+        param.put("password", "chy");
+        param.put("action", "login");
+        param.put("url", "user");
+                    /*param.put("pretime",time.getText().toString());
+                    param.put("highpre", et_high.getText().toString());
+                    param.put("lowpre", et_low.getText().toString());
+                    param.put("rate", et_rate.getText().toString());*/
+        System.out.println("volley start");
+        VolleyRequestImp volleyRequest = new VolleyRequestImp(param);
+        //volleyRequest.myVolleyRequestDemo_POST(this);
+        //volleyRequest.volleyJsonObjectRequestDome_POST();
+        volleyRequest.volleyStringRequestDome_POST();
+        System.out.println("volley fin");
     }
 
     private class MyStringCallback extends StringCallback {

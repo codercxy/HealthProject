@@ -85,7 +85,7 @@
             android:padding="16dp"
             android:id="@+id/textView9" />
 
-        <!--偏头痛-->
+        <!--高血压-->
         <LinearLayout
             android:id="@+id/search_result_headache"
             android:layout_width="match_parent"
@@ -104,7 +104,7 @@
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:layout_height="wrap_content"
-                android:text="偏头痛"
+                android:text="高血压"
                 android:layout_gravity="center_vertical"
                 android:textSize="16sp"
                 android:textColor="@color/black"/>
@@ -126,7 +126,7 @@
                 android:layout_gravity="center_vertical"
                 android:src="@drawable/ic_keyboard_arrow_right_black_24dp"/>
         </LinearLayout>
-        <!--脑肿瘤-->
+        <!--&lt;!&ndash;脑肿瘤&ndash;&gt;
         <LinearLayout
             android:id="@+id/search_result_brain"
             android:layout_width="match_parent"
@@ -165,7 +165,7 @@
                 android:layout_gravity="center_vertical"
                 android:src="@drawable/ic_keyboard_arrow_right_black_24dp"/>
         </LinearLayout>
-        <!--脑膜炎-->
+        &lt;!&ndash;脑膜炎&ndash;&gt;
         <LinearLayout
             android:id="@+id/search_result_brain_next"
             android:layout_width="match_parent"
@@ -217,7 +217,7 @@
             android:text="更多疾病"
             android:padding="12dp"
             android:gravity="right|center_vertical"
-            android:drawableRight="@drawable/ic_keyboard_arrow_right_black_24dp"/>
+            android:drawableRight="@drawable/ic_keyboard_arrow_right_black_24dp"/>-->
 
         <View
             android:layout_width="match_parent"

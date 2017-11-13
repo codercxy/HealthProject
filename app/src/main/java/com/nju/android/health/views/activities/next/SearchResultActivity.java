@@ -36,11 +36,21 @@ public class SearchResultActivity extends AppCompatActivity implements View.OnCl
     private String DISEASE = "disease";
     private String SYMPTOM = "sympton";
 
+    private static Double[][] sex_age = {{0.0, 4.76, 9.45, 17.27, 27.24, 40.79, 52.46},
+            {0.0, 2.13, 3.82, 11.88, 28.42, 43.66, 55.70}};
+    private static Double[] alcohol = {0.0, 24.04, 23.65, 26.25, 30.20, 35.22};
+    private static Double[] weightIndex = {0.0, 13.7, 16.5, 33.3, 51.2};
+    private static Double[] histroy = {0.0, 18.22, 30.38};
+    private static Double[] chol = {0.0, 21.29, 43.26};
+    private static Double[] smoke = {0.0, 22.54, 26.32};
+    private static Double[] bloodSugar = {0.0, 22.35, 64.29};
+
+
     private FlowLayout flowLayout;
     private ArrayList<MyProgressBar> progressBarList;
     private MyProgressBar headProgressBar;
-    private MyProgressBar brainProgressBar;
-    private MyProgressBar nextProgressBar;
+    /*private MyProgressBar brainProgressBar;
+    private MyProgressBar nextProgressBar;*/
     private Context context;
 
     private LinearLayout ll_headache;
@@ -86,14 +96,13 @@ public class SearchResultActivity extends AppCompatActivity implements View.OnCl
             case R.id.search_result_headache:
                 intent.putExtra("extra_id", 0);
 
-
                 break;
-            case R.id.search_result_brain:
+            /*case R.id.search_result_brain:
                 intent.putExtra("extra_id", 1);
                 break;
             case R.id.search_result_brain_next:
                 intent.putExtra("extra_id", 2);
-                break;
+                break;*/
 
             default:
                 break;
@@ -107,16 +116,16 @@ public class SearchResultActivity extends AppCompatActivity implements View.OnCl
         flowLayout = (FlowLayout) findViewById(R.id.search_result_flow);
 
         headProgressBar = (MyProgressBar) findViewById(R.id.search_result_headache_bar);
-        brainProgressBar = (MyProgressBar) findViewById(R.id.search_result_brain_bar);
-        nextProgressBar = (MyProgressBar) findViewById(R.id.search_result_brain_next_bar);
+        /*brainProgressBar = (MyProgressBar) findViewById(R.id.search_result_brain_bar);
+        nextProgressBar = (MyProgressBar) findViewById(R.id.search_result_brain_next_bar);*/
 
         ll_headache = (LinearLayout) findViewById(R.id.search_result_headache);
-        ll_brain = (LinearLayout) findViewById(R.id.search_result_brain);
-        ll_braing_next = (LinearLayout) findViewById(R.id.search_result_brain_next);
+        /*ll_brain = (LinearLayout) findViewById(R.id.search_result_brain);
+        ll_braing_next = (LinearLayout) findViewById(R.id.search_result_brain_next);*/
 
         ll_headache.setOnClickListener(this);
-        ll_brain.setOnClickListener(this);
-        ll_braing_next.setOnClickListener(this);
+        /*ll_brain.setOnClickListener(this);
+        ll_braing_next.setOnClickListener(this);*/
 
     }
 
@@ -128,14 +137,13 @@ public class SearchResultActivity extends AppCompatActivity implements View.OnCl
 
         progressBarList = new ArrayList<MyProgressBar>();
         progressBarList.add(headProgressBar);
-        progressBarList.add(brainProgressBar);
-        progressBarList.add(nextProgressBar);
+        /*progressBarList.add(brainProgressBar);
+        progressBarList.add(nextProgressBar);*/
         //初始化node data
         getData();
 
         CreateNetwork();
 //        InfereceWithBayesianNetwork();
-
 
         addView();
 
@@ -144,17 +152,28 @@ public class SearchResultActivity extends AppCompatActivity implements View.OnCl
     private void getData() {
 //        diseases = new String[]{"头痛", "偏头痛", "脑肿瘤", "脑膜炎"};
 //
-        symptomsName = new String[]{"抽搐,畏光及畏声", "恶心,呕吐", "钝痛,变换姿势时变严重", "发烧"};
+        symptomsName = new String[]{"头痛", "晕眩", "鼻出血"};
 
-        diseases = new String[]{"a", "b", "c", "d"};
+        diseases = new String[]{"a"};
 
-
-        symptoms = new String[]{"q", "w", "e", "r"};
+        symptoms = new String[]{"q", "w", "e"};
 
         for (int i = 0; i< symptoms.length; i++) {
             symptomParams.put(symptoms[i], false);
         }
 
+        int[] index = {1, 1, 1, 1, 1, 1, 1, 1};
+        //高血压
+        nodeDef.add(new double[]{calPressure(index), 1 - calPressure(index)});
+
+        //头痛
+        nodeDef.add(new double[]{0.8, 0.2, 0.5, 0.5});
+        //眩晕
+        nodeDef.add(new double[]{0.8, 0.2, 0.3, 0.7});
+        //鼻出血
+        nodeDef.add(new double[]{0.8, 0.2, 0.2, 0.8});
+
+        /*
         //头痛
         nodeDef.add(new double[]{0.3, 0.7});
         //偏头痛
@@ -164,6 +183,7 @@ public class SearchResultActivity extends AppCompatActivity implements View.OnCl
         //脑膜炎
         nodeDef.add(new double[]{0.2, 0.8, 0.01, 0.99});
 
+
         //抽搐
         nodeDef.add(new double[]{0.8, 0.2, 0.01, 0.99});
         //恶心
@@ -171,8 +191,18 @@ public class SearchResultActivity extends AppCompatActivity implements View.OnCl
         //钝痛
         nodeDef.add(new double[]{0.3, 0.7, 0.1, 0.9});
         //发烧
-        nodeDef.add(new double[]{0.8, 0.2, 0.1, 0.9});
+        nodeDef.add(new double[]{0.8, 0.2, 0.1, 0.9});*/
 
+    }
+    private double calPressure(int[] index) {
+        double result = 1.0;
+        result = (1 - sex_age[index[0]][index[1]] / 100) *
+                (1 - weightIndex[index[2]] / 100) *
+                (1 - histroy[index[3]] / 100) *
+                (1 - chol[index[4]] / 100) *
+                (1 - smoke[index[5]] / 100) *
+                (1 - bloodSugar[index[7]] / 100);
+        return 1 - result;
     }
 
     private void addView() {
@@ -227,9 +257,9 @@ public class SearchResultActivity extends AppCompatActivity implements View.OnCl
 //        File fileDir = getApplicationContext().getFilesDir();
 //        net.readFile(fileDir + "/bayesNet.xdsl");
 //        net.updateBeliefs();
-        for (int i = 0; i < diseases.length - 1; i++) {
+        for (int i = 0; i < diseases.length; i++) {
 //            System.out.println(diseases[i + 1]);
-            updateProgressBarDetail(diseases[i + 1], progressBarList.get(i));
+            updateProgressBarDetail(diseases[i], progressBarList.get(i));
 //            testUpdate(diseases[i + 1], progressBarList.get(i), i + 1);
         }
     }
@@ -300,15 +330,18 @@ public class SearchResultActivity extends AppCompatActivity implements View.OnCl
             }
 
             // Adding arcs
-            net.addArc(diseases[0], diseases[1]);
+            /*net.addArc(diseases[0], diseases[1]);
             net.addArc(diseases[0], diseases[2]);
             net.addArc(diseases[0], diseases[3]);
 
-            net.addArc(diseases[1], symptoms[0]);
+            net.addArc(diseases[0], symptoms[0]);
             net.addArc(diseases[1], symptoms[1]);
             net.addArc(diseases[2], symptoms[1]);
             net.addArc(diseases[2], symptoms[2]);
-            net.addArc(diseases[3], symptoms[3]);
+            net.addArc(diseases[3], symptoms[3]);*/
+            net.addArc(diseases[0], symptoms[0]);
+            net.addArc(diseases[0], symptoms[1]);
+            net.addArc(diseases[0], symptoms[2]);
 
             for (int i = 0; i < symptoms.length + diseases.length; i++) {
                 if (i < diseases.length)

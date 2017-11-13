@@ -25,12 +25,15 @@ import android.widget.Toast;
 import com.nju.android.health.R;
 import com.nju.android.health.providers.DbPressure;
 import com.nju.android.health.providers.DbProvider;
+import com.nju.android.health.utils.VolleyRequestImp;
 import com.nju.android.health.views.activities.MainActivity;
 
 import java.lang.ref.WeakReference;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 
 public class BleActivity extends AppCompatActivity implements DeviceListFragment.OnDeviceListFragmentInteractionListener {
@@ -319,6 +322,9 @@ public class BleActivity extends AppCompatActivity implements DeviceListFragment
 		}
 	}
 	private static void savePressureValue(int high, int low, int pulse) {
+
+
+
 		DbProvider provider = new DbProvider();
 		provider.init(context);
 
@@ -331,6 +337,15 @@ public class BleActivity extends AppCompatActivity implements DeviceListFragment
 		contentValues.put(DbPressure.Pressure.RATE, pulse);
 
 		provider.insert(DbPressure.CONTENT_URI, contentValues);
+
+		//volley
+		Map<String, String> param = new HashMap<>();
+		param.put("pretime",df.format(new Date()));
+		param.put("highpre", String.valueOf(high));
+		param.put("lowpre", String.valueOf(low));
+		param.put("rate", String.valueOf(pulse));
+		VolleyRequestImp volleyRequest = new VolleyRequestImp(param);
+		volleyRequest.myVolleyRequestDemo_POST(context);
 	}
 
 	private void stateChanged(BleService.State newState) {

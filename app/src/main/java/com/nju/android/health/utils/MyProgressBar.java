@@ -65,11 +65,12 @@ public class MyProgressBar extends ProgressBar {
 //        int x = (getWidth() / 2) - rect.centerX();
 //        int y = (getHeight() / 2) - rect.centerY();
         float x = 0, y = 0;
-        if (this.getProgress() > 80) {
+        if (this.getProgress() > 70) {
             this.mPaint.setColor(getResources().getColor(R.color.aliwx_white));
             x = (getWidth() / 2) - rect.centerX();
             y = (getHeight() / 2) - rect.centerY();
         } else {
+            this.mPaint.setColor(getResources().getColor(R.color.colorPrimary));
             x = this.getMeasuredWidth() * this.getProgress() / 100 + mPaint.measureText(text) / 2 - 10;
             y = this.getMeasuredHeight() / 2f - mPaint.getFontMetrics().ascent / 2f - mPaint.getFontMetrics().descent / 2f;
         }

@@ -24,10 +24,13 @@ import com.nju.android.health.MyApplication;
 import com.nju.android.health.R;
 import com.nju.android.health.providers.DbPressure;
 import com.nju.android.health.providers.DbProvider;
+import com.nju.android.health.utils.VolleyRequestImp;
 import com.nju.android.health.views.activities.HomeManualActivity;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.HashMap;
+import java.util.Map;
 
 public class ManualActivity extends AppCompatActivity implements View.OnClickListener{
 
@@ -165,6 +168,9 @@ public class ManualActivity extends AppCompatActivity implements View.OnClickLis
                         Toast.makeText(ManualActivity.this, "请检测是否输入正确", Toast.LENGTH_SHORT).show();
                         break;
                     }
+
+
+
                     savePressureValue();
 
                     Intent intent_mb = new Intent(ManualActivity.this, AnlsActivity.class);
@@ -313,6 +319,7 @@ public class ManualActivity extends AppCompatActivity implements View.OnClickLis
         mToast.show();
     }
     private void savePressureValue() {
+        System.out.println("savepressure start");
         DbProvider provider = new DbProvider();
         provider.init(this);
 
@@ -324,6 +331,8 @@ public class ManualActivity extends AppCompatActivity implements View.OnClickLis
         contentValues.put(DbPressure.Pressure.RATE, Integer.parseInt(et_rate.getText().toString()));
 
         provider.insert(DbPressure.CONTENT_URI, contentValues);
+
+
     }
     public static boolean isNumeric(String str){
         for (int i = str.length();--i>=0;){
@@ -332,5 +341,12 @@ public class ManualActivity extends AppCompatActivity implements View.OnClickLis
             }
         }
         return true;
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        MyApplication.getRequestQueue().cancelAll(VolleyRequestImp.VOLLEY_TAG);
+        Log.i("### onStop", "cancel all:tag=" + VolleyRequestImp.VOLLEY_TAG);
     }
 }

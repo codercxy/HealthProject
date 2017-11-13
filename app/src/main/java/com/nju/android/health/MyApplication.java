@@ -6,6 +6,8 @@ import android.content.Context;
 
 import com.alibaba.mobileim.YWAPI;
 import com.alibaba.wxlib.util.SysUtil;
+import com.android.volley.RequestQueue;
+import com.android.volley.toolbox.Volley;
 import com.nostra13.universalimageloader.cache.disc.naming.Md5FileNameGenerator;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
@@ -26,6 +28,9 @@ public class MyApplication extends Application{
     public static String age = "60";        //年龄
     public static String height = "170";        //身高
 
+    //Volley的全局请求队列
+    public static RequestQueue sRequestQueue;
+
     private Context _context;
     //单例模式的入口
     private static MyApplication instance;
@@ -39,10 +44,19 @@ public class MyApplication extends Application{
     //  存放图书ID
     public static int book_id;
 
+    /**
+     * @return Volley全局请求队列
+     */
+    public static RequestQueue getRequestQueue() {
+        return sRequestQueue;
+    }
     @Override
     public void onCreate() {
         super.onCreate();
         _context = getApplicationContext();
+
+        //实例化Volley全局请求队列
+        sRequestQueue = Volley.newRequestQueue(getApplicationContext());
 
         SysUtil.setApplication(this);
         if (SysUtil.isTCMSServiceProcess(this)) {

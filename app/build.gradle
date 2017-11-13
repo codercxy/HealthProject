@@ -53,4 +53,5 @@ dependencies {
     compile 'com.roughike:bottom-bar:2.2.0'
     compile 'com.zhy:okhttputils:2.3.6'
     compile 'com.jakewharton:butterknife:7.0.0'
+    compile project(':volley-master')
 }
