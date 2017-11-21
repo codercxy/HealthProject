@@ -23,6 +23,7 @@ public class DbHelper extends SQLiteOpenHelper{
         db.execSQL(DbPressure.Pressure.CREATE_SQL);
         db.execSQL(DbGlucose.Glucose.CREATE_SQL);
         db.execSQL(DbStep.Step.CREATE_SQL);
+        db.execSQL(DbOrigin.Origin.CREATE_SQL);
         db.execSQL("create table if not exists records(id integer primary key autoincrement,name varchar(200));");
     }
 

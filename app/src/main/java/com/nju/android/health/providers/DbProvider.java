@@ -37,6 +37,7 @@ public class DbProvider extends ContentProvider{
     private static final int GLUCOSE = 1;
     private static final int STEP = 2;
     private static final int USER = 3;
+    private static final int Origin = 4;
 
     private long user_id;
     private static final UriMatcher uriMatcher;
@@ -48,6 +49,7 @@ public class DbProvider extends ContentProvider{
         uriMatcher.addURI(DbGlucose.PROVIDER_NAME, DbGlucose.Glucose.TABLE_NAME, GLUCOSE);
         uriMatcher.addURI(DbStep.PROVIDER_NAME, DbStep.Step.TABLE_NAME, STEP);
         uriMatcher.addURI(DbUser.PROVIDER_NAME, DbUser.User.TABLE_NAME, USER);
+        uriMatcher.addURI(DbOrigin.PROVIDER_NAME, DbOrigin.Origin.TABLE_NAME, Origin);
     }
 
     public SQLiteDatabase database;
