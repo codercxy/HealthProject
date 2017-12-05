@@ -16,6 +16,8 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import com.nju.android.health.R;
+import com.nju.android.health.model.data.OriginData;
+import com.nju.android.health.providers.DbProvider;
 import com.nju.android.health.utils.FlowLayout;
 import com.nju.android.health.utils.MyProgressBar;
 import com.nju.android.health.utils.RecyclerItemClickListener;
@@ -29,12 +31,15 @@ import java.util.Map;
 import smile.Network;
 import smile.SMILEException;
 import smile.ValueOfInfo;
+import smile.learning.DataSet;
+import smile.learning.EM;
 
 
 public class SearchResultActivity extends AppCompatActivity implements View.OnClickListener{
 
     private String DISEASE = "disease";
     private String SYMPTOM = "sympton";
+    private List<OriginData> originDataList = new ArrayList<OriginData>();
 
     private static Double[][] sex_age = {{0.0, 4.76, 9.45, 17.27, 27.24, 40.79, 52.46},
             {0.0, 2.13, 3.82, 11.88, 28.42, 43.66, 55.70}};
@@ -134,6 +139,10 @@ public class SearchResultActivity extends AppCompatActivity implements View.OnCl
 //        TextView view = (TextView) flowLayout.getChildAt(0);
 //        view.setBackground(this.getResources().getDrawable(R.drawable.flow_flag_2));
 //        view.setTextColor(this.getResources().getColor(R.color.search_white));
+
+        DbProvider provider = new DbProvider();
+        provider.init(getApplicationContext());
+        originDataList = provider.getOrigindata();
 
         progressBarList = new ArrayList<MyProgressBar>();
         progressBarList.add(headProgressBar);
@@ -368,6 +377,16 @@ public class SearchResultActivity extends AppCompatActivity implements View.OnCl
             System.out.println(e.getMessage());
         }
     }
+
+    public void learnData() {
+        DataSet dataSet = new DataSet();
+        dataSet.readFile("D:\\Program Files (x86)\\GeNIe 2.2 Academic\\Network1.txt");
+
+        EM em = new EM();
+//        em.learn(dataSet, net);
+
+    }
+
 
     public void InfereceWithBayesianNetwork() {
         try {

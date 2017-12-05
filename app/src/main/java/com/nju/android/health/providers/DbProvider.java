@@ -16,6 +16,7 @@ import android.util.Log;
 
 import com.nju.android.health.MyApplication;
 import com.nju.android.health.model.data.Glucose;
+import com.nju.android.health.model.data.OriginData;
 import com.nju.android.health.model.data.Pressure;
 import com.nju.android.health.model.data.Step;
 
@@ -37,7 +38,7 @@ public class DbProvider extends ContentProvider{
     private static final int GLUCOSE = 1;
     private static final int STEP = 2;
     private static final int USER = 3;
-    private static final int Origin = 4;
+    private static final int ORIGIN = 4;
 
     private long user_id;
     private static final UriMatcher uriMatcher;
@@ -49,7 +50,7 @@ public class DbProvider extends ContentProvider{
         uriMatcher.addURI(DbGlucose.PROVIDER_NAME, DbGlucose.Glucose.TABLE_NAME, GLUCOSE);
         uriMatcher.addURI(DbStep.PROVIDER_NAME, DbStep.Step.TABLE_NAME, STEP);
         uriMatcher.addURI(DbUser.PROVIDER_NAME, DbUser.User.TABLE_NAME, USER);
-        uriMatcher.addURI(DbOrigin.PROVIDER_NAME, DbOrigin.Origin.TABLE_NAME, Origin);
+        uriMatcher.addURI(DbOrigin.PROVIDER_NAME, DbOrigin.Origin.TABLE_NAME, ORIGIN);
     }
 
     public SQLiteDatabase database;
@@ -107,7 +108,14 @@ public class DbProvider extends ContentProvider{
                     context.getContentResolver().notifyChange(uri, null);
                 }
                 break;
+            case ORIGIN:
 
+                rowId = database.insert(DbOrigin.Origin.TABLE_NAME, null, contentValues);
+                if (rowId > 0) {
+                    uri = ContentUris.withAppendedId(DbOrigin.CONTENT_URI, rowId);
+                    context.getContentResolver().notifyChange(uri, null);
+                }
+                break;
 
 
             default:
@@ -147,6 +155,12 @@ public class DbProvider extends ContentProvider{
                     sortOrder = DbUser.User.DEFAULT_SORT_ORDER;
                 }
                 break;
+            case ORIGIN:
+                queryBuilder.setTables(DbOrigin.Origin.TABLE_NAME);
+                if (sortOrder == null) {
+                    sortOrder = DbOrigin.Origin.DEFAULT_SORT_ORDER;
+                }
+                break;
 
             default:
                 throw new IllegalArgumentException("Unknown URI: " + uri);
@@ -175,6 +189,9 @@ public class DbProvider extends ContentProvider{
             case USER:
                 rowsDeleted = database.delete(DbUser.User.TABLE_NAME, selection, selectionArgs);
                 break;
+            case ORIGIN:
+                rowsDeleted = database.delete(DbOrigin.Origin.TABLE_NAME, selection, selectionArgs);
+                break;
 
             default:
                 throw new IllegalArgumentException("Unknown Uri" + uri);
@@ -200,6 +217,9 @@ public class DbProvider extends ContentProvider{
                 break;
             case USER:
                 rowsUpdated = database.update(DbUser.User.TABLE_NAME, contentValues, selection, selectionArgs);
+                break;
+            case ORIGIN:
+                rowsUpdated = database.update(DbOrigin.Origin.TABLE_NAME, contentValues, selection, selectionArgs);
                 break;
             default:
                 throw new IllegalArgumentException("Unknown Uri" + uri);
@@ -460,6 +480,42 @@ public class DbProvider extends ContentProvider{
         Collections.reverse(stepList);
         return stepList;
 
+    }
+    public List<OriginData> getOrigindata() {
+        List<OriginData> dataList = new ArrayList<>();
+        OriginData origin = null;
+        String[] projection = new String[] {DbOrigin.Origin.AGE,
+                DbOrigin.Origin.SEX, DbOrigin.Origin.SMOKE, DbOrigin.Origin.DRINK,
+                DbOrigin.Origin.HISTORY, DbOrigin.Origin.WEIGHTINDEX, DbOrigin.Origin.BLOODSUGAR,
+                DbOrigin.Origin.CHOL, DbOrigin.Origin.PRESSURE, DbOrigin.Origin.HIGH,
+                DbOrigin.Origin.LOW, DbOrigin.Origin.RATE, DbOrigin.Origin.DIZZINESS,
+                DbOrigin.Origin.HEADACHE, DbOrigin.Origin.NOSE};
+        Cursor c = query(DbOrigin.CONTENT_URI, projection, null, null, null);
+        if (c.moveToFirst()) {
+            do {
+                origin = new OriginData();
+                origin.setAge(c.getInt(c.getColumnIndexOrThrow(DbOrigin.Origin.AGE)));
+                origin.setSex(c.getString(c.getColumnIndexOrThrow(DbOrigin.Origin.SEX)));
+                origin.setSmoke(c.getString(c.getColumnIndexOrThrow(DbOrigin.Origin.SMOKE)));
+                origin.setDrink(c.getString(c.getColumnIndexOrThrow(DbOrigin.Origin.DRINK)));
+                origin.setHistory(c.getString(c.getColumnIndexOrThrow(DbOrigin.Origin.HISTORY)));
+                origin.setWeightindex(c.getDouble(c.getColumnIndexOrThrow(DbOrigin.Origin.WEIGHTINDEX)));
+                origin.setBloodsugar(c.getString(c.getColumnIndexOrThrow(DbOrigin.Origin.BLOODSUGAR)));
+                origin.setChol(c.getString(c.getColumnIndexOrThrow(DbOrigin.Origin.CHOL)));
+                origin.setPressure(c.getString(c.getColumnIndexOrThrow(DbOrigin.Origin.PRESSURE)));
+                origin.setHigh(c.getInt(c.getColumnIndexOrThrow(DbOrigin.Origin.HIGH)));
+                origin.setLow(c.getInt(c.getColumnIndexOrThrow(DbOrigin.Origin.LOW)));
+                origin.setRate(c.getInt(c.getColumnIndexOrThrow(DbOrigin.Origin.RATE)));
+                origin.setDizziness(c.getString(c.getColumnIndexOrThrow(DbOrigin.Origin.DIZZINESS)));
+                origin.setHeadache(c.getString(c.getColumnIndexOrThrow(DbOrigin.Origin.HEADACHE)));
+                origin.setNose(c.getString(c.getColumnIndexOrThrow(DbOrigin.Origin.NOSE)));
+
+                dataList.add(origin);
+            } while (c.moveToNext());
+        }
+        c.close();
+
+        return dataList;
     }
 
 

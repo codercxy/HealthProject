@@ -6,19 +6,21 @@ package com.nju.android.health.utils;
 import android.content.Context;
 
 import com.android.volley.AuthFailureError;
+import com.android.volley.DefaultRetryPolicy;
 import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.nju.android.health.MyApplication;
 
+import java.util.HashMap;
 import java.util.Map;
 
 public class MyVolleyRequest {
     private Context mContext;
     private Response.Listener<String> mListener;
     private Response.ErrorListener mErrorListener;
-
+    private static int MY_TIMEOUT_MS = 500000;
     public MyVolleyRequest(Context context, final Callback callback) {
 
         mContext = context;
@@ -58,13 +60,18 @@ public class MyVolleyRequest {
         StringRequest stringRequest = new StringRequest(Request.Method.POST, url, mListener, mErrorListener) {
             @Override
             protected Map<String, String> getParams() throws AuthFailureError {
+
                 return param;
             }
 
         };
         stringRequest.setTag(tag);
-
-        MyApplication.getRequestQueue().add(stringRequest);
+        stringRequest.setRetryPolicy(new DefaultRetryPolicy(
+                MY_TIMEOUT_MS,
+                DefaultRetryPolicy.DEFAULT_MAX_RETRIES,
+                DefaultRetryPolicy.DEFAULT_BACKOFF_MULT
+        ));
+        MyApplication.getRequestQueue().add(stringRequest).setShouldCache(false);
         MyApplication.getRequestQueue().start();
     }
 

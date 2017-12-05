@@ -96,11 +96,11 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                     startActivity(intent);*/
 
                     //
-                    /*Thread t = new LoginThread();
-                    t.start();*/
+                    Thread t = new LoginThread();
+                    t.start();
 
                     //start
-                    MyApplication.getInstance().setUser_id("10001");
+                    /*MyApplication.getInstance().setUser_id("10001");
                     YWIMKit mIMKit = YWAPI.getIMKitInstance();
 
                     String userid = "testpro1";
@@ -141,7 +141,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                         public void onProgress(int i) {
                             showMessage("正在登陆...");
                         }
-                    });
+                    });*/
 
                     //end
 

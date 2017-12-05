@@ -22,6 +22,16 @@ import java.util.List;
 public class ReserveRoomAdapter extends RecyclerView.Adapter<ReserveRoomViewHodler> {
     private RecyclerViewClickListener listener;
     List<Room> list = new ArrayList<>();
+
+    public ReserveRoomAdapter(List<Room> roomList) {
+        this.list = roomList;
+    }
+
+    public void setRecyclerViewListener(RecyclerViewClickListener listener) {
+        this.listener = listener;
+    }
+
+
     @Override
     public ReserveRoomViewHodler onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_reserve_room, parent, false);
@@ -43,9 +53,9 @@ class ReserveRoomViewHodler extends RecyclerView.ViewHolder implements View.OnTo
     public TextView roomName;
     private final RecyclerViewClickListener listener;
     public ReserveRoomViewHodler(View itemview, RecyclerViewClickListener listener) {
-        super((itemview));
+        super(itemview);
         this.listener = listener;
-
+        roomName = (TextView) itemview.findViewById(R.id.item_reserve_name_room);
         itemview.setOnTouchListener(this);
     }
 

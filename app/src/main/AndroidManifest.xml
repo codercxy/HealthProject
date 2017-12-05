@@ -175,7 +175,13 @@
         <activity android:name=".views.activities.next.Reserve.ReserveRoomActivity" />
         <activity android:name=".views.activities.next.Reserve.ReserveTimeActivity" />
         <activity android:name=".views.activities.next.Reserve.ReserveDoctorActivity" />
-        <activity android:name=".views.activities.next.Reserve.ReserveUserActivity"></activity>
+        <activity android:name=".views.activities.next.Reserve.ReserveUserActivity" />
+        <activity android:name=".views.activities.next.Reservation.ReservationActivity" />
+        <activity android:name=".views.activities.next.Reservation.ReservationMainActivity" />
+        <activity android:name=".views.activities.next.Reservation.ReservationChooseRoomActivity" />
+        <activity android:name=".views.activities.next.Reservation.ReservationDoctorListActivity" />
+        <activity android:name=".views.activities.next.Reservation.ReservationChooseTimeActivity" />
+        <activity android:name=".views.activities.next.Reservation.ReservationConfirmActivity"></activity>
     </application>
 
 </manifest>

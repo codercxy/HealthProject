@@ -35,6 +35,8 @@ import com.nju.android.health.views.activities.next.Chart_2_Activity;
 import com.nju.android.health.views.activities.next.Chart_3_Activity;
 import com.nju.android.health.views.activities.next.Chart_4_Activity;
 import com.nju.android.health.views.activities.next.Chart_5_Activity;
+import com.nju.android.health.views.activities.next.Reservation.ReservationActivity;
+import com.nju.android.health.views.activities.next.ReserveActivity;
 import com.nju.android.health.views.activities.next.SearchActivity;
 import com.roughike.bottombar.BottomBar;
 
@@ -61,6 +63,8 @@ public class SettingFragment extends BackHandledFragment implements View.OnClick
 //    private TextView setting;
     private TextView feedback;
     private TextView search;
+    private TextView reserve;
+    private TextView reservation;
 
     private TextView chart_1;
     private TextView chart_2;
@@ -121,6 +125,8 @@ public class SettingFragment extends BackHandledFragment implements View.OnClick
 //        setting = (TextView) view.findViewById(R.id.me_setting);
         feedback = (TextView) view.findViewById(R.id.me_feedback);
         search = (TextView) view.findViewById(R.id.me_search);
+        reserve = (TextView) view.findViewById(R.id.me_reserve);
+        reservation = (TextView) view.findViewById(R.id.me_reservation);
 
         chart_1 = (TextView) view.findViewById(R.id.me_chart_1);
         chart_2 = (TextView) view.findViewById(R.id.me_chart_2);
@@ -138,6 +144,8 @@ public class SettingFragment extends BackHandledFragment implements View.OnClick
         feedback.setOnClickListener(this);
         setting_info.setOnClickListener(this);
         search.setOnClickListener(this);
+        reserve.setOnClickListener(this);
+        reservation.setOnClickListener(this);
         chart_1.setOnClickListener(this);
         chart_2.setOnClickListener(this);
         chart_3.setOnClickListener(this);
@@ -221,7 +229,14 @@ public class SettingFragment extends BackHandledFragment implements View.OnClick
                 intent = new Intent(getActivity(), SearchActivity.class);
                 startActivity(intent);
                 break;
-
+            case R.id.me_reserve:
+                intent = new Intent(getActivity(), ReserveActivity.class);
+                startActivity(intent);
+                break;
+            case R.id.me_reservation:
+                intent = new Intent(getActivity(), ReservationActivity.class);
+                startActivity(intent);
+                break;
             case R.id.me_chart_1:
                 intent = new Intent(getActivity(), Chart_1_Activity.class);
                 startActivity(intent);

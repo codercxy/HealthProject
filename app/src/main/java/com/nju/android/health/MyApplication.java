@@ -58,6 +58,7 @@ public class MyApplication extends Application{
         //实例化Volley全局请求队列
         sRequestQueue = Volley.newRequestQueue(getApplicationContext());
 
+
         SysUtil.setApplication(this);
         if (SysUtil.isTCMSServiceProcess(this)) {
             return;

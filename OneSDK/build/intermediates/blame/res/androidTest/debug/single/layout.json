@@ -112,12 +112,12 @@
         "source": "D:\\MyProjects\\Android\\health\\OneSDK\\build\\intermediates\\bundles\\debug\\res\\layout\\aliwx_chatting_detail.xml"
     },
     {
-        "merged": "D:\\MyProjects\\Android\\health\\OneSDK\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\com_taobao_tae_sdk_web_view_activity.xml",
-        "source": "D:\\MyProjects\\Android\\health\\OneSDK\\build\\intermediates\\bundles\\debug\\res\\layout\\com_taobao_tae_sdk_web_view_activity.xml"
-    },
-    {
         "merged": "D:\\MyProjects\\Android\\health\\OneSDK\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\aliwx_reply_bar_select.xml",
         "source": "D:\\MyProjects\\Android\\health\\OneSDK\\build\\intermediates\\bundles\\debug\\res\\layout\\aliwx_reply_bar_select.xml"
+    },
+    {
+        "merged": "D:\\MyProjects\\Android\\health\\OneSDK\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\com_taobao_tae_sdk_web_view_activity.xml",
+        "source": "D:\\MyProjects\\Android\\health\\OneSDK\\build\\intermediates\\bundles\\debug\\res\\layout\\com_taobao_tae_sdk_web_view_activity.xml"
     },
     {
         "merged": "D:\\MyProjects\\Android\\health\\OneSDK\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\aliwx_fragment_at_msg_list.xml",
@@ -276,16 +276,16 @@
         "source": "D:\\MyProjects\\Android\\health\\OneSDK\\build\\intermediates\\bundles\\debug\\res\\layout\\aliwx_template_audio_item.xml"
     },
     {
+        "merged": "D:\\MyProjects\\Android\\health\\OneSDK\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\aliwx_pull_down_refresh_toast.xml",
+        "source": "D:\\MyProjects\\Android\\health\\OneSDK\\build\\intermediates\\bundles\\debug\\res\\layout\\aliwx_pull_down_refresh_toast.xml"
+    },
+    {
         "merged": "D:\\MyProjects\\Android\\health\\OneSDK\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\tooltip_chatwindow_rec_text.xml",
         "source": "D:\\MyProjects\\Android\\health\\OneSDK\\build\\intermediates\\bundles\\debug\\res\\layout\\tooltip_chatwindow_rec_text.xml"
     },
     {
         "merged": "D:\\MyProjects\\Android\\health\\OneSDK\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\aliwx_chatting_detail_phrase_list.xml",
         "source": "D:\\MyProjects\\Android\\health\\OneSDK\\build\\intermediates\\bundles\\debug\\res\\layout\\aliwx_chatting_detail_phrase_list.xml"
-    },
-    {
-        "merged": "D:\\MyProjects\\Android\\health\\OneSDK\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\aliwx_pull_down_refresh_toast.xml",
-        "source": "D:\\MyProjects\\Android\\health\\OneSDK\\build\\intermediates\\bundles\\debug\\res\\layout\\aliwx_pull_down_refresh_toast.xml"
     },
     {
         "merged": "D:\\MyProjects\\Android\\health\\OneSDK\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\aliwx_message_item.xml",

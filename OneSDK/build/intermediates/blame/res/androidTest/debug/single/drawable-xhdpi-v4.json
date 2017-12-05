@@ -316,12 +316,12 @@
         "source": "D:\\MyProjects\\Android\\health\\OneSDK\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\aliwx_s069.png"
     },
     {
-        "merged": "D:\\MyProjects\\Android\\health\\OneSDK\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\tooltip_icon_f.png",
-        "source": "D:\\MyProjects\\Android\\health\\OneSDK\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\tooltip_icon_f.png"
-    },
-    {
         "merged": "D:\\MyProjects\\Android\\health\\OneSDK\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\aliwx_s082.png",
         "source": "D:\\MyProjects\\Android\\health\\OneSDK\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\aliwx_s082.png"
+    },
+    {
+        "merged": "D:\\MyProjects\\Android\\health\\OneSDK\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\tooltip_icon_f.png",
+        "source": "D:\\MyProjects\\Android\\health\\OneSDK\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\tooltip_icon_f.png"
     },
     {
         "merged": "D:\\MyProjects\\Android\\health\\OneSDK\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\common_checkbox_normal.png",
@@ -828,12 +828,12 @@
         "source": "D:\\MyProjects\\Android\\health\\OneSDK\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\aliwx_s067.png"
     },
     {
-        "merged": "D:\\MyProjects\\Android\\health\\OneSDK\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\aliwx_comment_r_green_press.9.png",
-        "source": "D:\\MyProjects\\Android\\health\\OneSDK\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\aliwx_comment_r_green_press.9.png"
-    },
-    {
         "merged": "D:\\MyProjects\\Android\\health\\OneSDK\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\aliwx_comment_r_press.9.png",
         "source": "D:\\MyProjects\\Android\\health\\OneSDK\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\aliwx_comment_r_press.9.png"
+    },
+    {
+        "merged": "D:\\MyProjects\\Android\\health\\OneSDK\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\aliwx_comment_r_green_press.9.png",
+        "source": "D:\\MyProjects\\Android\\health\\OneSDK\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\aliwx_comment_r_green_press.9.png"
     },
     {
         "merged": "D:\\MyProjects\\Android\\health\\OneSDK\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\aliwx_chatfrom_play_r03.png",

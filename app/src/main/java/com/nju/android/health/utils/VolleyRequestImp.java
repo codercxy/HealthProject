@@ -31,9 +31,10 @@ public class VolleyRequestImp {
 
     private String url = "http://114.212.190.79:12080/action.php";
 
-    Map<String, String> param = new HashMap<>();
+    private Map<String, String> param = new HashMap<>();
     public VolleyRequestImp(Map<String, String> p) {
         param = p;
+
     }
 
     public void myVolleyRequestDemo_POST(Context context) {
@@ -46,6 +47,7 @@ public class VolleyRequestImp {
 
             @Override
             public void onError(VolleyError error) {
+                error.printStackTrace();
                 System.out.println("volley error:" + error);
             }
         });
@@ -55,15 +57,9 @@ public class VolleyRequestImp {
 
     public void volleyJsonObjectRequestDome_POST() {
 
-        String url = "http://114.212.190.79:12080/action.php";
-        Map<String, String> paramMap = new HashMap<>();
-        // TODO: 处理POST参数
-        paramMap.put("username", "chy");
-        paramMap.put("password", "chy");
-        paramMap.put("action", "login");
-        paramMap.put("url", "user");
+
         //产生JsonObject类型的参数
-        JSONObject jsonParam = new JSONObject(paramMap);
+        JSONObject jsonParam = new JSONObject(param);
 
         // TODO: 错误的请求KEY!
         Log.i("DEBUG ###", jsonParam.toString());
@@ -100,7 +96,6 @@ public class VolleyRequestImp {
      */
     public void volleyStringRequestDome_POST() {
 
-        String url = "http://114.212.190.79:12080/action.php";
 
         StringRequest stringRequest = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
             @Override

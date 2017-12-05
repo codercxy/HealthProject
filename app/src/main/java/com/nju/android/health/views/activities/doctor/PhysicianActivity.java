@@ -60,7 +60,7 @@ public class PhysicianActivity extends AppCompatActivity implements RecyclerView
     /**OrderListView*/
     private ListView orderLV;
 
-    //弹出PopupWindow时背景变暗
+    /**弹出PopupWindow时背景变暗*/
     private View darkView;
 
     //弹出PopupWindow时，背景变暗的动画

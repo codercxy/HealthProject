@@ -47,14 +47,23 @@ import com.nju.android.health.views.activities.MainActivity;
 import com.zhy.http.okhttp.OkHttpUtils;
 import com.zhy.http.okhttp.callback.StringCallback;
 
+import java.io.IOException;
 import java.text.ParsePosition;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.concurrent.TimeUnit;
 
 import okhttp3.Call;
+import okhttp3.MediaType;
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.RequestBody;
+import okhttp3.Response;
+
+import static com.alibaba.sdk.android.rpc.RpcServiceClient.JSON;
 
 
 /**
@@ -497,20 +506,55 @@ public class AddXyrecorder extends Activity implements View.OnClickListener {
 
         //volley
         Map<String, String> param = new HashMap<>();
-        param.put("username", "chy");
-        param.put("password", "chy");
+        param.put("url", "bloodpressure");
+        param.put("action", "upload_data");
+        param.put("clientid", "10001");
+        param.put("SBP", "121");
+        param.put("DBP", "67");
+        param.put("HR", "71");
+        param.put("measureTime", "2015-08-25 16:10:47");
+        /*param.put("url", "user");
         param.put("action", "login");
-        param.put("url", "user");
+        param.put("username", "paotail");
+        param.put("password", "123456");*/
                     /*param.put("pretime",time.getText().toString());
                     param.put("highpre", et_high.getText().toString());
                     param.put("lowpre", et_low.getText().toString());
                     param.put("rate", et_rate.getText().toString());*/
         System.out.println("volley start");
         VolleyRequestImp volleyRequest = new VolleyRequestImp(param);
-        //volleyRequest.myVolleyRequestDemo_POST(this);
-        //volleyRequest.volleyJsonObjectRequestDome_POST();
-        volleyRequest.volleyStringRequestDome_POST();
+        volleyRequest.myVolleyRequestDemo_POST(this);
+//        volleyRequest.volleyJsonObjectRequestDome_POST();
+//        volleyRequest.volleyStringRequestDome_POST();
         System.out.println("volley fin");
+
+        /*System.out.println("okhttp start");
+        upload();
+        System.out.println("okhttp fin");*/
+    }
+
+    private void upload() {
+        MediaType JSON = MediaType.parse("application/json; charset=utf-8");
+        OkHttpClient client = new OkHttpClient.Builder()
+                .connectTimeout(10, TimeUnit.SECONDS)
+                .readTimeout(20, TimeUnit.SECONDS)
+                .build();
+
+        String json = "{'url':'user'," +
+                "'action':'login'," +
+                "'username':'paotail'," +
+                "'password':'123456'}";
+        RequestBody body = RequestBody.create(JSON, json);
+        Request request = new Request.Builder()
+                .url("http://gist.nju.edu.cn:12080/action.php")
+                .post(body)
+                .build();
+        try  {
+            Response response = client.newCall(request).execute();
+            System.out.println(response.body().string());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     private class MyStringCallback extends StringCallback {

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/nju/android/health/utils/sortlistview/CharacterParser.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/nju/android/health/utils/sortlistview/ClearEditText.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/nju/android/health/utils/sortlistview/SideBar.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/nju/android/health/utils/sortlistview/SortAdapter.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/nju/android/health/utils/sortlistview/SortModel.java" charset="GBK" />
+  </component>
+</project>
