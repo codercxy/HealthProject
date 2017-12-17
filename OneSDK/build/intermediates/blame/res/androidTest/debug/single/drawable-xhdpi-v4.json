@@ -600,12 +600,12 @@
         "source": "D:\\MyProjects\\Android\\health\\OneSDK\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\aliwx_s008.png"
     },
     {
-        "merged": "D:\\MyProjects\\Android\\health\\OneSDK\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\aliwx_s075.png",
-        "source": "D:\\MyProjects\\Android\\health\\OneSDK\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\aliwx_s075.png"
-    },
-    {
         "merged": "D:\\MyProjects\\Android\\health\\OneSDK\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\aliwx_s005.png",
         "source": "D:\\MyProjects\\Android\\health\\OneSDK\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\aliwx_s005.png"
+    },
+    {
+        "merged": "D:\\MyProjects\\Android\\health\\OneSDK\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\aliwx_s075.png",
+        "source": "D:\\MyProjects\\Android\\health\\OneSDK\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\aliwx_s075.png"
     },
     {
         "merged": "D:\\MyProjects\\Android\\health\\OneSDK\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\aliwx_photo_group_offline.png",
@@ -628,12 +628,12 @@
         "source": "D:\\MyProjects\\Android\\health\\OneSDK\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\aliwx_recordbutton_normal_bg.9.png"
     },
     {
-        "merged": "D:\\MyProjects\\Android\\health\\OneSDK\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\aliwx_s027.png",
-        "source": "D:\\MyProjects\\Android\\health\\OneSDK\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\aliwx_s027.png"
-    },
-    {
         "merged": "D:\\MyProjects\\Android\\health\\OneSDK\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\aliwx_reply_bar_album_nor.png",
         "source": "D:\\MyProjects\\Android\\health\\OneSDK\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\aliwx_reply_bar_album_nor.png"
+    },
+    {
+        "merged": "D:\\MyProjects\\Android\\health\\OneSDK\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\aliwx_s027.png",
+        "source": "D:\\MyProjects\\Android\\health\\OneSDK\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\aliwx_s027.png"
     },
     {
         "merged": "D:\\MyProjects\\Android\\health\\OneSDK\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\friends_search_icon_pressed.png",

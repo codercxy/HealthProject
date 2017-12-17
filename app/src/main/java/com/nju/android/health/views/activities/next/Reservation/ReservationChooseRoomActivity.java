@@ -1,5 +1,6 @@
 package com.nju.android.health.views.activities.next.Reservation;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.Editable;
@@ -78,6 +79,10 @@ public class ReservationChooseRoomActivity extends AppCompatActivity {
                                     int position, long id) {
                 //这里要利用adapter.getItem(position)来获取当前position所对应的对象
                 Toast.makeText(getApplication(), ((SortModel)adapter.getItem(position)).getName(), Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(ReservationChooseRoomActivity.this, ReservationDoctorListActivity.class);
+                intent.putExtra("roomName", ((SortModel)adapter.getItem(position)).getName());
+                startActivity(intent);
+
             }
         });
 

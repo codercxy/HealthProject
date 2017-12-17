@@ -181,7 +181,8 @@
         <activity android:name=".views.activities.next.Reservation.ReservationChooseRoomActivity" />
         <activity android:name=".views.activities.next.Reservation.ReservationDoctorListActivity" />
         <activity android:name=".views.activities.next.Reservation.ReservationChooseTimeActivity" />
-        <activity android:name=".views.activities.next.Reservation.ReservationConfirmActivity"></activity>
+        <activity android:name=".views.activities.next.Reservation.ReservationConfirmActivity" />
+        <activity android:name=".views.activities.next.Reservation.ReservationDetailActivity"></activity>
     </application>
 
 </manifest>

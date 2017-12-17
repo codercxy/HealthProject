@@ -156,16 +156,16 @@
         "source": "D:\\MyProjects\\Android\\health\\OneSDK\\build\\intermediates\\bundles\\debug\\res\\drawable\\demo_common_check_bg.xml"
     },
     {
+        "merged": "D:\\MyProjects\\Android\\health\\OneSDK\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable\\com_taobao_tae_sdk_web_view_title_bar_back.9.png",
+        "source": "D:\\MyProjects\\Android\\health\\OneSDK\\build\\intermediates\\bundles\\debug\\res\\drawable\\com_taobao_tae_sdk_web_view_title_bar_back.9.png"
+    },
+    {
         "merged": "D:\\MyProjects\\Android\\health\\OneSDK\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable\\aliwx_cloud_msg_forget_password.xml",
         "source": "D:\\MyProjects\\Android\\health\\OneSDK\\build\\intermediates\\bundles\\debug\\res\\drawable\\aliwx_cloud_msg_forget_password.xml"
     },
     {
         "merged": "D:\\MyProjects\\Android\\health\\OneSDK\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable\\aliwx_record_dialog_bg1.xml",
         "source": "D:\\MyProjects\\Android\\health\\OneSDK\\build\\intermediates\\bundles\\debug\\res\\drawable\\aliwx_record_dialog_bg1.xml"
-    },
-    {
-        "merged": "D:\\MyProjects\\Android\\health\\OneSDK\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable\\com_taobao_tae_sdk_web_view_title_bar_back.9.png",
-        "source": "D:\\MyProjects\\Android\\health\\OneSDK\\build\\intermediates\\bundles\\debug\\res\\drawable\\com_taobao_tae_sdk_web_view_title_bar_back.9.png"
     },
     {
         "merged": "D:\\MyProjects\\Android\\health\\OneSDK\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable\\aliwx_topbar_icon_download_bg.xml",
