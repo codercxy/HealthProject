@@ -26,7 +26,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:scaleType="centerCrop"
-                        android:src="@drawable/diagnose_bg"/>
+                        android:paddingBottom="160dp"
+                        android:src="@drawable/bg_darkblue"/>
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -63,6 +64,57 @@
                 android:paddingRight="8dp"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent" />
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="5dp"
+                android:background="#f5f5f5" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="16dp"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/reserve_doctor"
+                    android:layout_gravity="center"/>
+                <TextView
+                    android:id="@+id/diagnose_reservation"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:gravity="center_vertical"
+                    android:drawableRight="@drawable/ic_chevron_right_grey600_24dp"
+                    android:text="预约医生"/>
+            </LinearLayout>
+
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="1dp"
+                android:background="#f5f5f5" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="16dp"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/prediction"
+                    android:layout_gravity="center"/>
+                <TextView
+                    android:id="@+id/diagnose_predict"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:gravity="center_vertical"
+                    android:drawableRight="@drawable/ic_chevron_right_grey600_24dp"
+                    android:text="高血压预测"/>
+            </LinearLayout>
+
+
         </LinearLayout>
     </ScrollView>
 

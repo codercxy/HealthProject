@@ -182,7 +182,9 @@
         <activity android:name=".views.activities.next.Reservation.ReservationDoctorListActivity" />
         <activity android:name=".views.activities.next.Reservation.ReservationChooseTimeActivity" />
         <activity android:name=".views.activities.next.Reservation.ReservationConfirmActivity" />
-        <activity android:name=".views.activities.next.Reservation.ReservationDetailActivity"></activity>
+        <activity android:name=".views.activities.next.Reservation.ReservationDetailActivity" />
+        <activity android:name=".views.activities.next.Reservation.ReservationHistoryActivity" />
+        <activity android:name=".views.activities.next.Reservation.ReservationFollowActivity"></activity>
     </application>
 
 </manifest>

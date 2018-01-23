@@ -41,8 +41,7 @@ public class MyApplication extends Application{
 
     // 存储应用锁打开的Activity，方便退出应用的时候回收
     private List<Activity> mList = new LinkedList<Activity>();
-    //  存放图书ID
-    public static int book_id;
+
 
     /**
      * @return Volley全局请求队列

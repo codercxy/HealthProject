@@ -345,7 +345,7 @@ public class BleActivity extends AppCompatActivity implements DeviceListFragment
 		param.put("lowpre", String.valueOf(low));
 		param.put("rate", String.valueOf(pulse));
 		VolleyRequestImp volleyRequest = new VolleyRequestImp(param);
-		volleyRequest.myVolleyRequestDemo_POST(context);
+		volleyRequest.myVolleyRequestPressure_POST(context);
 	}
 
 	private void stateChanged(BleService.State newState) {

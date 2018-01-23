@@ -14,7 +14,7 @@
         android:ellipsize="marquee"
         android:gravity="center_horizontal|center"
         android:singleLine="true"
-        android:background="#7B1FA2"
+        android:background="@color/colorPrimary"
         android:text="历史数据"
         android:textColor="@color/aliwx_white"
         android:textSize="20dp"/>

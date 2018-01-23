@@ -117,7 +117,7 @@ import java.util.List;
 //        tabLayout.getTabAt(1).setIcon(R.drawable.list);
         tabLayout.getTabAt(1).setIcon(R.drawable.heart);
         tabLayout.getTabAt(2).setIcon(R.drawable.step);
-        tabLayout.setBackgroundColor(getResources().getColor(R.color.tab_purple));
+        tabLayout.setBackgroundColor(getResources().getColor(R.color.colorPrimary));
 
         tabLayout.setOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override

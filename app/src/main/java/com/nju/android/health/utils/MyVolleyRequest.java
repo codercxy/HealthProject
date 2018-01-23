@@ -58,6 +58,16 @@ public class MyVolleyRequest {
         MyApplication.getRequestQueue().cancelAll(tag);
 
         StringRequest stringRequest = new StringRequest(Request.Method.POST, url, mListener, mErrorListener) {
+
+            @Override
+            public Map<String, String> getHeaders() throws AuthFailureError {
+                HashMap localHashMap = new HashMap();
+                localHashMap.put("user_id", MyApplication.getInstance().getUser_id());
+                localHashMap.put("session_id", MyApplication.getInstance().getSession_id());
+
+                return localHashMap;
+            }
+
             @Override
             protected Map<String, String> getParams() throws AuthFailureError {
 

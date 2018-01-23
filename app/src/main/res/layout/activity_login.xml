@@ -18,7 +18,7 @@
             android:layout_weight="1"
             android:gravity="center_vertical"
             android:text="返回"
-            android:textSize="15dp"
+            android:textSize="16dp"
             android:drawableLeft="@drawable/ic_chevron_left_white_24dp"
             android:typeface="monospace"
             android:textColor="#FFFFFF"/>
@@ -38,7 +38,7 @@
             android:layout_weight="1"
             android:gravity="center_vertical"
             android:text="注册"
-            android:textSize="15dp"
+            android:textSize="16dp"
             android:textColor="#FFFFFF"
             android:typeface="monospace"/>
     </LinearLayout>
@@ -95,7 +95,8 @@
             android:id="@+id/text_forgetpasswd"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-
+            android:layout_marginRight="16dp"
+            android:layout_marginTop="16dp"
             android:text="忘记密码？"
             android:textColor="#0066CC"/>
 

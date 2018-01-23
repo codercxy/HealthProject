@@ -198,6 +198,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 Header[] header = response.getHeaders("Set-Cookie");
 //                showMessage(String.valueOf(header[0].getValue().toString()));
                 if(header.length > 0){
+                    //arrayIndexOutOfBoundsExceptions
                     String temp1 = header[1].getValue().toString();
                     String user_id = temp1.substring(temp1.indexOf("user_id") + 8, temp1.indexOf(";"));
 
@@ -227,7 +228,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                     loginService.login(loginParam, new IWxCallback() {
                         @Override
                         public void onSuccess(Object... objects) {
-
+                            System.out.println("user_id : " + MyApplication.getInstance().getUser_id());
 //                            Log.e(TAG, "ywim success");
                             InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
                             boolean isOpen = imm.isActive();//isOpen若返回true，则表示输入法打开

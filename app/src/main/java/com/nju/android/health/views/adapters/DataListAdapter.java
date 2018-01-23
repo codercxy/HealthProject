@@ -33,7 +33,7 @@ public class DataListAdapter extends RecyclerView.Adapter<DataListViewHolder> {
         this.listener = listener;
     }
 
-    private SimpleDateFormat sdf = new SimpleDateFormat("yyyy年MM月dd日 HH:mm");
+    private SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 
     @Override
     public DataListViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {

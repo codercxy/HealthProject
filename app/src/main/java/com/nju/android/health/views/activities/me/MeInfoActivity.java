@@ -48,7 +48,7 @@ public class MeInfoActivity extends AppCompatActivity implements View.OnClickLis
     private Uri outputFileUri;
 
     private CircleImg headImg;
-    private boolean isRun=false;
+    private boolean isRun = false;
     private String addString=" ";
     public static MeInfoActivity instance;
 

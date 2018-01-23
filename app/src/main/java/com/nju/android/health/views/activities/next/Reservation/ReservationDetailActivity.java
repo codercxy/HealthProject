@@ -1,11 +1,16 @@
 package com.nju.android.health.views.activities.next.Reservation;
 
+import android.app.AlertDialog;
+import android.content.Context;
+import android.content.DialogInterface;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.nju.android.health.R;
 import com.nju.android.health.model.data.ReservationDetail;
@@ -26,12 +31,13 @@ public class ReservationDetailActivity extends AppCompatActivity implements Recy
     private RecyclerView recyclerView;
     private List<ReservationDetail> dataList;
     private ReservationDetailAdapter adapter;
+    private Context context;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_reservation_deatil);
-
+        context = this;
         initView();
 
     }
@@ -50,7 +56,7 @@ public class ReservationDetailActivity extends AppCompatActivity implements Recy
         dataList = new ArrayList<>();
         for (int i = 0; i < 5; i++) {
             ReservationDetail detail = new ReservationDetail();
-            detail.setStarttime("2017/12/15");
+            detail.setStarttime("12：00-13：00");
             detail.setRemain(7);
             dataList.add(detail);
         }
@@ -69,6 +75,27 @@ public class ReservationDetailActivity extends AppCompatActivity implements Recy
 
     @Override
     public void onClick(View v, int position) {
+        showDialog();
+    }
+    private void showDialog() {
+        final AlertDialog.Builder dialog = new AlertDialog.Builder(this);
 
+        View view = LayoutInflater.from(this).inflate(R.layout.dialog_reservation_detail, null);
+
+        dialog.setView(view);
+        dialog.setTitle("请确认信息")
+                .setPositiveButton("确认", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        Toast.makeText(context, "预约已发送", Toast.LENGTH_SHORT).show();
+                    }
+                })
+                .setNegativeButton("取消", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.dismiss();
+                    }
+                })
+                .show();
     }
 }

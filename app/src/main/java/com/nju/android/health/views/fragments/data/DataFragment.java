@@ -167,8 +167,8 @@ public class DataFragment extends Fragment implements RecyclerViewClickListener,
         diseaseList = new ArrayList<Disease>();
 
         String[] strings = new String[] {"血压", "血糖", "尿酸", "胆固醇", "身体成分", "脑卒中"};
-        Integer[] integers = new Integer[] {R.drawable.blood_pressure, R.drawable.suger, R.drawable.acid,
-                R.drawable.stone, R.drawable.body, R.drawable.brain};
+        Integer[] integers = new Integer[] {R.drawable.data_pressure, R.drawable.data_sugar, R.drawable.data_acid,
+                R.drawable.data_chol, R.drawable.data_body, R.drawable.data_brain};
 
         for (int i = 0; i < strings.length; i++) {
             Disease disease = new Disease();

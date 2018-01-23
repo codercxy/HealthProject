@@ -25,13 +25,16 @@ import com.nju.android.health.utils.DividerItemDecoration;
 import com.nju.android.health.utils.RecyclerInsetsDecoration;
 import com.nju.android.health.utils.RecyclerViewClickListener;
 import com.nju.android.health.utils.ScreenUtils;
+import com.nju.android.health.utils.VolleyRequestImp;
 import com.nju.android.health.views.adapters.FirstClassAdapter;
 import com.nju.android.health.views.adapters.MyDoctorAdapter;
 import com.nju.android.health.views.adapters.PhysicianAdapter;
 import com.nju.android.health.views.adapters.SecondClassAdapter;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class PhysicianActivity extends AppCompatActivity implements RecyclerViewClickListener{
 
@@ -216,6 +219,17 @@ public class PhysicianActivity extends AppCompatActivity implements RecyclerView
     }
 
     private void initPhyList(String room) {
+
+        //volley
+        Map<String, String> param = new HashMap<>();
+        param.put("url", "doctor");
+        param.put("action", "search");
+
+        VolleyRequestImp volley = new VolleyRequestImp(param);
+        String response = volley.myVolleyRequestSearch_POST(this);
+
+        System.out.println("doctor response:" + response);
+
         phyList = new ArrayList<>();
         Physician phy = new Physician();
         switch (room) {

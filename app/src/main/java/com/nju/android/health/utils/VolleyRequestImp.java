@@ -1,5 +1,6 @@
 package com.nju.android.health.utils;
 
+import android.content.ContentValues;
 import android.content.Context;
 import android.util.Log;
 
@@ -11,10 +12,16 @@ import com.android.volley.RetryPolicy;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.StringRequest;
+import com.google.gson.JsonObject;
 import com.nju.android.health.MyApplication;
+import com.nju.android.health.providers.DbPressure;
+import com.nju.android.health.providers.DbProvider;
 
+import org.json.JSONArray;
+import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.text.SimpleDateFormat;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -31,28 +38,128 @@ public class VolleyRequestImp {
 
     private String url = "http://114.212.190.79:12080/action.php";
 
+    private String result = null;
+
     private Map<String, String> param = new HashMap<>();
+    public VolleyRequestImp() {
+
+    }
     public VolleyRequestImp(Map<String, String> p) {
         param = p;
 
     }
+    public void myVolleyRequestPressure_GET(final Context context) {
+        MyVolleyRequest request = new MyVolleyRequest(context, new MyVolleyRequest.Callback() {
+            @Override
+            public void onSuccess(String response) {
+                System.out.println("my_volley_get_pressure_success : " + response.toString());
+                try {
+                    JSONObject json = new JSONObject(response);
+                    boolean success = json.getBoolean("success");
+                    System.out.println("json success : " + success);
+                    if (success) {
+                        JSONArray jsonArray = json.getJSONArray("data");
+                        int n = jsonArray.length();
+                        if (n > 0) {
+                            DbProvider provider = new DbProvider();
+                            provider.init(context);
+                            for (int i = 0; i < n; i++) {
+                                JSONObject data = jsonArray.getJSONObject(i);
 
-    public void myVolleyRequestDemo_POST(Context context) {
+                                ContentValues contentValues = new ContentValues();
+                                contentValues.put(DbPressure.Pressure.USER_ID, Integer.parseInt(MyApplication.getInstance().getUser_id()));
+                                contentValues.put(DbPressure.Pressure.TIME, data.getString("measureTime"));
+                                contentValues.put(DbPressure.Pressure.HIGH, Integer.parseInt(data.getString("SBP")));
+                                contentValues.put(DbPressure.Pressure.LOW, Integer.parseInt(data.getString("DBP")));
+                                contentValues.put(DbPressure.Pressure.RATE, Integer.parseInt(data.getString("HR")));
+                                contentValues.put(DbPressure.Pressure.ISSEND, "true");
+                                provider.insert(DbPressure.CONTENT_URI, contentValues);
+                            }
+                            System.out.println("Database has been initialized!");
+                        }
+
+                    }
+
+
+                } catch (JSONException e) {
+                    System.out.println("json error, at pressure_get_method");
+                }
+            }
+
+            @Override
+            public void onError(VolleyError error) {
+                error.printStackTrace();
+                System.out.println("my_volley_get_pressure_failed : " + error);
+            }
+        });
+        request.requestPost(url, "my_get_" + VOLLEY_TAG, param);
+    }
+
+    public void myVolleyRequestPressure_POST(final Context context) {
+        MyVolleyRequest myVolleyRequest = new MyVolleyRequest(context, new MyVolleyRequest.Callback() {
+            @Override
+            public void onSuccess(String response) {
+
+                DbProvider provider = new DbProvider();
+                provider.init(context);
+
+                ContentValues contentValues = new ContentValues();
+                contentValues.put(DbPressure.Pressure.USER_ID, Integer.parseInt(MyApplication.getInstance().getUser_id()));
+                contentValues.put(DbPressure.Pressure.TIME, param.get("measureTime"));
+                contentValues.put(DbPressure.Pressure.HIGH, Integer.parseInt(param.get("SBP")));
+                contentValues.put(DbPressure.Pressure.LOW, Integer.parseInt(param.get("DBP")));
+                contentValues.put(DbPressure.Pressure.RATE, Integer.parseInt(param.get("HR")));
+                contentValues.put(DbPressure.Pressure.ISSEND, "true");
+
+                provider.insert(DbPressure.CONTENT_URI, contentValues);
+                provider.database.close();
+
+                Log.i("### onSuccess", "POST_MyVolleyRequest" + response);
+                System.out.println("volley success : " + response);
+            }
+
+            @Override
+            public void onError(VolleyError error) {
+                DbProvider provider = new DbProvider();
+                provider.init(context);
+
+                ContentValues contentValues = new ContentValues();
+                contentValues.put(DbPressure.Pressure.USER_ID, Integer.parseInt(MyApplication.getInstance().getUser_id()));
+                contentValues.put(DbPressure.Pressure.TIME, param.get("measureTime"));
+                contentValues.put(DbPressure.Pressure.HIGH, Integer.parseInt(param.get("SBP")));
+                contentValues.put(DbPressure.Pressure.LOW, Integer.parseInt(param.get("DBP")));
+                contentValues.put(DbPressure.Pressure.RATE, Integer.parseInt(param.get("HR")));
+                contentValues.put(DbPressure.Pressure.ISSEND, "false");
+
+                provider.insert(DbPressure.CONTENT_URI, contentValues);
+                provider.database.close();
+
+                error.printStackTrace();
+                System.out.println("volley error:" + error);
+            }
+        });
+        myVolleyRequest.requestPost(url, "my_post_" + VOLLEY_TAG, param);
+    }
+
+    public String myVolleyRequestSearch_POST(Context context) {
+
         MyVolleyRequest myVolleyRequest = new MyVolleyRequest(context, new MyVolleyRequest.Callback() {
             @Override
             public void onSuccess(String response) {
                 Log.i("### onSuccess", "POST_MyVolleyRequest" + response);
                 System.out.println("volley success");
+                result = response;
             }
 
             @Override
             public void onError(VolleyError error) {
                 error.printStackTrace();
                 System.out.println("volley error:" + error);
+                result = error.toString();
             }
         });
-
         myVolleyRequest.requestPost(url, "my_post_" + VOLLEY_TAG, param);
+        return result;
     }
 
     public void volleyJsonObjectRequestDome_POST() {

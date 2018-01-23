@@ -23,6 +23,7 @@ public class DbPressure {
         public static final String HIGH = "high";
         public static final String LOW = "low";
         public static final String RATE = "rate";
+        public static final String ISSEND = "issend";
 
         public static final String CREATE_SQL = "CREATE TABLE IF NOT EXISTS " + TABLE_NAME + " (" +
                 ID + " INTEGER PRIMARY KEY AUTOINCREMENT," +
@@ -30,7 +31,8 @@ public class DbPressure {
                 TIME + " TEXT," +
                 HIGH + " INTEGER," +
                 LOW + " INTEGER," +
-                RATE + " INTEGER);";
+                RATE + " INTEGER," +
+                ISSEND + " TEXT);";
 
         public static final String DEFAULT_SORT_ORDER = ID + " ASC";
     }

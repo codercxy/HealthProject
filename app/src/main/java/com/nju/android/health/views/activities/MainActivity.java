@@ -2,10 +2,12 @@ package com.nju.android.health.views.activities;
 
 
 
+import android.app.Application;
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Parcelable;
 import android.os.PersistableBundle;
 import android.support.annotation.IdRes;
@@ -15,17 +17,21 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.Window;
 
+import com.nju.android.health.MyApplication;
 import com.nju.android.health.R;
+import com.nju.android.health.model.data.Pressure;
 import com.nju.android.health.model.data.Step;
 import com.nju.android.health.providers.DbProvider;
 import com.nju.android.health.service.StepDetector;
 import com.nju.android.health.service.StepService;
 import com.nju.android.health.utils.BackHandledFragment;
 import com.nju.android.health.utils.BackHandledInterface;
+import com.nju.android.health.utils.VolleyRequestImp;
 import com.nju.android.health.views.fragments.data.DataFragment;
 import com.nju.android.health.views.fragments.data.DataListFragment;
 import com.nju.android.health.views.fragments.doctor.DiagnoseFragment;
 import com.nju.android.health.views.fragments.doctor.DoctorFragment;
+import com.nju.android.health.views.fragments.health.HealthFragment;
 import com.nju.android.health.views.fragments.home.HomeFragment;
 import com.nju.android.health.views.fragments.setting.SettingFragment;
 import com.roughike.bottombar.BottomBar;
@@ -42,6 +48,9 @@ import org.apache.http.params.HttpParams;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 import java.util.Stack;
 
 
@@ -54,6 +63,7 @@ public class MainActivity extends AppCompatActivity implements BackHandledInterf
     private View setting;*/
 
     private HomeFragment homeFragment;
+    private HealthFragment healthFragment;
     private DataFragment dataFragment;
     private DoctorFragment doctorFragment;
     private SettingFragment settingFragment;
@@ -158,7 +168,7 @@ public class MainActivity extends AppCompatActivity implements BackHandledInterf
         unreadMessages.setAnimationDuration(200);
         unreadMessages.setAutoShowAfterUnSelection(true);*/
 
-        initView();
+        initData();
         initService();
         Intent intent = getIntent();
 
@@ -196,7 +206,7 @@ public class MainActivity extends AppCompatActivity implements BackHandledInterf
                         mBottomBar.setDefaultTabPosition(0);
 //                    mBottomBar.setDefaultTabPosition(1);
 //                    mBottomBar.selectTabAtPosition(1);
-                } else if (ft instanceof HomeFragment) {
+                } else if (ft instanceof HealthFragment) {
                     if (mBottomBar.getCurrentTabPosition() != 1)
                         mBottomBar.setDefaultTabPosition(1);
 //                    mBottomBar.selectTabAtPosition(0);
@@ -236,8 +246,19 @@ public class MainActivity extends AppCompatActivity implements BackHandledInterf
 //        mBottomBar.onSaveInstanceState();
     }
 
-    private void initView(){
+    private void initData(){
 
+        SharedPreferences sp = getSharedPreferences("share", MODE_PRIVATE);
+        boolean isFirstRun = sp.getBoolean("isFirstRun", true);
+        System.out.println("isFirstRun : " + isFirstRun);
+        SharedPreferences.Editor editor = sp.edit();
+        if (isFirstRun) {
+            SyncServerData();
+            editor.putBoolean("isFirstRun", false);
+            editor.commit();
+        } else {
+            checkAndSendData();
+        }
 
         /*home = findViewById(R.id.menu_home);
         health = findViewById(R.id.menu_health);
@@ -253,6 +274,41 @@ public class MainActivity extends AppCompatActivity implements BackHandledInterf
         home.setOnClickListener(this);
         doctor.setOnClickListener(this);
         setting.setOnClickListener(this);*/
+    }
+    private void SyncServerData() {
+        Map<String, String> param = new HashMap<>();
+        param.put("url", "bloodpressure");
+        param.put("action", "get_data");
+        param.put("type", "times");
+        param.put("parameter1", "4");
+        param.put("parameter2", "");
+        param.put("user_id", MyApplication.getInstance().getUser_id());
+        param.put("session_id", MyApplication.getInstance().getSession_id());
+        System.out.println(MyApplication.getInstance().getUser_id());
+        VolleyRequestImp myVolley = new VolleyRequestImp(param);
+        myVolley.myVolleyRequestPressure_GET(this);
+    }
+
+    private void checkAndSendData() {
+        DbProvider provider = new DbProvider();
+        provider.init(getApplicationContext());
+        List<Pressure> dataList = provider.getUnSendPressure();
+
+        for (int i = 0; i < dataList.size(); i++) {
+            Pressure p = dataList.get(i);
+            Map<String, String> param = new HashMap<>();
+            param.put("url", "bloodpressure");
+            param.put("action", "upload_data");
+            param.put("clientid", MyApplication.getInstance().getUser_id());
+            param.put("SBP", String.valueOf(p.getHigh()));
+            param.put("DBP", String.valueOf(p.getLow()));
+            param.put("HR", String.valueOf(p.getRate()));
+            param.put("measureTime", String.valueOf(p.getTime()));
+
+            VolleyRequestImp volleyRequest = new VolleyRequestImp(param);
+            volleyRequest.myVolleyRequestPressure_POST(this);
+        }
+
     }
 
     private void initService() {
@@ -371,8 +427,8 @@ public class MainActivity extends AppCompatActivity implements BackHandledInterf
 
                 break;
             case 1:
-                homeFragment = new HomeFragment();
-                switchContent(mContent, homeFragment, 1);
+                healthFragment = new HealthFragment();
+                switchContent(mContent, healthFragment, 1);
 //                fragmentTransaction.replace(R.id.content, homeFragment);
                 break;
             case 2:

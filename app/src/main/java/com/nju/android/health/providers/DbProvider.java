@@ -229,15 +229,17 @@ public class DbProvider extends ContentProvider{
     }
 
     public String getUserName() {
+        String result = "";
         String[] projection = new String[] {DbUser.User.USER_ID,
                 DbUser.User.NAME};
         String[] args = {String.valueOf(user_id)};
         Cursor c = query(DbUser.CONTENT_URI, projection, "user_id = ?", args, null);
         if (c.moveToFirst()) {
-            return c.getString(c.getColumnIndexOrThrow(DbUser.User.NAME));
-        } else {
-            return "";
+             result = c.getString(c.getColumnIndexOrThrow(DbUser.User.NAME));
+
         }
+        c.close();
+        return result;
     }
 
     public void UpdateUser(String name) {
@@ -270,7 +272,8 @@ public class DbProvider extends ContentProvider{
         String[] projection = new String[] {DbPressure.Pressure.TIME,
                 DbPressure.Pressure.HIGH,
                 DbPressure.Pressure.LOW,
-                DbPressure.Pressure.RATE};
+                DbPressure.Pressure.RATE,
+                DbPressure.Pressure.ISSEND};
         String[] args = {String .valueOf(user_id)};
         Cursor c = query(DbPressure.CONTENT_URI, projection, "user_id = ?", args, null);
 
@@ -281,7 +284,7 @@ public class DbProvider extends ContentProvider{
                 pressure.setHigh(c.getInt(c.getColumnIndexOrThrow(DbPressure.Pressure.HIGH)));
                 pressure.setLow(c.getInt(c.getColumnIndexOrThrow(DbPressure.Pressure.LOW)));
                 pressure.setRate(c.getInt(c.getColumnIndexOrThrow(DbPressure.Pressure.RATE)));
-
+                pressure.setSend(Boolean.parseBoolean(c.getString(c.getColumnIndexOrThrow(DbPressure.Pressure.ISSEND))));
             }
         }
         c.close();
@@ -312,24 +315,26 @@ public class DbProvider extends ContentProvider{
 
     public List<Pressure> getPressure(String date) {
         String[] args = null;
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy年MM月dd日");
         switch (date) {
             case "day":
-                SimpleDateFormat sdf = new SimpleDateFormat("yyyy年MM月dd日");
                 args = new String[]{sdf.format(new Date()), String.valueOf(user_id)};
                 break;
             case "week":
-                SimpleDateFormat sdf2 = new SimpleDateFormat("yyyy年MM月dd日");
                 Calendar c = Calendar.getInstance();
                 c.add(Calendar.DATE, -7);
                 Date d = c.getTime();
-                args = new String[]{sdf2.format(d), String.valueOf(user_id)};
+                args = new String[]{sdf.format(d), String.valueOf(user_id)};
                 break;
             case "month":
-                SimpleDateFormat sdf3 = new SimpleDateFormat("yyyy年MM月dd日");
                 Calendar calendar = Calendar.getInstance();
                 calendar.add(Calendar.DATE, -30);
                 Date newDate = calendar.getTime();
-                args = new String[]{sdf3.format(newDate), String.valueOf(user_id)};
+                args = new String[]{sdf.format(newDate), String.valueOf(user_id)};
+                break;
+            case "all":
+                Date date_all = new Date(0);
+                args = new String[]{sdf.format(date_all), String.valueOf(user_id)};
                 break;
         }
 
@@ -340,7 +345,8 @@ public class DbProvider extends ContentProvider{
         String[] projection = new String[] {DbPressure.Pressure.TIME,
                 DbPressure.Pressure.HIGH,
                 DbPressure.Pressure.LOW,
-                DbPressure.Pressure.RATE};
+                DbPressure.Pressure.RATE,
+                DbPressure.Pressure.ISSEND};
 
         Cursor c = query(DbPressure.CONTENT_URI, projection, "time > ? and user_id = ?", args, null);
 
@@ -354,6 +360,7 @@ public class DbProvider extends ContentProvider{
                     pressure.setHigh(c.getInt(c.getColumnIndexOrThrow(DbPressure.Pressure.HIGH)));
                     pressure.setLow(c.getInt(c.getColumnIndexOrThrow(DbPressure.Pressure.LOW)));
                     pressure.setRate(c.getInt(c.getColumnIndexOrThrow(DbPressure.Pressure.RATE)));
+                    pressure.setSend(Boolean.parseBoolean(c.getString(c.getColumnIndexOrThrow(DbPressure.Pressure.ISSEND))));
 
                     pressureList.add(pressure);
                 } while (c.moveToNext());
@@ -363,6 +370,42 @@ public class DbProvider extends ContentProvider{
         //倒序输出
         Collections.reverse(pressureList);
         return pressureList;
+    }
+    public List<Pressure> getUnSendPressure() {
+        List<Pressure> pressureList = new ArrayList<>();
+        String[] args = new String[] {String.valueOf(user_id), "false"};
+        String[] projection = new String[] {
+                DbPressure.Pressure.TIME,
+                DbPressure.Pressure.HIGH,
+                DbPressure.Pressure.LOW,
+                DbPressure.Pressure.RATE,
+                DbPressure.Pressure.ISSEND
+        };
+        Cursor c = query(DbPressure.CONTENT_URI, projection, "user_id = ? and issend = ?", args, null);
+        if (c != null) {
+            if (c.moveToFirst()) {
+                do {
+                    Pressure pressure = new Pressure();
+                    pressure.setTime(c.getString(c.getColumnIndexOrThrow(DbPressure.Pressure.TIME)));
+                    pressure.setHigh(c.getInt(c.getColumnIndexOrThrow(DbPressure.Pressure.HIGH)));
+                    pressure.setLow(c.getInt(c.getColumnIndexOrThrow(DbPressure.Pressure.LOW)));
+                    pressure.setRate(c.getInt(c.getColumnIndexOrThrow(DbPressure.Pressure.RATE)));
+                    pressure.setSend(Boolean.parseBoolean(c.getString(c.getColumnIndexOrThrow(DbPressure.Pressure.ISSEND))));
+
+                    pressureList.add(pressure);
+                } while (c.moveToNext());
+            }
+            c.close();
+        }
+        Collections.reverse(pressureList);
+        return pressureList;
+    }
+
+    public void changeSendState() {
+        ContentValues values = new ContentValues();
+        values.put("issend", "true");
+        String[] args = new String[] {"false"};
+        update(DbPressure.CONTENT_URI, values, "issend = ?", args);
     }
 
     public List<Glucose> getGlucose(String date, String type) {

@@ -468,11 +468,11 @@ public class AddXyrecorder extends Activity implements View.OnClickListener {
 
                     SimpleDateFormat sdf_date = new SimpleDateFormat("yyyy-MM-dd");
 
-                    SimpleDateFormat newSdf = new SimpleDateFormat("yyyy年MM月dd日");
+                    SimpleDateFormat newSdf = new SimpleDateFormat("yyyy-MM-dd");
 
                     Date date = sdf_date.parse(dynamic_date, new ParsePosition(0));
 
-                    String newDateTime = newSdf.format(date) + " " + dynamic_time;
+                    String newDateTime = newSdf.format(date) + " " + dynamic_time + ":00";
 
                     System.out.println("newDateTime:" + newDateTime);
 
@@ -491,7 +491,33 @@ public class AddXyrecorder extends Activity implements View.OnClickListener {
 
     }
     public void savePressureValue(String time, String high, String low, String rate) {
-        DbProvider provider = new DbProvider();
+
+        //volley
+        Map<String, String> param = new HashMap<>();
+        param.put("url", "bloodpressure");
+        param.put("action", "upload_data");
+        param.put("clientid", "10001");
+        param.put("SBP", high);
+        param.put("DBP", low);
+        param.put("HR", rate);
+        param.put("measureTime", time);
+        /*param.put("url", "user");
+        param.put("action", "login");
+        param.put("username", "paotail");
+        param.put("password", "123456");*/
+                    /*param.put("pretime",time.getText().toString());
+                    param.put("highpre", et_high.getText().toString());
+                    param.put("lowpre", et_low.getText().toString());
+                    param.put("rate", et_rate.getText().toString());*/
+        System.out.println("pressure volley start");
+        VolleyRequestImp volleyRequest = new VolleyRequestImp(param);
+        volleyRequest.myVolleyRequestPressure_POST(this);
+//        volleyRequest.volleyJsonObjectRequestDome_POST();
+//        volleyRequest.volleyStringRequestDome_POST();
+        System.out.println("pressure volley fin");
+
+
+        /*DbProvider provider = new DbProvider();
         provider.init(this);
 
         ContentValues contentValues = new ContentValues();
@@ -502,31 +528,7 @@ public class AddXyrecorder extends Activity implements View.OnClickListener {
         contentValues.put(DbPressure.Pressure.RATE, Integer.parseInt(rate));
 
         provider.insert(DbPressure.CONTENT_URI, contentValues);
-        provider.database.close();
-
-        //volley
-        Map<String, String> param = new HashMap<>();
-        param.put("url", "bloodpressure");
-        param.put("action", "upload_data");
-        param.put("clientid", "10001");
-        param.put("SBP", "121");
-        param.put("DBP", "67");
-        param.put("HR", "71");
-        param.put("measureTime", "2015-08-25 16:10:47");
-        /*param.put("url", "user");
-        param.put("action", "login");
-        param.put("username", "paotail");
-        param.put("password", "123456");*/
-                    /*param.put("pretime",time.getText().toString());
-                    param.put("highpre", et_high.getText().toString());
-                    param.put("lowpre", et_low.getText().toString());
-                    param.put("rate", et_rate.getText().toString());*/
-        System.out.println("volley start");
-        VolleyRequestImp volleyRequest = new VolleyRequestImp(param);
-        volleyRequest.myVolleyRequestDemo_POST(this);
-//        volleyRequest.volleyJsonObjectRequestDome_POST();
-//        volleyRequest.volleyStringRequestDome_POST();
-        System.out.println("volley fin");
+        provider.database.close();*/
 
         /*System.out.println("okhttp start");
         upload();

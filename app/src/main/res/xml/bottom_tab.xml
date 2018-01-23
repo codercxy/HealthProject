@@ -4,7 +4,7 @@
         id="@+id/bottomBarItemData"
         icon="@drawable/ic_trending_up_grey600_24dp"
         title="数据"
-        barColorWhenSelected="#7B1FA2" />
+        barColorWhenSelected="#00BCD4" />
     <tab
         id="@+id/bottomBarItemHome"
         icon="@drawable/ic_home_grey600_24dp"
@@ -14,10 +14,10 @@
         id="@+id/bottomBarItemDoctor"
         icon="@drawable/ic_local_hospital_grey600_24dp"
         title="医生"
-        barColorWhenSelected="#FF9800" />
+        barColorWhenSelected="#00BCD4" />
     <tab
         id="@+id/bottomBarItemSetting"
         icon="@drawable/ic_settings_grey600_24dp"
         title="个人中心"
-        barColorWhenSelected="#FF5252" />
+        barColorWhenSelected="#00BCD4" />
 </tabs>

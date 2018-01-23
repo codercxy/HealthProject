@@ -14,10 +14,13 @@ import com.nju.android.health.R;
 import com.nju.android.health.model.data.Doctor;
 import com.nju.android.health.utils.RecyclerInsetsDecoration;
 import com.nju.android.health.utils.RecyclerViewClickListener;
+import com.nju.android.health.utils.VolleyRequestImp;
 import com.nju.android.health.views.adapters.MyDoctorAdapter;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class MyDoctorActivity extends AppCompatActivity implements RecyclerViewClickListener{
 
@@ -44,6 +47,8 @@ public class MyDoctorActivity extends AppCompatActivity implements RecyclerViewC
     }
 
     private void initData() {
+
+
         mDoctors = new ArrayList<Doctor>();
         Doctor doctor = new Doctor();
         doctor.setPicRes(R.drawable.doctor);

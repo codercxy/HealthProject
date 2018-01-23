@@ -92,7 +92,7 @@ public class DataListFragment extends BackHandledFragment implements RecyclerVie
         }*/
         mProvider = new DbProvider();
         mProvider.init(getActivity());
-        dataList = mProvider.getPressure("week");
+        dataList = mProvider.getPressure("all");
 
     }
 

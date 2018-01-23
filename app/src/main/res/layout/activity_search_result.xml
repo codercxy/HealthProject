@@ -1,11 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/activity_search_result"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context="com.nju.android.health.views.activities.next.SearchResultActivity">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/predict_toolbar"
+        android:layout_width="match_parent"
+        android:background="@color/colorPrimary"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="高血压预测"
+            android:textSize="20sp"
+            android:textColor="@color/aliwx_white"
+            android:gravity="center"
+            />
+    </android.support.v7.widget.Toolbar>
 
     <TextView
         android:layout_width="match_parent"
@@ -80,7 +96,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="对应疾病"
+            android:text="可能患有高血压的概率"
             android:textSize="16sp"
             android:padding="16dp"
             android:id="@+id/textView9" />
@@ -100,18 +116,19 @@
                 android:layout_gravity="center_vertical"
                 android:src="@drawable/disease"
                 android:padding="16dp"/>
-            <TextView
+            <!--<TextView
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:layout_height="wrap_content"
                 android:text="高血压"
                 android:layout_gravity="center_vertical"
                 android:textSize="16sp"
-                android:textColor="@color/black"/>
+                android:textColor="@color/black"/>-->
 
             <com.nju.android.health.utils.MyProgressBar
                 android:id="@+id/search_result_headache_bar"
-                android:layout_width="140dp"
+                android:layout_width="0dp"
+                android:layout_weight="1"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
                 android:layout_marginLeft="16dp"

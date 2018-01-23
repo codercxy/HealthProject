@@ -28,6 +28,7 @@ import com.nju.android.health.utils.BackHandledFragment;
 import com.nju.android.health.utils.CircleImg;
 import com.nju.android.health.utils.PictureUtil;
 import com.nju.android.health.views.activities.MainActivity;
+import com.nju.android.health.views.activities.home.ClockActivity;
 import com.nju.android.health.views.activities.me.HealthRecordActivity;
 import com.nju.android.health.views.activities.me.MeInfoActivity;
 import com.nju.android.health.views.activities.next.Chart_1_Activity;
@@ -62,15 +63,16 @@ public class SettingFragment extends BackHandledFragment implements View.OnClick
     private TextView username;
 //    private TextView setting;
     private TextView feedback;
-    private TextView search;
+    private TextView remainder;
+//    private TextView search;
     private TextView reserve;
-    private TextView reservation;
+//    private TextView reservation;
 
-    private TextView chart_1;
+    /*private TextView chart_1;
     private TextView chart_2;
     private TextView chart_3;
     private TextView chart_4;
-    private TextView chart_5;
+    private TextView chart_5;*/
 
     private BottomBar bottomBar;
 
@@ -124,15 +126,16 @@ public class SettingFragment extends BackHandledFragment implements View.OnClick
         message = (TextView) view.findViewById(R.id.me_message);
 //        setting = (TextView) view.findViewById(R.id.me_setting);
         feedback = (TextView) view.findViewById(R.id.me_feedback);
-        search = (TextView) view.findViewById(R.id.me_search);
+        remainder = (TextView) view.findViewById(R.id.me_remainder);
+//        search = (TextView) view.findViewById(R.id.me_search);
         reserve = (TextView) view.findViewById(R.id.me_reserve);
-        reservation = (TextView) view.findViewById(R.id.me_reservation);
+//        reservation = (TextView) view.findViewById(R.id.me_reservation);
 
-        chart_1 = (TextView) view.findViewById(R.id.me_chart_1);
-        chart_2 = (TextView) view.findViewById(R.id.me_chart_2);
-        chart_3 = (TextView) view.findViewById(R.id.me_chart_3);
-        chart_4 = (TextView) view.findViewById(R.id.me_chart_4);
-        chart_5 = (TextView) view.findViewById(R.id.me_chart_5);
+//        chart_1 = (TextView) view.findViewById(R.id.me_chart_1);
+//        chart_2 = (TextView) view.findViewById(R.id.me_chart_2);
+//        chart_3 = (TextView) view.findViewById(R.id.me_chart_3);
+//        chart_4 = (TextView) view.findViewById(R.id.me_chart_4);
+//        chart_5 = (TextView) view.findViewById(R.id.me_chart_5);
 
         setting_info = (LinearLayout) view.findViewById(R.id.ll_setting_info);
         username = (TextView) view.findViewById(R.id.me_username);
@@ -143,14 +146,15 @@ public class SettingFragment extends BackHandledFragment implements View.OnClick
 //        setting.setOnClickListener(this);
         feedback.setOnClickListener(this);
         setting_info.setOnClickListener(this);
-        search.setOnClickListener(this);
+        remainder.setOnClickListener(this);
+//        search.setOnClickListener(this);
         reserve.setOnClickListener(this);
-        reservation.setOnClickListener(this);
-        chart_1.setOnClickListener(this);
-        chart_2.setOnClickListener(this);
-        chart_3.setOnClickListener(this);
-        chart_4.setOnClickListener(this);
-        chart_5.setOnClickListener(this);
+//        reservation.setOnClickListener(this);
+//        chart_1.setOnClickListener(this);
+//        chart_2.setOnClickListener(this);
+//        chart_3.setOnClickListener(this);
+//        chart_4.setOnClickListener(this);
+//        chart_5.setOnClickListener(this);
 
 
 
@@ -225,19 +229,23 @@ public class SettingFragment extends BackHandledFragment implements View.OnClick
                 intent = new Intent(getActivity(), MeInfoActivity.class);
                 startActivity(intent);
                 break;
-            case R.id.me_search:
-                intent = new Intent(getActivity(), SearchActivity.class);
+            case R.id.me_remainder:
+                intent = new Intent(getActivity(), ClockActivity.class);
                 startActivity(intent);
                 break;
+            /*case R.id.me_search:
+                intent = new Intent(getActivity(), SearchActivity.class);
+                startActivity(intent);
+                break;*/
             case R.id.me_reserve:
                 intent = new Intent(getActivity(), ReserveActivity.class);
                 startActivity(intent);
                 break;
-            case R.id.me_reservation:
+            /*case R.id.me_reservation:
                 intent = new Intent(getActivity(), ReservationActivity.class);
                 startActivity(intent);
-                break;
-            case R.id.me_chart_1:
+                break;*/
+            /*case R.id.me_chart_1:
                 intent = new Intent(getActivity(), Chart_1_Activity.class);
                 startActivity(intent);
                 break;
@@ -256,7 +264,7 @@ public class SettingFragment extends BackHandledFragment implements View.OnClick
             case R.id.me_chart_5:
                 intent = new Intent(getActivity(), Chart_5_Activity.class);
                 startActivity(intent);
-                break;
+                break;*/
 
         }
     }

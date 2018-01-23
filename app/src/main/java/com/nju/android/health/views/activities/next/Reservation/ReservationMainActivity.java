@@ -38,8 +38,10 @@ public class ReservationMainActivity extends AppCompatActivity implements View.O
                 intent.setClass(ReservationMainActivity.this, ReservationChooseRoomActivity.class);
                 break;
             case R.id.reservation_main_history:
+                intent.setClass(ReservationMainActivity.this, ReservationHistoryActivity.class);
                 break;
             case R.id.reservation_main_follow:
+                intent.setClass(ReservationMainActivity.this, ReservationFollowActivity.class);
                 break;
         }
 

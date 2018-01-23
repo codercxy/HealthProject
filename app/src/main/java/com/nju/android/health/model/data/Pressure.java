@@ -19,7 +19,7 @@ public class Pressure {
     private int low;
     private int rate;
     private String time;
-    private String tag_send;
+    private boolean isSend;
     public long getId(){
         return id;
     }
@@ -32,11 +32,11 @@ public class Pressure {
     public void setTime(String time) {
         this.time = time;
     }
-    public String isTag_send() {
-        return tag_send;
+    public boolean isSend() {
+        return isSend;
     }
-    public void setTag_send(String tag_send) {
-        this.tag_send = tag_send;
+    public void setSend(boolean isSend) {
+        this.isSend = isSend;
     }
     public int getHigh() {
         return high;

@@ -27,7 +27,7 @@
                 android:layout_height="wrap_content"
                 android:fitsSystemWindows="true"
                 android:adjustViewBounds="true"
-                android:src="@mipmap/header"
+                android:src="@mipmap/life"
                 app:layout_collapseMode="parallax"
                 app:layout_collapseParallaxMultiplier="0.7"/>
 

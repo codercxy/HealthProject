@@ -12,6 +12,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.alibaba.mobileim.YWAPI;
@@ -23,6 +24,9 @@ import com.nju.android.health.utils.BackHandledFragment;
 import com.nju.android.health.utils.RecyclerInsetsDecoration;
 import com.nju.android.health.utils.RecyclerViewClickListener;
 import com.nju.android.health.views.activities.doctor.PhysicianActivity;
+import com.nju.android.health.views.activities.next.Reservation.ReservationActivity;
+import com.nju.android.health.views.activities.next.SearchActivity;
+import com.nju.android.health.views.activities.next.SearchResultActivity;
 import com.nju.android.health.views.adapters.DiagnoseAdapter;
 import com.roughike.bottombar.BottomBar;
 
@@ -41,6 +45,8 @@ public class DiagnoseFragment extends BackHandledFragment implements RecyclerVie
     private String[] discList;
     private List<DiagnoseItem> diagnoseItems;
 
+    private TextView predict;
+    private TextView reservation;
     private BottomBar bottomBar;
 
     public DiagnoseFragment() {
@@ -85,6 +91,22 @@ public class DiagnoseFragment extends BackHandledFragment implements RecyclerVie
 
     private void init(View view) {
         mRecyclerView = (RecyclerView) view.findViewById(R.id.diagnose_recycler);
+        predict = (TextView) view.findViewById(R.id.diagnose_predict);
+        predict.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), SearchResultActivity.class);
+                startActivity(intent);
+            }
+        });
+        reservation = (TextView) view.findViewById(R.id.diagnose_reservation);
+        reservation.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), ReservationActivity.class);
+                startActivity(intent);
+            }
+        });
         initData();
         initRecycler();
 
@@ -92,17 +114,13 @@ public class DiagnoseFragment extends BackHandledFragment implements RecyclerVie
     }
 
     private void initData() {
-        pictureList = new Integer[]{R.drawable.pills, R.drawable.heartbeat, R.drawable.drops, R.drawable.microscope,
-                R.drawable.xray, R.drawable.eye, R.drawable.thermometer, R.drawable.pills2,
-                R.drawable.stethoscope, R.drawable.snake, R.drawable.pulsometer, R.drawable.cardio_machine,
-                R.drawable.enema, R.drawable.marker, R.drawable.test_tube, R.drawable.test_tube};
+        pictureList = new Integer[]{R.drawable.room_all, R.drawable.room_surgery, R.drawable.room_internal, R.drawable.room_bone,
+                R.drawable.room_mouth, R.drawable.room_ear, R.drawable.room_mental, R.drawable.room_skin};
 
-        discList = new String[]{"儿科", "内科", "男科", "产科",
-                "外科", "眼科", "中医科", "骨伤科",
-                "精神心理科", "肿瘤科", "妇科", "耳鼻喉科",
-                "口腔科", "美容", "肝病", "皮肤科"};
+        discList = new String[]{"全科", "外科", "内科", "骨科",
+                "口腔科", "耳鼻喉科", "精神科", "皮肤科"};
         diagnoseItems = new ArrayList<>();
-        for (int i = 0; i < 15; i++) {
+        for (int i = 0; i < discList.length; i++) {
             DiagnoseItem newItem = new DiagnoseItem();
             newItem.setImgRes(pictureList[i]);
             newItem.setText(discList[i]);

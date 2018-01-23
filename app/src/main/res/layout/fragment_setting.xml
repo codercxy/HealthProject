@@ -5,11 +5,22 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".views.fragments.setting.SettingFragment">
 
-    <android.support.v7.widget.Toolbar
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:gravity="center"
+        android:text="个人中心"
+        android:textSize="22sp"
+        android:textColor="@color/aliwx_white"
+        android:background="@color/colorPrimary"
+        />
+    <!--<android.support.v7.widget.Toolbar
         android:id="@+id/toolbar_me"
         android:layout_width="match_parent"
         android:layout_height="?android:attr/actionBarSize"
         android:background="@color/aliwx_white"
+
         app:popupTheme="@style/AppTheme.PopupOverlay" >
 
         <TextView
@@ -20,8 +31,7 @@
             android:textSize="20sp"
             android:layout_marginLeft="48dp"
             android:textColor="@color/black"/>
-    </android.support.v7.widget.Toolbar>
-
+    </android.support.v7.widget.Toolbar>-->
 
 
     <ScrollView
@@ -36,34 +46,30 @@
 
             android:orientation="vertical"
             >
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="8dp"
-                android:background="@color/view" />
+
 
             <LinearLayout
                 android:id="@+id/ll_setting_info"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@color/aliwx_white"
-                android:orientation="horizontal">
+                android:orientation="vertical">
 
                 <com.nju.android.health.utils.CircleImg
                     android:id="@+id/me_circleimg"
                     android:layout_width="88dp"
                     android:layout_height="88dp"
-                    android:layout_gravity="center_vertical"
-                    android:src="@drawable/head"
+                    android:layout_gravity="center_horizontal"
+                    android:src="@drawable/default_head"
                     android:layout_margin="16dp"/>
 
                 <TextView
                     android:layout_width="match_parent"
-                    android:layout_height="120dp"
-                    android:text="username"
+                    android:layout_height="wrap_content"
+                    android:text="用户名"
                     android:textSize="16sp"
-                    android:layout_marginLeft="16dp"
-                    android:textColor="@color/black"
-                    android:gravity="center_vertical"
+                    android:paddingBottom="16dp"
+                    android:gravity="center_horizontal"
                     android:id="@+id/me_username" />
             </LinearLayout>
 
@@ -79,6 +85,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="15dp"
+                android:background="@color/search_white"
                 android:drawableRight="@drawable/ic_chevron_right_grey600_24dp"
                 android:text="健康档案"/>
             <View
@@ -91,6 +98,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="15dp"
+                android:background="@color/search_white"
                 android:drawableRight="@drawable/ic_chevron_right_grey600_24dp"
                 android:text="消息中心"/>
 
@@ -104,6 +112,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="15dp"
+                android:background="@color/search_white"
                 android:drawableRight="@drawable/ic_chevron_right_grey600_24dp"
                 android:text="意见反馈"/>
 
@@ -111,8 +120,20 @@
                 android:layout_width="wrap_content"
                 android:layout_height="1dp"
                 android:background="#f5f5f5" />
-
             <TextView
+                android:id="@+id/me_remainder"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="15dp"
+                android:background="@color/search_white"
+                android:drawableRight="@drawable/ic_chevron_right_grey600_24dp"
+                android:text="设置闹铃"/>
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="1dp"
+                android:background="#f5f5f5" />
+
+            <!--<TextView
                 android:id="@+id/me_search"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -122,8 +143,8 @@
             <View
                 android:layout_width="wrap_content"
                 android:layout_height="1dp"
-                android:background="#f5f5f5" />
-            <TextView
+                android:background="#f5f5f5" />-->
+            <!--<TextView
                 android:id="@+id/me_reservation"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -133,13 +154,14 @@
             <View
                 android:layout_width="wrap_content"
                 android:layout_height="1dp"
-                android:background="#f5f5f5" />
+                android:background="#f5f5f5" />-->
 
             <TextView
                 android:id="@+id/me_reserve"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="15dp"
+                android:background="@color/search_white"
                 android:drawableRight="@drawable/ic_chevron_right_grey600_24dp"
                 android:text="预约"/>
             <View
@@ -147,7 +169,7 @@
                 android:layout_height="1dp"
                 android:background="#f5f5f5" />
 
-            <TextView
+            <!--<TextView
                 android:id="@+id/me_chart_1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -202,7 +224,7 @@
                 android:layout_height="wrap_content"
                 android:padding="15dp"
                 android:drawableRight="@drawable/ic_chevron_right_grey600_24dp"
-                android:text="chart_5"/>
+                android:text="chart_5"/>-->
 
             <View
                 android:layout_width="wrap_content"
@@ -212,7 +234,6 @@
 
         </LinearLayout>
     </ScrollView>
-
 
 
 </FrameLayout>
