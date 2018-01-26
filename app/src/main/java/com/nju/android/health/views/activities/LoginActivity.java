@@ -234,8 +234,11 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                             InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
                             boolean isOpen = imm.isActive();//isOpen若返回true，则表示输入法打开
                             if (isOpen) {
-                                imm.toggleSoftInput(0, InputMethodManager.HIDE_NOT_ALWAYS);
-
+//                                imm.toggleSoftInput(0, InputMethodManager.HIDE_NOT_ALWAYS);
+//                                imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
+                                //隐藏软键盘 //
+                                imm.hideSoftInputFromWindow(edit_user.getWindowToken(), 0);
+                                imm.hideSoftInputFromWindow(edit_passwd.getWindowToken(), 0);
                             }
                             SharedPreferences.Editor editor = sp.edit();
                             editor.putString("USER_NAME", edit_user.getText().toString());
