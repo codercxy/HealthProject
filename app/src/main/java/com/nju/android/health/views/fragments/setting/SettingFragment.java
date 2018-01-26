@@ -172,7 +172,7 @@ public class SettingFragment extends BackHandledFragment implements View.OnClick
                 System.out.println("provider name" + provider.getUserName());
                 username.setText(provider.getUserName());
             }
-            provider.shutdown();
+            provider.database.close();
         } catch (Exception e) {
             e.printStackTrace();
         }

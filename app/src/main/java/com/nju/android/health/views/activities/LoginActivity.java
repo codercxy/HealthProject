@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Handler;
+import android.os.IBinder;
 import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -234,6 +235,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                             boolean isOpen = imm.isActive();//isOpen若返回true，则表示输入法打开
                             if (isOpen) {
                                 imm.toggleSoftInput(0, InputMethodManager.HIDE_NOT_ALWAYS);
+
                             }
                             SharedPreferences.Editor editor = sp.edit();
                             editor.putString("USER_NAME", edit_user.getText().toString());

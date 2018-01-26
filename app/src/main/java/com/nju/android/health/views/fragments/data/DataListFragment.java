@@ -12,6 +12,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.nju.android.health.Interface.ISwitchFragment;
 import com.nju.android.health.R;
 import com.nju.android.health.model.data.Pressure;
 import com.nju.android.health.providers.DbProvider;
@@ -116,11 +117,19 @@ public class DataListFragment extends BackHandledFragment implements RecyclerVie
 
     @Override
     public void onClick(View v, int position) {
-        FragmentManager fm = getFragmentManager();
+        /*FragmentManager fm = getFragmentManager();
         FragmentTransaction ft = fm.beginTransaction();
         ft.replace(R.id.content, new OldDataFragment());
         ft.addToBackStack(null);
         ft.commit();
+*/
+        Fragment to = getFragmentManager().findFragmentByTag("OldDataFragment");
+        if (to == null) {
+            to = new OldDataFragment();
+        }
+        if (getActivity() instanceof ISwitchFragment) {
+            ((ISwitchFragment)getActivity()).switchContent(to, "OldDataFragment");
+        }
     }
 
     @Override

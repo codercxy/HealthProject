@@ -20,6 +20,7 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.nju.android.health.Interface.ISwitchFragment;
 import com.nju.android.health.R;
 import com.nju.android.health.bswk.AddUricAcidActivity;
 import com.nju.android.health.bswk.XuetangAdd;
@@ -296,13 +297,13 @@ public class DataFragment extends Fragment implements RecyclerViewClickListener,
                 startActivity(intent_burn);
                 break;
             case R.id.ll_home_pressure:
-                System.out.println("fr transaction");
-                FragmentTransaction manager = getFragmentManager().beginTransaction();
-                manager.replace(R.id.content, new DataListFragment());
-                manager.addToBackStack(null);
-                /*manager.hide(new DataFragment());
-                manager.show(new DataListFragment());*/
-                manager.commit();
+                Fragment to = getFragmentManager().findFragmentByTag("dataListFragment");
+                if (to == null) {
+                    to = new DataListFragment();
+                }
+                if (getActivity() instanceof ISwitchFragment) {
+                    ((ISwitchFragment)getActivity()).switchContent(to, "dataListFragment");
+                }
 
                 break;
         }

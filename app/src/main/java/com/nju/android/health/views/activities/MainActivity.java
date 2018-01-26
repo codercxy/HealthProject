@@ -17,6 +17,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.Window;
 
+import com.nju.android.health.Interface.ISwitchFragment;
 import com.nju.android.health.MyApplication;
 import com.nju.android.health.R;
 import com.nju.android.health.model.data.Pressure;
@@ -54,7 +55,7 @@ import java.util.Map;
 import java.util.Stack;
 
 
-public class MainActivity extends AppCompatActivity implements BackHandledInterface{
+public class MainActivity extends AppCompatActivity implements BackHandledInterface, ISwitchFragment{
 
     /*private View home;
     private View health;
@@ -65,12 +66,11 @@ public class MainActivity extends AppCompatActivity implements BackHandledInterf
     private HomeFragment homeFragment;
     private HealthFragment healthFragment;
     private DataFragment dataFragment;
-    private DoctorFragment doctorFragment;
     private SettingFragment settingFragment;
     private DiagnoseFragment diagnoseFragment;
+    private DataListFragment dataListFragment;
 
     private Fragment mContent;
-    private Stack<Integer> mContentIdStack;
 
     private BottomBar mBottomBar;
     private BottomBarTab bottomBarTab;
@@ -90,8 +90,6 @@ public class MainActivity extends AppCompatActivity implements BackHandledInterf
     private Step step;
     private DbProvider provider;
     private Parcelable bottomBarState;
-    private Stack<Parcelable> bottomBarStack;
-    private Stack<Integer> bottomIdStack;
     private int currentIndex;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -99,10 +97,7 @@ public class MainActivity extends AppCompatActivity implements BackHandledInterf
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_main);
 
-        bottomBarStack = new Stack<Parcelable>();
-        bottomIdStack = new Stack<>();
 
-        mContentIdStack = new Stack<>();
 
 //        mActionBar = getSupportActionBar();
 //        mActionBar.hide();
@@ -113,7 +108,6 @@ public class MainActivity extends AppCompatActivity implements BackHandledInterf
         mBottomBar.setOnTabSelectListener(new OnTabSelectListener() {
             @Override
             public void onTabSelected(@IdRes int tabId) {
-                bottomIdStack.push(currentIndex);
                 switch (tabId) {
                     case R.id.bottomBarItemData:
                         setTabSelection(0);
@@ -172,19 +166,18 @@ public class MainActivity extends AppCompatActivity implements BackHandledInterf
         initService();
         Intent intent = getIntent();
 
-        bottomIdStack = new Stack<>();
-
         if(intent != null && savedInstanceState == null){
-            mContent = null;
             currentIndex = intent.getIntExtra("tabIndex", 1);
             if (currentIndex == 0) {
-                getFragmentManager()
-                        .beginTransaction()
-                        .replace(R.id.content, new DataListFragment())
-                        .addToBackStack(null)
-                        .commit();
+                FragmentTransaction ft = getFragmentManager()
+                        .beginTransaction();
+                if (dataListFragment == null) {
+                    dataListFragment = new DataListFragment();
+                }
+                switchContent(dataListFragment, "dataListFragment");
             } else {
                 setTabSelection(currentIndex);
+                mBottomBar.setDefaultTabPosition(currentIndex);
             }
 
 
@@ -308,6 +301,7 @@ public class MainActivity extends AppCompatActivity implements BackHandledInterf
             VolleyRequestImp volleyRequest = new VolleyRequestImp(param);
             volleyRequest.myVolleyRequestPressure_POST(this);
         }
+        provider.database.close();
 
     }
 
@@ -315,7 +309,7 @@ public class MainActivity extends AppCompatActivity implements BackHandledInterf
         sdf = new SimpleDateFormat("yyyyMMdd");
         today = sdf.format(new Date());
         provider = new DbProvider();
-        provider.init(this);
+        provider.init(getApplicationContext());
 
         step = provider.loadStep(today);
 
@@ -329,16 +323,25 @@ public class MainActivity extends AppCompatActivity implements BackHandledInterf
         Intent intent = new Intent(MainActivity.this, StepService.class);
         this.startService(intent);
     }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        if (!provider.database.isOpen()) {
+            provider.init(getApplicationContext());
+        }
+    }
+
     @Override
     public void onPause() {
         super.onPause();
         saveDate();
+        provider.database.close();
     }
     @Override
     public void onDestroy() {
         // TODO Auto-generated method stub
         super.onDestroy();
-        saveDate();
     }
 
     private void saveDate() {
@@ -382,31 +385,41 @@ public class MainActivity extends AppCompatActivity implements BackHandledInterf
         }
     }*/
 
-    public void switchContent(Fragment from, Fragment to, int id) {
-        if (mContent != to) {
-            mContent = to;
+
+
+    public void switchContent(Fragment to, String tag) {
+        FragmentTransaction transaction = getFragmentManager().beginTransaction();
+        if (mContent != null) {
+            if (mContent != to) {
+
 //            System.out.println(mBottomBar.getCurrentTabPosition());
-//
 //            mContentIdStack.push(mBottomBar.getCurrentTabPosition());
-            FragmentTransaction transaction = getFragmentManager().beginTransaction();
-            /*if (from != null) {
-                transaction.hide(from);
+
+                if (!to.isAdded()) {
+                    transaction.hide(mContent).add(R.id.content, to, tag).commit();
+                } else {
+                    transaction.hide(mContent).show(to).commit();
+                }
+//            transaction.replace(R.id.content, to);
+                mContent = to;
+//            transaction.addToBackStack(null);
+//            transaction.commit();
             }
-
+        } else {
             if (!to.isAdded()) {
-                transaction.add(R.id.content, to);
+                transaction.add(R.id.content, to, to.getTag()).commit();
             } else {
-                transaction.show(to);
-            }*/
-            transaction.replace(R.id.content, to);
-
-            transaction.addToBackStack(null);
-            transaction.commit();
+                transaction.show(to).commit();
+            }
+            mContent = to;
         }
+
+
+
+
     }
     private void setTabSelection(int index){
         currentIndex = index;
-        mContent = getFragmentManager().findFragmentById(R.id.content);
 
 //        System.out.println(mContent);
 //        mBottomBar.selectTabAtPosition(index);
@@ -417,8 +430,11 @@ public class MainActivity extends AppCompatActivity implements BackHandledInterf
 
         switch(index){
             case 0:
-                dataFragment = new DataFragment();
-                switchContent(mContent, dataFragment, 0);
+                if (dataFragment == null) {
+                    dataFragment = new DataFragment();
+                }
+
+                switchContent(dataFragment, "dataFragment");
 //                if (!dataListFragment.isAdded()) {
 //                    fragmentTransaction.add(R.id.content, dataListFragment);
 //                } else {
@@ -427,21 +443,28 @@ public class MainActivity extends AppCompatActivity implements BackHandledInterf
 
                 break;
             case 1:
-                healthFragment = new HealthFragment();
-                switchContent(mContent, healthFragment, 1);
+                if (healthFragment == null) {
+                    healthFragment = new HealthFragment();
+                }
+
+                switchContent(healthFragment, "healthFragment");
 //                fragmentTransaction.replace(R.id.content, homeFragment);
                 break;
             case 2:
                 /*doctorFragment = new DoctorFragment();
                 fragmentTransaction.replace(R.id.content, doctorFragment);*/
-                diagnoseFragment = new DiagnoseFragment();
-                switchContent(mContent, diagnoseFragment, 2);
+                if (diagnoseFragment == null) {
+                    diagnoseFragment = new DiagnoseFragment();
+                }
+                switchContent(diagnoseFragment, "diagnoseFragment");
 
 //                fragmentTransaction.replace(R.id.content, diagnoseFragment);
                 break;
             case 3:
-                settingFragment = new SettingFragment();
-                switchContent(mContent, settingFragment, 3);
+                if (settingFragment == null) {
+                    settingFragment = new SettingFragment();
+                }
+                switchContent(settingFragment, "settingFragment");
 
 //                fragmentTransaction.replace(R.id.content, settingFragment);
                 break;

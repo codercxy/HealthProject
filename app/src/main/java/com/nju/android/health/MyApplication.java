@@ -12,6 +12,7 @@ import com.nostra13.universalimageloader.cache.disc.naming.Md5FileNameGenerator;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
 import com.nostra13.universalimageloader.core.assist.QueueProcessingType;
+import com.squareup.leakcanary.LeakCanary;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -52,6 +53,7 @@ public class MyApplication extends Application{
     @Override
     public void onCreate() {
         super.onCreate();
+        LeakCanary.install(this);
         _context = getApplicationContext();
 
         //实例化Volley全局请求队列
